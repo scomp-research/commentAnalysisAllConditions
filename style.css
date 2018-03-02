@@ -42,6 +42,9 @@ body {
 
 .comment-reply {
   margin: 0 auto; 
+  float: clear; 
+  display: flex; 
+  clear: right;
 }
 
 .response-button {
@@ -56,15 +59,29 @@ body {
     float: right; 
     cursor: pointer; 
     text-align: center; 
+    margin: 4px;
 }
 
 .reply-button {
   color: #16A085;
-  text-align: center; 
 }
 
+.main-button {
+  float: none; 
+}
 .button-icon {
   width: 12px; 
   height: 12px;
+}
+
+.reply-textarea {
+  border-radius: 4px;
+  background-color: white; 
+  width: 100%;
+  overflow: none; 
+  border: 1px solid #979797;
+  flex: 1;
+  padding-left: 4px;
+  resize: none; 
 }
 

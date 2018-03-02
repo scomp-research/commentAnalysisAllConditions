@@ -2,6 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="scripts.js"></script>
   <title>Forum Test</title>
 </head>
 <body>
@@ -15,8 +16,8 @@
       Trump has repeatedly stressed the importance of the border wall in securing the border in order to prevent both illegal immigration and drug trafficking. He has held steady in repeating his campaign promise that Mexico will pay for the border wall.
     </div>
     <div id="article-voting">
-      <button class="response-button" type="button"> <img id="downvote-article-icon" class="button-icon" src='resources/downvote.png'> Downvote </button>
-      <button class="response-button" type="button"> <img id="upvote-article-icon" class="button-icon" src='resources/upvote.png'> Upvote </button>
+      <button class="response-button" onclick="buttonClicked('downvote', this);" type="button"> <img id="downvote-article-icon-1" class="button-icon" src='resources/downvote.png'> Downvote </button>
+      <button class="response-button" onclick="buttonClicked('upvote', this);" type="button"> <img id="upvote-article-icon-1" class="button-icon" src='resources/upvote.png'> Upvote </button>
     </div>
   </div>
   
@@ -24,17 +25,17 @@
 
   <div id="comment-section">
     <div id="comment-header">Comments 3/3</div>
-    <div id="comment1"> 
+    <div id="comment1" class="comment-box"> 
       <div class="comment-username">User M</div>
       <div class="comment-time">2/12/2018 8:10 PM EST</div>
       <div class="comment-text">For decades, open borders have allowed drugs and gangs to pour into our most vulnerable communities. They've allowed millions of low-wage workers to compete for jobs and wages against the poorest Americans. Most tragically, they have caused the loss of many innocent lives.</div>
       <div class="comment-interactions">
         <button class="response-button reply-button"> Reply </button>
-        <button class="response-button"> Report </button>
-        <button class="response-button"> <img id="downvote-comment-icon-1" class="button-icon" src='resources/downvote.png'> Downvote </button>
-        <button class="response-button"> <img id="upvote-comment-icon-1" class="button-icon" src='resources/upvote.png'> Upvote </button>
+        <button class="response-button" onclick="buttonClicked('report', this);"> Report </button>
+        <button class="response-button" onclick="buttonClicked('downvote', this);"> <img id="downvote-comment-icon" class="button-icon" src='resources/downvote.png'> Downvote </button>
+        <button class="response-button" onclick="buttonClicked('upvote', this);"> <img id="upvote-comment-icon" class="button-icon" src='resources/upvote.png'> Upvote </button>
       </div>
-      <div class="comment-reply reply-button">Reply<textarea></textarea></div>
+      <div class="comment-reply reply-button"><button id="reply-button-1" class="response-button reply-button main-button">Reply</button><textarea placeholder="Join a discussion" class="reply-textarea"></textarea></div>
     </div>
   </div>
 
