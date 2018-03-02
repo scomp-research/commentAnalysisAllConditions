@@ -1,0 +1,70 @@
+body {
+  background-color: #FBFCF7; 
+  font-family: "Helvetica Neue";
+  line-height: 2;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#main-content {
+
+}
+
+#article-break {
+  height: 40px; 
+}
+
+#article-text {
+  font-size: 18px; 
+}
+
+#comment-header {
+  font-size: 22px;
+  color: #9B9B9B;
+}
+
+.comment-username {
+  font-size: 18px;
+}
+
+.comment-time {
+  font-size: 14px; 
+  color: #9B9B9B;
+}
+
+.comment-text {
+  font-size: 15px; 
+}
+
+.comment-interactions {
+  float: right; 
+}
+
+.comment-reply {
+  margin: 0 auto; 
+}
+
+.response-button {
+    background-color: #FBFCF7; 
+    border: none;
+    color: #9B9B9B;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    float: right; 
+    cursor: pointer; 
+    text-align: center; 
+}
+
+.reply-button {
+  color: #16A085;
+  text-align: center; 
+}
+
+.button-icon {
+  width: 12px; 
+  height: 12px;
+}
+
