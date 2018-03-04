@@ -99,3 +99,16 @@ body {
   color: #F06C09; 
 }
 
+#comment-submission {
+  display: flex;
+}
+
+#comment-submission-icon {
+  width: 25px; 
+  height: 20px;
+}
+
+#comment-submission-title {
+  font-size: 22px; 
+  color: #16A085; 
+}
