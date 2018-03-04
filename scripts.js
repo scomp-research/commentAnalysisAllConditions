@@ -3,12 +3,29 @@ var DOWNVOTE_OFF = "resources/downvote.png";
 var UPVOTE_ON = "resources/upvote_on.png";
 var UPVOTE_OFF = "resources/upvote.png";
 
-var REPORT_ON = "F06C09";
+var REPORT_ON = "#F06C09";
+var REPORT_ON_RGB = "rgb(240, 108, 9)";
 var REPORT_OFF = "#9B9B9B"; 
+var REPORT_OFF_RGB = "rgb(155, 155, 155)"; 
+
+var REPLY_COLOR = "#16A085";
+var CANCEL_COLOR = "#F06C09";
 
 function buttonClicked(buttonType, callerObject) {
   
-  if (buttonType=="downvote") {
+  if (buttonType==="downvote") {
+    fireDownvote(callerObject); 
+  } else if (buttonType==="upvote") {
+    fireUpvote(callerObject); 
+  } else if (buttonType==="report") {
+    fireReport(callerObject); 
+  } else if (buttonType==="reply") {
+    fireReply(callerObject); 
+  }
+ 
+}
+
+function fireDownvote(callerObject) {
     var elements = callerObject.getElementsByTagName("IMG");
     var elem = elements[0]; 
     var elemID = elem.id; 
@@ -21,7 +38,9 @@ function buttonClicked(buttonType, callerObject) {
       elem.src = DOWNVOTE_ON; 
       counterpartElem.src = UPVOTE_OFF; 
     }
-  } else if (buttonType=="upvote") {
+}
+
+function fireUpvote(callerObject) {
     var elements = callerObject.getElementsByTagName("IMG");
     var elem = elements[0]; 
     var elemID = elem.id; 
@@ -34,19 +53,34 @@ function buttonClicked(buttonType, callerObject) {
       elem.src = UPVOTE_ON;  
       counterpartElem.src = DOWNVOTE_OFF;
     }
-  } else if (buttonType=="report") {
-    console.log("Reporting");
-    console.log(callerObject.style.color);
-    console.log(callerObject.style);
-    if (callerObject.style.color == REPORT_ON) {
-      console.log("ON"); 
+  
+}
+
+function fireReport(callerObject) {
+    var objectColor = callerObject.style.color;
+ 
+    if (objectColor === REPORT_ON || objectColor === REPORT_ON_RGB) {
       callerObject.style.color = REPORT_OFF;
     } else {
-      console.log("OFF"); 
       callerObject.style.color = REPORT_ON;
     }
+}
+
+function fireReply(callerObject) {
+  var elemID = callerObject.id; 
+  var counterpartID = elemID.replace('reply-button', 'reply-area'); 
+  
+  var replyArea = document.getElementById(counterpartID); 
+  
+  var replyVis = replyArea.style.visibility
+  if (replyVis === 'hidden' || replyVis==="") {
+    replyArea.style.visibility = 'visible';
+    callerObject.innerHTML = "Cancel";
+    callerObject.style.color = CANCEL_COLOR; 
+  } else {
+    replyArea.style.visibility = 'hidden'; 
+    callerObject.innerHTML = "Reply";
+    callerObject.style.color = REPLY_COLOR; 
   }
-  
-  
-  
+
 }

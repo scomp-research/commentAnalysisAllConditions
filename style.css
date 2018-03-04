@@ -47,6 +47,10 @@ body {
   clear: right;
 }
 
+.reply-area {
+  visibility: hidden;
+}
+
 .response-button {
     background-color: #FBFCF7; 
     border: none;
