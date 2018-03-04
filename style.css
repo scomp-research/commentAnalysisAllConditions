@@ -38,6 +38,7 @@ body {
 
 .comment-interactions {
   float: right; 
+  margin-bottom: 4px; 
 }
 
 .comment-reply {
@@ -87,5 +88,14 @@ body {
   flex: 1;
   padding-left: 4px;
   resize: none; 
+}
+
+.report-area {
+  display: flex; 
+  visibility: hidden; 
+}
+
+.report-button {
+  color: #F06C09; 
 }
 

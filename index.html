@@ -31,11 +31,21 @@
       <div class="comment-text">For decades, open borders have allowed drugs and gangs to pour into our most vulnerable communities. They've allowed millions of low-wage workers to compete for jobs and wages against the poorest Americans. Most tragically, they have caused the loss of many innocent lives.</div>
       <div class="comment-interactions">
         <button id="reply-button-1" class="response-button reply-button" onclick="buttonClicked('reply', this)">Reply</button>
-        <button id="downvote-button-1" class="response-button" onclick="buttonClicked('downvote', this);"> <img id="downvote-comment-icon" class="button-icon" src='resources/downvote.png'>Downvote</button>
-        <button id="upvote-button-1" class="response-button" onclick="buttonClicked('upvote', this);"> <img id="upvote-comment-icon" class="button-icon" src='resources/upvote.png'>Upvote</button>
+        <button id="downvote-button-1" class="response-button" onclick="buttonClicked('downvote', this);"> 
+          <img id="downvote-comment-icon" class="button-icon" src='resources/downvote.png'> Downvote</button>
+        <button id="upvote-button-1" class="response-button" onclick="buttonClicked('upvote', this);"> 
+          <img id="upvote-comment-icon" class="button-icon" src='resources/upvote.png'> Upvote</button>
         <button id="report-button-1" class="response-button" onclick="buttonClicked('report', this);">Report</button>
+        
+        <div id="report-area-1" class="report-area">
+          <button id="report-submit-1" class="response-button report-button">Report</button>
+          <textarea id="report-textarea-1" class="reply-textarea report-textarea" placeholder="Why should this comment be reported?"></textarea>
+        </div>
       </div>
-      <div id="reply-area-1" class="comment-reply reply-button"><button id="reply-submit-button-1" class="response-button reply-button main-button">Reply</button><textarea id="reply-textarea-1" placeholder="Join a discussion" class="reply-textarea"></textarea></div>
+      <div id="reply-area-1" class="comment-reply reply-button reply-area">
+        <button id="reply-submit-button-1" class="response-button reply-button main-button">Reply</button>
+        <textarea id="reply-textarea-1" placeholder="Join a discussion" class="reply-textarea"></textarea>
+      </div>
     </div>
   </div>
 

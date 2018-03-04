@@ -58,11 +58,21 @@ function fireUpvote(callerObject) {
 
 function fireReport(callerObject) {
     var objectColor = callerObject.style.color;
+  
+    var elemID = callerObject.id;
+    var counterpartID = elemID.replace("button","area"); 
+  
+    var reportArea = document.getElementById(counterpartID); 
+    var reportAreaVis = reportArea.style.visibility; 
  
-    if (objectColor === REPORT_ON || objectColor === REPORT_ON_RGB) {
-      callerObject.style.color = REPORT_OFF;
+    if (reportAreaVis==='hidden' || reportAreaVis==="") {
+      callerObject.style.color = CANCEL_COLOR;
+      callerObject.innerHTML = "Cancel";
+      reportArea.style.visibility = 'visible';
     } else {
-      callerObject.style.color = REPORT_ON;
+      callerObject.style.color = REPORT_OFF;
+      callerObject.innerHTML = "Report"; 
+      reportArea.style.visibility = 'hidden'; 
     }
 }
 
@@ -71,6 +81,8 @@ function fireReply(callerObject) {
   var counterpartID = elemID.replace('reply-button', 'reply-area'); 
   
   var replyArea = document.getElementById(counterpartID); 
+  
+
   
   var replyVis = replyArea.style.visibility
   if (replyVis === 'hidden' || replyVis==="") {
