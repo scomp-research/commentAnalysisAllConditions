@@ -8,9 +8,12 @@ body {
 
 #headline {
   font-size: 56pt; 
-  line-height: 1;
+  line-height: 1.2;
 }
 
+#headline-article-spacing {
+  height: 20px;
+}
 #main-content {
 
 }
