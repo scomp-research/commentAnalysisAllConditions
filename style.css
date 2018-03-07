@@ -73,6 +73,7 @@ body {
 
 .main-button {
   float: none; 
+  padding-left: 0;
 }
 .button-icon {
   width: 12px; 
@@ -113,6 +114,10 @@ body {
   color: #16A085; 
 }
 
-#comment-cubmission-textarea {
-  flex: 1; 
+#comment-submission-textarea {
+  float: left;
+}
+
+.comment-submit-button {
+  float: left;
 }
