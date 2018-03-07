@@ -6,6 +6,10 @@ body {
   margin: 0 auto;
 }
 
+#headline {
+  font-size: 56pt; 
+}
+
 #main-content {
 
 }
@@ -15,25 +19,25 @@ body {
 }
 
 #article-text {
-  font-size: 18px; 
+  font-size: 18pt; 
 }
 
 #comment-header {
-  font-size: 22px;
+  font-size: 22pt;
   color: #9B9B9B;
 }
 
 .comment-username {
-  font-size: 18px;
+  font-size: 18pt;
 }
 
 .comment-time {
-  font-size: 14px; 
+  font-size: 14pt; 
   color: #9B9B9B;
 }
 
 .comment-text {
-  font-size: 15px; 
+  font-size: 15pt; 
 }
 
 .comment-interactions {
@@ -60,7 +64,7 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 16pt;
     float: right; 
     cursor: pointer; 
     text-align: center; 
@@ -76,8 +80,8 @@ body {
   padding-left: 0;
 }
 .button-icon {
-  width: 12px; 
-  height: 12px;
+  width: 16px; 
+  height: 16px;
 }
 
 .reply-textarea {
@@ -110,7 +114,7 @@ body {
 }
 
 #comment-submission-title {
-  font-size: 22px; 
+  font-size: 22pt; 
   color: #16A085; 
 }
 
