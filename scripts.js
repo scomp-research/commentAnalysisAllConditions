@@ -96,3 +96,12 @@ function fireReply(callerObject) {
   }
 
 }
+
+
+function unhideSecondaryInteractions() {
+  var elems = document.getElementsByClassName("secondary-interactions"); 
+
+  for (var i=0; i<elems.length; i++) {
+    elems[i].style.visibility = 'visible';
+  }
+}

@@ -22,7 +22,7 @@ body {
   height: 40px; 
 }
 
-#article-text {
+.article-text {
   font-size: 18pt; 
 }
 
@@ -128,4 +128,8 @@ body {
 
 .comment-submit-button {
   float: left;
+}
+
+.secondary-interactions {
+  visibility: hidden; 
 }
