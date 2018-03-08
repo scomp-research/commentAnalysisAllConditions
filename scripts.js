@@ -41,11 +41,13 @@ function fireDownvote(callerObject) {
 }
 
 function fireUpvote(callerObject) {
+    console.log("UPVOTE");
     var elements = callerObject.getElementsByTagName("IMG");
     var elem = elements[0]; 
     var elemID = elem.id; 
     var counterpartID = elemID.replace('upvote', 'downvote'); 
     var counterpartElem = document.getElementById(counterpartID); 
+    console.log(counterpartElem);
     
     if (elem.src.includes(UPVOTE_ON)) {
       elem.src = UPVOTE_OFF;
@@ -104,4 +106,31 @@ function unhideSecondaryInteractions() {
   for (var i=0; i<elems.length; i++) {
     elems[i].style.visibility = 'visible';
   }
+}
+
+function makeComment() {
+  var commentHTML = `
+  <div id="commentComNum" class="comment-box"> 
+    <div class="comment-username">User UserNum</div>
+    <div class="comment-time">dateAndTime</div>
+    <div class="comment-text">ComText</div>
+    <div class="comment-interactions secondary-interactions">
+      <button id="downvote-button-ComNum" class="response-button" onclick="buttonClicked('downvote', this);"> 
+        <img id="downvote-comment-icon" class="button-icon" src='resources/downvote.png'> Downvote</button>
+      <button id="upvote-button-ComNum" class="response-button" onclick="buttonClicked('upvote', this);"> 
+        <img id="upvote-comment-icon" class="button-icon" src='resources/upvote.png'> Upvote</button>
+    </div>
+  </div>
+  `
+  
+  
+  commentHTML = commentHTML.replace(new RegExp("UserNum", "g"), "1337");
+  commentHTML = commentHTML.replace(new RegExp("ComNum", "g"), "9");
+  commentHTML = commentHTML.replace(new RegExp("DateAndTime", "g"), "It's the Date!");
+  commentHTML = commentHTML.replace(new RegExp("ComText", "g"), "Here's my comment."); 
+  
+  commentSection = document.getElementById("comment-section"); 
+  commentSection.innerHTML = commentSection.innerHTML + commentHTML; 
+  
+
 }

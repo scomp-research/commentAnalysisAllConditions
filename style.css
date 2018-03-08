@@ -1,6 +1,6 @@
 body {
   background-color: #FBFCF7; 
-  font-family: "Helvetica Neue";
+  font-family: "Open Sans";
   line-height: 2;
   width: 80%;
   margin: 0 auto;
@@ -132,4 +132,8 @@ body {
 
 .secondary-interactions {
   visibility: hidden; 
+}
+
+#comment-section-break {
+  height: 40px; 
 }
