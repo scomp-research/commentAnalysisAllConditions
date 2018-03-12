@@ -11,6 +11,9 @@ var REPORT_OFF_RGB = "rgb(155, 155, 155)";
 var REPLY_COLOR = "#16A085";
 var CANCEL_COLOR = "#F06C09";
 
+var STANDARD_USER = "8725"; 
+var currentCommentNum = 4; 
+
 function buttonClicked(buttonType, callerObject) {
   
   if (buttonType==="downvote") {
@@ -21,6 +24,8 @@ function buttonClicked(buttonType, callerObject) {
     fireReport(callerObject); 
   } else if (buttonType==="reply") {
     fireReply(callerObject); 
+  } else if (buttonType==="comment-submit") {
+    fireComment(callerObject); 
   }
  
 }
@@ -99,6 +104,10 @@ function fireReply(callerObject) {
 
 }
 
+function fireComment(callerObject) {
+  makeComment(); 
+}
+
 
 function unhideSecondaryInteractions() {
   var elems = document.getElementsByClassName("secondary-interactions"); 
@@ -109,10 +118,18 @@ function unhideSecondaryInteractions() {
 }
 
 function makeComment() {
+  var commentTextArea = document.getElementById("comment-textarea");
+  var commentText = commentTextArea.value.trim(); 
+  
+  // Check if the comment is legal. 
+  if (isIllegalString(commentText)) {
+    return;
+  }
+  
   var commentHTML = `
   <div id="commentComNum" class="comment-box"> 
     <div class="comment-username">User UserNum</div>
-    <div class="comment-time">dateAndTime</div>
+    <div class="comment-time">DateAndTime</div>
     <div class="comment-text">ComText</div>
     <div class="comment-interactions secondary-interactions">
       <button id="downvote-button-ComNum" class="response-button" onclick="buttonClicked('downvote', this);"> 
@@ -124,13 +141,50 @@ function makeComment() {
   `
   
   
-  commentHTML = commentHTML.replace(new RegExp("UserNum", "g"), "1337");
-  commentHTML = commentHTML.replace(new RegExp("ComNum", "g"), "9");
-  commentHTML = commentHTML.replace(new RegExp("DateAndTime", "g"), "It's the Date!");
-  commentHTML = commentHTML.replace(new RegExp("ComText", "g"), "Here's my comment."); 
+  commentHTML = commentHTML.replace(new RegExp("UserNum", "g"), STANDARD_USER);
+  commentHTML = commentHTML.replace(new RegExp("ComNum", "g"), currentCommentNum.toString());
+  var date = new Date();
+
+  commentHTML = commentHTML.replace(new RegExp("DateAndTime", "g"), getDate());
+  commentHTML = commentHTML.replace(new RegExp("ComText", "g"), commentText); 
   
+  // Add Comment
   commentSection = document.getElementById("comment-section"); 
   commentSection.innerHTML = commentSection.innerHTML + commentHTML; 
   
+  // Show rest of the page; 
+  unhideSecondaryInteractions();
+}
 
+// https://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-dd-mm-yyyy-in-javascript-and-append-it-to-an-i#12409344
+function getDate() {
+  var today = new Date();
+  
+  //https://stackoverflow.com/questions/9070604/how-to-convert-datetime-from-the-users-timezone-to-est-in-javascript
+  //EST
+  offset = -5.0
+  utc = today.getTime() + (today.getTimezoneOffset() * 60000);
+  serverDate = new Date(utc + (3600000*offset));
+  
+  return serverDate.toLocaleString().replace(",", "") + " EST";
+}
+
+function isEmpty (input) {
+  if (input === "") {
+    alert("Empty comments are not allowed."); 
+    return true;
+  }
+}
+
+function containsIllegalCharacter (input) {
+  if (input.includes("<") || input.includes(">")) {
+    alert("Cannot use '<' or '>' characters in your comments!");
+    return true; 
+  }
+}
+
+function isIllegalString(input) {
+  if(isEmpty(input) || containsIllegalCharacter(input)) {
+    return true; 
+  }
 }
