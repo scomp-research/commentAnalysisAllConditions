@@ -11,8 +11,8 @@ var REPORT_OFF_RGB = "rgb(155, 155, 155)";
 var REPLY_COLOR = "#16A085";
 var CANCEL_COLOR = "#F06C09";
 
-var STANDARD_USER = "8725"; 
-var currentCommentNum = 4; 
+var STANDARD_USER = "0444"; 
+var currentCommentNum = 6; 
 
 function buttonClicked(buttonType, callerObject) {
   
@@ -128,16 +128,17 @@ function makeComment() {
   }
   
   var commentHTML = `
-  <div id="commentComNum" class="comment-box"> 
-    <div class="comment-username">User UserNum</div>
+  <div id="commentComNum" class="comment-box user-comment"> 
+    <div class="comment-username user-username">User UserNum</div>
     <div class="comment-time">DateAndTime</div>
     <div class="comment-text">ComText</div>
     <div class="comment-interactions secondary-interactions">
       <button id="downvote-button-ComNum" class="response-button" onclick="buttonClicked('downvote', this);"> 
-        <img id="downvote-comment-icon" class="button-icon" src='resources/downvote.png'> Downvote</button>
+        <img id="downvote-comment-icon-ComNum" class="button-icon" src='resources/downvote.png'> Downvote</button>
       <button id="upvote-button-ComNum" class="response-button" onclick="buttonClicked('upvote', this);"> 
-        <img id="upvote-comment-icon" class="button-icon" src='resources/upvote.png'> Upvote</button>
+        <img id="upvote-comment-icon-ComNum" class="button-icon" src='resources/upvote.png'> Upvote</button>
     </div>
+    <div class="comment-spacer"> </div>
   </div>
   `
   
@@ -152,6 +153,12 @@ function makeComment() {
   // Add Comment
   commentSection = document.getElementById("comment-section"); 
   commentSection.innerHTML = commentSection.innerHTML + commentHTML; 
+  
+  // Increment Comment Number
+  currentCommentNum += 1;
+  
+  // Empty text area
+  commentTextArea.value = ""; 
   
   // Show rest of the page; 
   unhideSecondaryInteractions();

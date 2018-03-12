@@ -146,3 +146,11 @@ body {
 #comment-section-break {
   height: 40px; 
 }
+
+.comment-spacer {
+  height: 20px;
+}
+
+.user-username{
+  color: #16A085;
+}
