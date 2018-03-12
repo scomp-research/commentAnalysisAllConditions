@@ -35,6 +35,7 @@ function fireDownvote(callerObject) {
     var elem = elements[0]; 
     var elemID = elem.id; 
     var counterpartID = elemID.replace('downvote', 'upvote'); 
+    console.log(counterpartID);
     var counterpartElem = document.getElementById(counterpartID); 
     
     if (elem.src.includes(DOWNVOTE_ON)) {
@@ -46,11 +47,11 @@ function fireDownvote(callerObject) {
 }
 
 function fireUpvote(callerObject) {
-    console.log("UPVOTE");
     var elements = callerObject.getElementsByTagName("IMG");
     var elem = elements[0]; 
     var elemID = elem.id; 
     var counterpartID = elemID.replace('upvote', 'downvote'); 
+  console.log(counterpartID);
     var counterpartElem = document.getElementById(counterpartID); 
     console.log(counterpartElem);
     

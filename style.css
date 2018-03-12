@@ -79,6 +79,15 @@ body {
   color: #16A085;
 }
 
+.reply-submit-button {
+  color: #FFFFFF;
+  background-color: #16A085;
+  border-radius: 5px; 
+  margin-left: 18px;
+  text-align: center;
+  padding-left: 10px !important;
+}
+
 .main-button {
   float: none; 
   padding-left: 0;
