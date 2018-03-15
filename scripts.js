@@ -174,7 +174,7 @@ function getDate() {
   utc = today.getTime() + (today.getTimezoneOffset() * 60000);
   serverDate = new Date(utc + (3600000*offset));
   
-  return serverDate.toLocaleString().replace(",", "") + " EST";
+  return serverDate.toLocaleString([], {day:'numeric', month: 'numeric', year: 'numeric', hour: '2-digit', minute:'2-digit'}).replace(",", "") + " EST";
 }
 
 function isEmpty (input) {

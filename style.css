@@ -11,9 +11,7 @@ body {
   line-height: 1.2;
 }
 
-#headline-article-spacing {
-  height: 20px;
-}
+
 #main-content {
 
 }
@@ -23,7 +21,8 @@ body {
 }
 
 .article-text {
-  font-size: 18px; 
+  font-size: 18px;
+  float: clear; 
 }
 
 #comment-header {
@@ -153,4 +152,31 @@ body {
 
 .user-username{
   color: #16A085;
+}
+
+#author-break {
+  height: 20px; 
+}
+
+.author-text {
+  float: left; 
+}
+
+#author-name {
+  padding-left: 10px; 
+  font-weight: bold; 
+  font-style: italic; 
+}
+
+#author-title { 
+  padding-left: 10px;
+}
+
+#author-date {
+  color: #9B9B9B; 
+  padding-left: 20px;
+}
+
+#headline-article-break {
+  height: 40px;
 }
