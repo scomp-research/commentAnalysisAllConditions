@@ -197,58 +197,26 @@ function isIllegalString(input) {
   }
 }
 
-function postToForm(id, act_time, act, val) {
+function postToSheet(id, act, val) {
   
   var obj = {
     user_id: id,
-    time: act_time,
     action: act,
     value: val
   }
   
-  post()
-   
-}
+  var url = 'https://script.google.com/macros/s/AKfycbxLaD-2vP94CApYvOiM4GCNAakGBmA-pFWFGB6G3wZ5PouayxCp/exec'
+  
+  var data = JSON.stringify(obj); 
 
-//
-var $form = $('form#test-form')
-var url = 'https://script.google.com/macros/s/AKfycbxLaD-2vP94CApYvOiM4GCNAakGBmA-pFWFGB6G3wZ5PouayxCp/exec'
-
-$('#submit-form').on('click', function(e) {
-  e.preventDefault();
-  console.log("submitting");
-  var jqxhr = $.ajax({
-    url: url,
+  console.log(data); 
+  var response = $.ajax(
+  {
+    url: url, 
     method: "GET",
     dataType: "json",
-    data: $form.serializeObject()
-  }).success(
-    console.log("blurp")
-  );
-})
+    data: data,
+  }).success();
 
-
-//https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
-function post(path, params, method) {
-    method = method || "post"; // Set method to post by default if not specified.
-
-    // The rest of this code assumes you are not using a library.
-    // It can be made less wordy if you use one.
-    var form = document.createElement("form");
-    form.setAttribute("method", method);
-    form.setAttribute("action", path);
-
-    for(var key in params) {
-        if(params.hasOwnProperty(key)) {
-            var hiddenField = document.createElement("input");
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", key);
-            hiddenField.setAttribute("value", params[key]);
-
-            form.appendChild(hiddenField);
-        }
-    }
-
-    document.body.appendChild(form);
-    form.submit();
+  console.log(response);
 }
