@@ -2,6 +2,9 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script src="scripts.js"></script>
   <title>Forum Test</title>
 </head>
@@ -139,5 +142,33 @@
     <textarea id="comment-textarea" placeholder="Join the discussion" class="reply-textarea"></textarea>
     <button id="comment-submit-button-1" class="response-button reply-button main-button reply-submit-button" onclick="buttonClicked('comment-submit', this)">Comment</button>
   </div>
+  
+  <form id="test-form">
+  
+  <div>
+    <label>Field 1</label>
+    <input type="text" name="user_id" placeholder="Field 1"/>
+  </div>
+
+  <div>
+    <label>Field 2</label>
+    <input type="text" name="time" placeholder="Field 2"/>
+  </div>
+  
+  <div>
+    <label>Field 3</label>
+    <input type="text" name="action" placeholder="Field 3"/>
+  </div>
+  
+  <div>
+    <label>Field 4</label>
+    <input type="text" name="value" placeholder="Field 4"/>
+  </div>
+
+  <div>
+    <button type="submit"id="submit-form">Submit</button>
+  </div>
+
+</form>
 </body>
 </html> 
