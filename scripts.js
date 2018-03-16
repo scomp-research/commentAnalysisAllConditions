@@ -13,7 +13,7 @@ var CANCEL_COLOR = "#F06C09";
 
 var STANDARD_USER = "0444"; 
 var USER_ID_LENGTH = 8;
-var currentCommentNum = 6; 
+var currentCommentNum = 5; 
 
 function buttonClicked(buttonType, callerObject) { 
   if (buttonType==="downvote") {
@@ -104,12 +104,12 @@ function fireReply(callerObject) {
     replyArea.style.visibility = 'visible';
     callerObject.innerHTML = "Cancel";
     callerObject.style.color = CANCEL_COLOR; 
-    postToSheet('report', elemID, 'ON'); 
+    postToSheet('reply', elemID, 'ON'); 
   } else {
     replyArea.style.visibility = 'hidden'; 
     callerObject.innerHTML = "Reply";
     callerObject.style.color = REPLY_COLOR;
-    postToSheet('report', elemID, 'OFF'); 
+    postToSheet('reply', elemID, 'OFF'); 
   }
     
   return elemID
@@ -117,7 +117,8 @@ function fireReply(callerObject) {
 }
 
 function fireComment(callerObject) {
-  makeComment(); 
+  var commentText = makeComment(); 
+  postToSheet('comment-submit', "comment-submit-button", commentText); 
 }
 
 
@@ -174,7 +175,7 @@ function makeComment() {
   // Show rest of the page; 
   unhideSecondaryInteractions();
 
-  postToSheet('comment-submit', "comment-submit-button", commentText); 
+  return commentText
 }
 
 // https://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-dd-mm-yyyy-in-javascript-and-append-it-to-an-i#12409344
