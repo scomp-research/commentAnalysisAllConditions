@@ -43,6 +43,7 @@ function fireDownvote(callerObject) {
       elem.src = DOWNVOTE_ON; 
       counterpartElem.src = UPVOTE_OFF; 
       postToSheet('downvote', elemID, 'ON'); 
+      postToSheet('upvote', elemID, 'OFF');
     }
 }
 
@@ -61,7 +62,8 @@ function fireUpvote(callerObject) {
     } else {
       elem.src = UPVOTE_ON;  
       counterpartElem.src = DOWNVOTE_OFF;
-      postToSheet('upvote', elemID, 'ON'); 
+      postToSheet('upvote', elemID, 'ON');
+      postToSheet('downvote', elemID, 'OFF'); 
     }
   
     return elemID
@@ -118,6 +120,7 @@ function unhideSecondaryInteractions() {
   var elems = document.getElementsByClassName("secondary-interactions"); 
 
   for (var i=0; i<elems.length; i++) {
+    elems[i].style.display = 'block'; 
     elems[i].style.visibility = 'visible';
   }
 }

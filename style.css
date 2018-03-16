@@ -135,6 +135,7 @@ body {
 }
 
 .secondary-interactions {
+  display: none;
   visibility: hidden; 
 }
 
