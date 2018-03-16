@@ -12,10 +12,10 @@ var REPLY_COLOR = "#16A085";
 var CANCEL_COLOR = "#F06C09";
 
 var STANDARD_USER = "0444"; 
+var USER_ID_LENGTH = 8;
 var currentCommentNum = 6; 
 
-function buttonClicked(buttonType, callerObject) {
-  
+function buttonClicked(buttonType, callerObject) { 
   if (buttonType==="downvote") {
     fireDownvote(callerObject); 
   } else if (buttonType==="upvote") {
@@ -27,7 +27,6 @@ function buttonClicked(buttonType, callerObject) {
   } else if (buttonType==="comment-submit") {
     fireComment(callerObject); 
   }
- 
 }
 
 function fireDownvote(callerObject) {
@@ -35,14 +34,15 @@ function fireDownvote(callerObject) {
     var elem = elements[0]; 
     var elemID = elem.id; 
     var counterpartID = elemID.replace('downvote', 'upvote'); 
-    console.log(counterpartID);
     var counterpartElem = document.getElementById(counterpartID); 
     
     if (elem.src.includes(DOWNVOTE_ON)) {
       elem.src = DOWNVOTE_OFF;
+      postToSheet('downvote', elemID, 'OFF'); 
     } else {
       elem.src = DOWNVOTE_ON; 
       counterpartElem.src = UPVOTE_OFF; 
+      postToSheet('downvote', elemID, 'ON'); 
     }
 }
 
@@ -57,11 +57,14 @@ function fireUpvote(callerObject) {
     
     if (elem.src.includes(UPVOTE_ON)) {
       elem.src = UPVOTE_OFF;
+      postToSheet('upvote', elemID, 'OFF'); 
     } else {
       elem.src = UPVOTE_ON;  
       counterpartElem.src = DOWNVOTE_OFF;
+      postToSheet('upvote', elemID, 'ON'); 
     }
   
+    return elemID
 }
 
 function fireReport(callerObject) {
@@ -77,11 +80,15 @@ function fireReport(callerObject) {
       callerObject.style.color = CANCEL_COLOR;
       callerObject.innerHTML = "Cancel";
       reportArea.style.visibility = 'visible';
+      postToSheet('report', elemID, 'ON'); 
     } else {
       callerObject.style.color = REPORT_OFF;
       callerObject.innerHTML = "Report"; 
       reportArea.style.visibility = 'hidden'; 
+      postToSheet('report', elemID, 'OFF'); 
     }
+    
+    return elemID
 }
 
 function fireReply(callerObject) {
@@ -97,11 +104,15 @@ function fireReply(callerObject) {
     replyArea.style.visibility = 'visible';
     callerObject.innerHTML = "Cancel";
     callerObject.style.color = CANCEL_COLOR; 
+    postToSheet('report', elemID, 'ON'); 
   } else {
     replyArea.style.visibility = 'hidden'; 
     callerObject.innerHTML = "Reply";
-    callerObject.style.color = REPLY_COLOR; 
+    callerObject.style.color = REPLY_COLOR;
+    postToSheet('report', elemID, 'OFF'); 
   }
+    
+  return elemID
 
 }
 
@@ -162,6 +173,8 @@ function makeComment() {
   
   // Show rest of the page; 
   unhideSecondaryInteractions();
+
+  postToSheet('comment-submit', "comment-submit-button", commentText); 
 }
 
 // https://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-dd-mm-yyyy-in-javascript-and-append-it-to-an-i#12409344
@@ -197,26 +210,42 @@ function isIllegalString(input) {
   }
 }
 
-function postToSheet(id, act, val) {
+function postToSheet(act, elemID, val) {
   
   var obj = {
-    user_id: id,
+    timestamp: new Date().getTime(),
+    user_id: getUserID(),
     action: act,
+    elem: elemID,
     value: val
   }
   
   var url = 'https://script.google.com/macros/s/AKfycbxLaD-2vP94CApYvOiM4GCNAakGBmA-pFWFGB6G3wZ5PouayxCp/exec'
   
-  var data = JSON.stringify(obj); 
-
-  console.log(data); 
   var response = $.ajax(
   {
     url: url, 
     method: "GET",
     dataType: "json",
-    data: data,
+    data: obj,
   }).success();
 
-  console.log(response);
+}
+
+function getUserID() {
+    if (localStorage.getItem('user_id') === null) {
+        var new_id = makeUserID(); 
+        localStorage.setItem('user_id', new_id);
+    }
+    return localStorage.getItem('user_id'); 
+}
+
+function makeUserID () {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+  for (var i = 0; i < USER_ID_LENGTH; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
 }

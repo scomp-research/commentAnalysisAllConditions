@@ -143,11 +143,15 @@ body {
 }
 
 #comment-section-break {
-  height: 40px; 
+  height: 20px; 
 }
 
 .comment-spacer {
   height: 20px;
+}
+
+#comment-submission-footer {
+    height: 20px; 
 }
 
 .user-username{
