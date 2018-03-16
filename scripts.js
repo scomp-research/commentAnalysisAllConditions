@@ -2,10 +2,10 @@ var DOWNVOTE_ON = "resources/downvote_on.png";
 var DOWNVOTE_OFF = "resources/downvote.png";
 var UPVOTE_ON = "resources/upvote_on.png";
 var UPVOTE_OFF = "resources/upvote.png";
+var REPORT_ON = "resources/flag_on.png";
+var REPORT_OFF = "resources/flag.png"; 
 
-var REPORT_ON = "#F06C09";
 var REPORT_ON_RGB = "rgb(240, 108, 9)";
-var REPORT_OFF = "#9B9B9B"; 
 var REPORT_OFF_RGB = "rgb(155, 155, 155)"; 
 
 var REPLY_COLOR = "#16A085";
@@ -68,25 +68,38 @@ function fireUpvote(callerObject) {
 }
 
 function fireReport(callerObject) {
-    var objectColor = callerObject.style.color;
-  
+    var elements = callerObject.getElementsByTagName("IMG");
+    var elem = elements[0]; 
     var elemID = callerObject.id;
-    var counterpartID = elemID.replace("button","area"); 
   
-    var reportArea = document.getElementById(counterpartID); 
-    var reportAreaVis = reportArea.style.visibility; 
- 
-    if (reportAreaVis==='hidden' || reportAreaVis==="") {
-      callerObject.style.color = CANCEL_COLOR;
-      callerObject.innerHTML = "Cancel";
-      reportArea.style.visibility = 'visible';
-      postToSheet('report', elemID, 'ON'); 
-    } else {
-      callerObject.style.color = REPORT_OFF;
-      callerObject.innerHTML = "Report"; 
-      reportArea.style.visibility = 'hidden'; 
+    if (elem.src.includes(REPORT_ON)) {
+      elem.src = REPORT_OFF;
       postToSheet('report', elemID, 'OFF'); 
+    } else {
+      elem.src = REPORT_ON;  
+      postToSheet('report', elemID, 'ON'); 
     }
+  
+
+//    var objectColor = callerObject.style.color;
+//  
+//    
+//    var counterpartID = elemID.replace("button","area"); 
+//  
+//    var reportArea = document.getElementById(counterpartID); 
+//    var reportAreaVis = reportArea.style.visibility; 
+// 
+//    if (reportAreaVis==='hidden' || reportAreaVis==="") {
+//      callerObject.style.color = CANCEL_COLOR;
+//      callerObject.innerHTML = "Cancel";
+//      reportArea.style.visibility = 'visible';
+//      postToSheet('report', elemID, 'ON'); 
+//    } else {
+//      callerObject.style.color = REPORT_OFF;
+//      callerObject.innerHTML = "Report"; 
+//      reportArea.style.visibility = 'hidden'; 
+//      postToSheet('report', elemID, 'OFF'); 
+//    }
     
     return elemID
 }
