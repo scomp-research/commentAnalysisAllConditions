@@ -56,6 +56,7 @@ body {
 }
 
 .reply-area {
+  display: none; 
   visibility: hidden;
 }
 
@@ -145,6 +146,10 @@ body {
 
 .comment-spacer {
   height: 20px;
+}
+
+.user-comment-spacer {
+  height: 30px;
 }
 
 #comment-submission-footer {

@@ -96,11 +96,13 @@ function fireReply(callerObject) {
   var replyVis = replyArea.style.visibility
   if (replyVis === 'hidden' || replyVis==="") {
     replyArea.style.visibility = 'visible';
+    replyArea.style.display = 'flex';
     callerObject.innerHTML = "Cancel";
     callerObject.style.color = CANCEL_COLOR; 
     postToSheet('reply', elemID, 'ON'); 
   } else {
     replyArea.style.visibility = 'hidden'; 
+    replyArea.style.display = 'none';
     callerObject.innerHTML = "Reply";
     callerObject.style.color = REPLY_COLOR;
     postToSheet('reply', elemID, 'OFF'); 
