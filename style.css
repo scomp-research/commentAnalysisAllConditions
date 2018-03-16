@@ -108,11 +108,6 @@ body {
   resize: none; 
 }
 
-.report-area {
-  display: flex; 
-  visibility: hidden; 
-}
-
 .report-button {
   color: #F06C09; 
 }

@@ -79,27 +79,6 @@ function fireReport(callerObject) {
       elem.src = REPORT_ON;  
       postToSheet('report', elemID, 'ON'); 
     }
-  
-
-//    var objectColor = callerObject.style.color;
-//  
-//    
-//    var counterpartID = elemID.replace("button","area"); 
-//  
-//    var reportArea = document.getElementById(counterpartID); 
-//    var reportAreaVis = reportArea.style.visibility; 
-// 
-//    if (reportAreaVis==='hidden' || reportAreaVis==="") {
-//      callerObject.style.color = CANCEL_COLOR;
-//      callerObject.innerHTML = "Cancel";
-//      reportArea.style.visibility = 'visible';
-//      postToSheet('report', elemID, 'ON'); 
-//    } else {
-//      callerObject.style.color = REPORT_OFF;
-//      callerObject.innerHTML = "Report"; 
-//      reportArea.style.visibility = 'hidden'; 
-//      postToSheet('report', elemID, 'OFF'); 
-//    }
     
     return elemID
 }
