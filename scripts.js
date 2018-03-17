@@ -14,6 +14,7 @@ var CANCEL_COLOR = "#F06C09";
 var STANDARD_USER = "0444"; 
 var USER_ID_LENGTH = 8;
 var currentCommentNum = 5; 
+var currentReplyNum = 1; 
 
 function buttonClicked(buttonType, callerObject) { 
   if (buttonType==="downvote") {
@@ -26,6 +27,8 @@ function buttonClicked(buttonType, callerObject) {
     fireReply(callerObject); 
   } else if (buttonType==="comment-submit") {
     fireComment(callerObject); 
+  } else if (buttonType==="reply-submit") {
+    fireReplySubmit(callerObject); 
   }
 }
 
@@ -112,6 +115,57 @@ function fireReply(callerObject) {
 
 }
 
+function fireReplySubmit(callerObject) {
+  var elemID = callerObject.id; 
+  var counterpartID = elemID.replace("reply-submit-button-", "comment");
+  var textAreaID = elemID.replace("reply-submit-button", "reply-textarea");
+  var replyButtonID = elemID.replace("reply-submit-button", "reply-button"); 
+  console.log(replyButtonID); 
+  var replyButton = document.getElementById(replyButtonID); 
+  var counterpartElem = document.getElementById(counterpartID); 
+  
+  var replyTextArea = document.getElementById(textAreaID);
+  var replyText = replyTextArea.value; 
+  
+  if (isIllegalString(replyText)) {
+    return; 
+  }
+  
+  var replyHTML = `
+  <div id="replyComNum" class="reply-submission"> 
+    <div class="comment-username user-username">User UserNum</div>
+    <div class="comment-time">DateAndTime</div>
+    <div class="comment-text">ComText</div>
+    <div class="comment-interactions secondary-interactions">
+      <button id="downvote-button-ComNum" class="response-button" onclick="buttonClicked('downvote', this);"> 
+        <img id="downvote-comment-icon-ComNum" class="button-icon" src='resources/downvote.png'>Downvote</button>
+      <button id="upvote-button-ComNum" class="response-button" onclick="buttonClicked('upvote', this);"> 
+        <img id="upvote-comment-icon-ComNum" class="button-icon" src='resources/upvote.png'>Upvote</button>
+    </div>
+    <div class="comment-spacer"> </div>
+  </div>
+  `
+  
+  replyHTML = replyHTML.replace(new RegExp("UserNum", "g"), STANDARD_USER);
+  replyHTML = replyHTML.replace(new RegExp("ComNum", "g"), currentReplyNum.toString());
+  var date = new Date();
+
+  replyHTML = replyHTML.replace(new RegExp("DateAndTime", "g"), getDate());
+  replyHTML = replyHTML.replace(new RegExp("ComText", "g"), replyText); 
+  
+  // Add Comment
+  counterpartElem.innerHTML = counterpartElem.innerHTML + replyHTML; 
+  
+  postToSheet('reply-submit', elemID, replyText); 
+  replyTextArea.value = '';
+  
+  replyButton.innerHTML = "Reply";
+  replyButton.style.color = REPLY_COLOR;
+  
+  fireReply(replyButton);
+  return elemID; 
+}
+
 function fireComment(callerObject) {
   var commentText = makeComment(); 
   postToSheet('comment-submit', "comment-submit-button", commentText); 
@@ -143,9 +197,9 @@ function makeComment() {
     <div class="comment-text">ComText</div>
     <div class="comment-interactions secondary-interactions">
       <button id="downvote-button-ComNum" class="response-button" onclick="buttonClicked('downvote', this);"> 
-        <img id="downvote-comment-icon-ComNum" class="button-icon" src='resources/downvote.png'> Downvote</button>
+        <img id="downvote-comment-icon-ComNum" class="button-icon" src='resources/downvote.png'>Downvote</button>
       <button id="upvote-button-ComNum" class="response-button" onclick="buttonClicked('upvote', this);"> 
-        <img id="upvote-comment-icon-ComNum" class="button-icon" src='resources/upvote.png'> Upvote</button>
+        <img id="upvote-comment-icon-ComNum" class="button-icon" src='resources/upvote.png'>Upvote</button>
     </div>
     <div class="comment-spacer"> </div>
   </div>

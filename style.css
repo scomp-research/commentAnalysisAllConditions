@@ -60,6 +60,11 @@ body {
   visibility: hidden;
 }
 
+.reply-submission {
+  padding-top: 10px;
+  padding-left: 100px;
+}
+
 .response-button {
     background-color: #FBFCF7; 
     border: none;

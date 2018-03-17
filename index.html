@@ -44,7 +44,7 @@
       <div class="comment-interactions secondary-interactions">
         <button id="reply-button-1" class="response-button reply-button" onclick="buttonClicked('reply', this)">Reply</button>
         <button id="downvote-button-1" class="response-button" onclick="buttonClicked('downvote', this);"> 
-          <img id="downvote-comment-icon-1" class="button-icon" src='resources/downvote.png'>Downvote</button>
+          <img id="downvote-comment-icon-1" class="button-icon" src='resources/downvote.png'> Downvote</button>
         <button id="upvote-button-1" class="response-button" onclick="buttonClicked('upvote', this);"> 
           <img id="upvote-comment-icon-1" class="button-icon" src='resources/upvote.png'>Upvote</button>
         <button id="report-button-1" class="response-button" onclick="buttonClicked('report', this);">
@@ -52,8 +52,16 @@
       </div>
       <div id="reply-area-1" class="comment-reply reply-button reply-area">
         <textarea id="reply-textarea-1" placeholder="Join a discussion" class="reply-textarea"></textarea>
-        <button id="reply-submit-button-1" class="response-button reply-button main-button reply-submit-button">Reply</button>
+        <button id="reply-submit-button-1" class="response-button reply-button main-button reply-submit-button" onclick="buttonClicked('reply-submit', this)">Reply</button>
       </div>
+      
+<!--
+      <div class="reply-submission">
+          <div class="comment-username">User 0000</div>
+          <div class="comment-time">3/7/2018 8:10 PM EST</div>
+        Here's a bunch of text.
+      </div>
+-->
       
       <div class="user-comment-spacer"></div>
     </div>
@@ -74,7 +82,7 @@
       </div>
       <div id="reply-area-2" class="comment-reply reply-button reply-area">
         <textarea id="reply-textarea-2" placeholder="Join a discussion" class="reply-textarea"></textarea>
-        <button id="reply-submit-button-2" class="response-button reply-button main-button reply-submit-button">Reply</button>
+        <button id="reply-submit-button-2" class="response-button reply-button main-button reply-submit-button" onclick="buttonClicked('reply-submit', this)">Reply</button>
       </div>
       
       <div class="user-comment-spacer"></div>
@@ -96,12 +104,12 @@
       </div>
       <div id="reply-area-3" class="comment-reply reply-button reply-area">
         <textarea id="reply-textarea-3" placeholder="Join a discussion" class="reply-textarea"></textarea>
-        <button id="reply-submit-button-3" class="response-button reply-button main-button reply-submit-button">Reply</button>
+        <button id="reply-submit-button-3" class="response-button reply-button main-button reply-submit-button" onclick="buttonClicked('reply-submit', this)">Reply</button>
       </div>
       <div class="user-comment-spacer"></div>
     </div>
     
-    <div id="comment3" class="comment-box"> 
+    <div id="comment4" class="comment-box"> 
       <div class="comment-username">User 5472</div>
       <div class="comment-time">3/8/2018 10:07 AM EST</div>
       <div class="comment-text">How about Trump loads all the money he was gonna spend on that wall into garbage trucks, drives it down to the border, and sets it all on fire. That would basically accomplish the same thing.</div>
@@ -117,7 +125,7 @@
       </div>
       <div id="reply-area-4" class="comment-reply reply-button reply-area">
         <textarea id="reply-textarea-4" placeholder="Join a discussion" class="reply-textarea"></textarea>
-        <button id="reply-submit-button-4" class="response-button reply-button main-button reply-submit-button">Reply</button>
+        <button id="reply-submit-button-4" class="response-button reply-button main-button reply-submit-button" onclick="buttonClicked('reply-submit', this)">Reply</button>
       </div>
       
       <div class="user-comment-spacer"></div>
