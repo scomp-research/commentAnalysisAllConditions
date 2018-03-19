@@ -9,7 +9,7 @@ body {
 #headline {
   font-size: 56px; 
   line-height: 1.2;
-  margin-top: 2vm;
+  margin-top: 10vm;
 }
 
 
@@ -25,6 +25,8 @@ body {
   font-size: 16.5px;
   float: clear; 
   font-family: "Georgia", Times, "Times New Roman", serif;
+  margin-top: 2vm;
+  margin-bottom: 4vm;
 }
 
 #comment-header {
