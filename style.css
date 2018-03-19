@@ -1,7 +1,7 @@
 body {
   background-color: #FFFFFF; 
   font-family: "Open Sans";
-  line-height: 1.8;
+  line-height: 1.7;
   width: 60%;
   margin: 0 auto;
 }
@@ -23,6 +23,7 @@ body {
 .article-text {
   font-size: 18px;
   float: clear; 
+  font-family: "Georgia"
 }
 
 #comment-header {
