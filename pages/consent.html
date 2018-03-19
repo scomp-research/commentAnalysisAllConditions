@@ -1,10 +1,13 @@
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="background.css">
     <link rel="stylesheet" type="text/css" href="consent.css">
+  
+    <script src="scripts/consent_scripts.js"></script>
 </head>
 
 <body>
-<img id="cmu-logo" src="resources/cmu.png">
+<img id="cmu-logo" src="../resources/cmu.png">
 <h2>Commenting task consent form</h2>
   
 This task is part of a research study conducted by Joseph Seering at Carnegie Mellon University.
@@ -55,7 +58,7 @@ Your participation in this research is voluntary.  You may discontinue participa
 <br>
 <br>
 
-<form>
+<form id="consent-form">
   <b>I am age 18 or older. </b>
   <div id="age-consent">
     <input id="age-consent-yes" type="radio" name="ageConsent">Yes   
@@ -81,7 +84,8 @@ Your participation in this research is voluntary.  You may discontinue participa
 <br>
 "You must check "Yes" in all three boxes above to proceed. If you do not meet these conditions, please exit this task now."
 <br> 
-<button id="continue-button">Continue To Task</button>
+<br>
+<button id="continue-button" onclick="continueToTask()">Continue To Task</button>
 <div id="foot-spacing"></div>
 </body>
 

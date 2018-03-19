@@ -3,11 +3,13 @@ body {
   margin: 0 auto; 
 }
 
-#cmu-logo {
-  padding-top: 20px; 
-  width: 60%; 
-}
-
 #foot-spacing {
   height: 20px; 
+}
+
+#continue-button {
+  font-size: 20px; 
+  width: 200px; 
+  height: 40px; 
+  background-color: aquamarine; 
 }
