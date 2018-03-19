@@ -1,0 +1,13 @@
+body {
+  width: 60%; 
+  margin: 0 auto; 
+}
+
+#cmu-logo {
+  padding-top: 20px; 
+  width: 60%; 
+}
+
+#foot-spacing {
+  height: 20px; 
+}
