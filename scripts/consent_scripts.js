@@ -3,8 +3,10 @@ function continueToTask() {
   var readElem = document.getElementById("read-consent-yes");
   var participateElem = document.getElementById("participate-consent-yes");
   
-  console.log(ageElem.value); 
-  console.log(readElem.value); 
-  console.log(participateElem.value); 
+  if (ageElem.checked && readElem.checked && participateElem.checked) {
+    window.location.replace('../index.html');
+  } else {
+    alert("You must check 'Yes' in all three boxes above to proceed. If you do not meet these conditions, please exit this task now.");
+  }
   
 }
