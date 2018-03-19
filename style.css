@@ -21,9 +21,9 @@ body {
 }
 
 .article-text {
-  font-size: 18px;
+  font-size: 16.5px;
   float: clear; 
-  font-family: "Georgia";
+  font-family: "Georgia", Times, "Times New Roman", serif;
 }
 
 #comment-header {
