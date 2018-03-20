@@ -26,8 +26,6 @@ function postToSheet(act, elemID, val) {
     value: val
   }
   
-  console.log(obj);
-  
   var url = 'https://script.google.com/macros/s/AKfycbyUnuAXgDhKsDJ4sVeRpbWChn1EAAo15qse7rTeKkIW5Xs0bfgE/exec'
   
   var response = $.ajax(
@@ -37,6 +35,4 @@ function postToSheet(act, elemID, val) {
     dataType: "json",
     data: obj,
   }).success();
-
-  console.log("POSTED");
 }
