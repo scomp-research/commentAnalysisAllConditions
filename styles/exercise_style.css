@@ -40,7 +40,7 @@ body {
 
 .comment-time {
   font-size: 14px; 
-  color: #9B9B9B;
+  color: #D2D2D2;
 }
 
 .comment-text {
@@ -70,9 +70,9 @@ body {
 }
 
 .response-button {
-    background-color: #FBFCF7; 
+    background-color: #FFFFFF; 
     border: none;
-    color: #9B9B9B;
+    color: #D2D2D2;
     padding: 8px 10px;
     text-align: center;
     text-decoration: none;
