@@ -18,6 +18,10 @@ var currentReplyNum = 1;
 
 localStorage.setItem("commentComplete", "not_complete");
 
+function cleanResource(resource) {
+  return resource.replace("../resources/", '');
+}
+
 function buttonClicked(buttonType, callerObject) { 
   if (buttonType==="downvote") {
     fireDownvote(callerObject); 
@@ -41,7 +45,7 @@ function fireDownvote(callerObject) {
     var counterpartID = elemID.replace('downvote', 'upvote'); 
     var counterpartElem = document.getElementById(counterpartID); 
     
-    if (elem.src.includes(DOWNVOTE_ON)) {
+    if (elem.src.includes(cleanResource(DOWNVOTE_ON))) {
       elem.src = DOWNVOTE_OFF;
       postToSheet('downvote', elemID, 'OFF'); 
     } else {
@@ -57,11 +61,9 @@ function fireUpvote(callerObject) {
     var elem = elements[0]; 
     var elemID = elem.id; 
     var counterpartID = elemID.replace('upvote', 'downvote'); 
-  console.log(counterpartID);
     var counterpartElem = document.getElementById(counterpartID); 
-    console.log(counterpartElem);
     
-    if (elem.src.includes(UPVOTE_ON)) {
+    if (elem.src.includes(cleanResource(UPVOTE_ON))) {
       elem.src = UPVOTE_OFF;
       postToSheet('upvote', elemID, 'OFF'); 
     } else {
@@ -79,7 +81,7 @@ function fireReport(callerObject) {
     var elem = elements[0]; 
     var elemID = callerObject.id;
   
-    if (elem.src.includes(REPORT_ON)) {
+    if (elem.src.includes(cleanResource(REPORT_ON))) {
       elem.src = REPORT_OFF;
       postToSheet('report', elemID, 'OFF'); 
     } else {
@@ -122,7 +124,6 @@ function fireReplySubmit(callerObject) {
   var counterpartID = elemID.replace("reply-submit-button-", "comment");
   var textAreaID = elemID.replace("reply-submit-button", "reply-textarea");
   var replyButtonID = elemID.replace("reply-submit-button", "reply-button"); 
-  console.log(replyButtonID); 
   var replyButton = document.getElementById(replyButtonID); 
   var counterpartElem = document.getElementById(counterpartID); 
   

@@ -1,9 +1,9 @@
 function getUserID() {
-    if (localStorage.getItem('user_id') === null) {
+    if (localStorage.getItem('commentForum_user_id') === null) {
         var new_id = makeUserID(); 
-        localStorage.setItem('user_id', new_id);
+        localStorage.setItem('commentForum_user_id', new_id);
     }
-    return localStorage.getItem('user_id'); 
+    return localStorage.getItem('commentForum_user_id'); 
 }
 
 function makeUserID () {
