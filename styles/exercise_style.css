@@ -1,7 +1,7 @@
 body {
   background-color: #FFFFFF; 
   font-family: "Open Sans";
-  line-height: 2;
+  line-height: 1.7;
   width: 60%;
   margin: 0 auto;
 }
@@ -9,6 +9,7 @@ body {
 #headline {
   font-size: 56px; 
   line-height: 1.2;
+  margin-top: 10vm;
 }
 
 
@@ -21,8 +22,11 @@ body {
 }
 
 .article-text {
-  font-size: 18px;
+  font-size: 16.5px;
   float: clear; 
+  font-family: "Georgia", Times, "Times New Roman", serif;
+  margin-top: 2vm;
+  margin-bottom: 4vm;
 }
 
 #comment-header {
