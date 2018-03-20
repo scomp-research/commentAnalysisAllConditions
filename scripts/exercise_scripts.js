@@ -97,9 +97,7 @@ function fireReply(callerObject) {
   var counterpartID = elemID.replace('reply-button', 'reply-area'); 
   
   var replyArea = document.getElementById(counterpartID); 
-  
-
-  
+ 
   var replyVis = replyArea.style.visibility
   if (replyVis === 'hidden' || replyVis==="") {
     replyArea.style.visibility = 'visible';
@@ -123,8 +121,6 @@ function fireReplySubmit(callerObject) {
   var elemID = callerObject.id; 
   var counterpartID = elemID.replace("reply-submit-button-", "comment");
   var textAreaID = elemID.replace("reply-submit-button", "reply-textarea");
-  var replyButtonID = elemID.replace("reply-submit-button", "reply-button"); 
-  var replyButton = document.getElementById(replyButtonID); 
   var counterpartElem = document.getElementById(counterpartID); 
   
   var replyTextArea = document.getElementById(textAreaID);
@@ -162,6 +158,8 @@ function fireReplySubmit(callerObject) {
   postToSheet('reply-submit', elemID, replyText); 
   replyTextArea.value = '';
   
+  var replyButtonID = elemID.replace("reply-submit-button", "reply-button"); 
+  var replyButton = document.getElementById(replyButtonID); 
   replyButton.innerHTML = "Reply";
   replyButton.style.color = REPLY_COLOR;
   
