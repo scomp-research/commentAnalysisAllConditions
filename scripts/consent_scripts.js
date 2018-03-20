@@ -4,7 +4,7 @@ function continueToTask() {
   var participateElem = document.getElementById("participate-consent-yes");
   
   if (ageElem.checked && readElem.checked && participateElem.checked) {
-    window.location.replace('/pages/pre-exercise.html');
+    window.location.replace('pages/pre-exercise.html');
   } else {
     alert("You must check 'Yes' in all three boxes above to proceed. If you do not meet these conditions, please exit this task now.");
   }
