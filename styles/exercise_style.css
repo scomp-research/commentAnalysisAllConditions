@@ -206,4 +206,5 @@ body {
 
 #exercise-continue {
   float: right; 
+  display: none; 
 }

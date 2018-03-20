@@ -15,3 +15,25 @@ function makeUserID () {
 
   return text;
 }
+
+function postToSheet(act, elemID, val) {
+  
+  var obj = {
+    timestamp: new Date().getTime(),
+    user_id: getUserID(),
+    action: act,
+    elem: elemID,
+    value: val
+  }
+  
+  var url = 'https://script.google.com/macros/s/AKfycbxLaD-2vP94CApYvOiM4GCNAakGBmA-pFWFGB6G3wZ5PouayxCp/exec'
+  
+  var response = $.ajax(
+  {
+    url: url, 
+    method: "GET",
+    dataType: "json",
+    data: obj,
+  }).success();
+
+}
