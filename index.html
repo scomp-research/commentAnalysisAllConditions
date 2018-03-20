@@ -1,143 +1,93 @@
- <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/styles/background.css">
+    <link rel="stylesheet" type="text/css" href="/styles/consent.css">
   
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script src="scripts.js"></script>
-  <title>Forum Test</title>
+    <script src="/scripts/consent_scripts.js"></script>
 </head>
+
 <body>
-
-  <div id="main-content">
-    <div id="headline">Trump Advances Border Wall Agenda</div>
-    <div id="author-break"></div>
-    <div id="author-line">
-      <div id="author-intro" class="author-text">by</div>
-      <div id="author-name" class="author-text">S. C. Reed,</div>
-      <div id="author-title" class="author-text">White House Reporter.</div>
-      <div id="author-date" class="author-text">March 7th, 2018</div>
-    
-    </div>
-    <div id="headline-article-break"></div>
-    <div class="article-text">
-      President Trump hosted a meeting at the White House today with leaders from both parties in order to address an impasse in negotiations over new immigration policy. Trump has previously endorsed protections for “dreamers”, but little progress has been made in reaching a deal. Trump emphasized the importance of building his signature border wall as part of any immigration package. 
-      <br>
-      <br>
-      Trump has repeatedly stressed the importance of the border wall in securing the border in order to prevent both illegal immigration and drug trafficking. He has held steady in repeating his campaign promise that Mexico will pay for the border wall.
-    </div>
-    <div id="article-voting" class="secondary-interactions">
-      <button class="response-button" onclick="buttonClicked('downvote', this);" type="button"> <img id="downvote-article-icon-1" class="button-icon" src='resources/downvote.png'> Downvote </button>
-      <button class="response-button" onclick="buttonClicked('upvote', this);" type="button"> <img id="upvote-article-icon-1" class="button-icon" src='resources/upvote.png'> Upvote </button>
-    </div>
-  </div>
+<img id="cmu-logo" src="../resources/cmu.png">
+<h2>Commenting task consent form</h2>
   
-  <div id="article-break"> </div>
-
-  <div id="comment-section">
-    <div id="comment-header">Comments</div>
-    <div id="comment1" class="comment-box"> 
-      <div class="comment-username">User 2647</div>
-      <div class="comment-time">3/7/2018 8:10 PM EST</div>
-      <div class="comment-text">For decades, open borders have allowed drugs and gangs to pour into our most vulnerable communities. They've allowed millions of low-wage workers to compete for jobs and wages against the poorest Americans. Most tragically, they have caused the loss of many innocent lives.</div>
-      <div class="comment-interactions secondary-interactions">
-        <button id="reply-button-1" class="response-button reply-button" onclick="buttonClicked('reply', this)">Reply</button>
-        <button id="downvote-button-1" class="response-button" onclick="buttonClicked('downvote', this);"> 
-          <img id="downvote-comment-icon-1" class="button-icon" src='resources/downvote.png'> Downvote</button>
-        <button id="upvote-button-1" class="response-button" onclick="buttonClicked('upvote', this);"> 
-          <img id="upvote-comment-icon-1" class="button-icon" src='resources/upvote.png'>Upvote</button>
-        <button id="report-button-1" class="response-button" onclick="buttonClicked('report', this);">
-          <img id="report-icon-1" class="button-icon" src="resources/flag.png">Report</button>
-      </div>
-      <div id="reply-area-1" class="comment-reply reply-button reply-area">
-        <textarea id="reply-textarea-1" placeholder="Join a discussion" class="reply-textarea"></textarea>
-        <button id="reply-submit-button-1" class="response-button reply-button main-button reply-submit-button" onclick="buttonClicked('reply-submit', this)">Reply</button>
-      </div>
-      
-      <div class="user-comment-spacer"></div>
-    </div>
-    
-    <div id="comment2" class="comment-box"> 
-      <div class="comment-username">User 1892</div>
-      <div class="comment-time">3/8/2018 1:10 AM EST</div>
-      <div class="comment-text">NO WALL. The country doesn’t want it, and at this point it’s only about Trump’s giant ego. Mexico is never going to pay for it.</div>
-      <div class="comment-interactions secondary-interactions">
-        <button id="reply-button-2" class="response-button reply-button" onclick="buttonClicked('reply', this)">Reply</button>
-        <button id="downvote-button-2" class="response-button" onclick="buttonClicked('downvote', this);"> 
-          <img id="downvote-comment-icon-2" class="button-icon" src='resources/downvote.png'> Downvote</button>
-        <button id="upvote-button-2" class="response-button" onclick="buttonClicked('upvote', this);"> 
-          <img id="upvote-comment-icon-2" class="button-icon" src='resources/upvote.png'> Upvote</button>
-        <button id="report-button-2" class="response-button" onclick="buttonClicked('report', this);">
-          <img id="report-icon-2" class="button-icon" src="resources/flag.png">Report</button>
-        
-      </div>
-      <div id="reply-area-2" class="comment-reply reply-button reply-area">
-        <textarea id="reply-textarea-2" placeholder="Join a discussion" class="reply-textarea"></textarea>
-        <button id="reply-submit-button-2" class="response-button reply-button main-button reply-submit-button" onclick="buttonClicked('reply-submit', this)">Reply</button>
-      </div>
-      
-      <div class="user-comment-spacer"></div>
-    </div>
-    
-    <div id="comment3" class="comment-box"> 
-      <div class="comment-username">User 3018</div>
-      <div class="comment-time">3/8/2018 4:45 AM EST</div>
-      <div class="comment-text">Democrats can’t win elections in this country as long as their policy leaves borders as open as a sieve. A majority of Americans are tired of illegal immigrants taking our jobs and ruining our country’s values, and Democrats want to let them all in.</div>
-      <div class="comment-interactions secondary-interactions">
-        <button id="reply-button-3" class="response-button reply-button" onclick="buttonClicked('reply', this)">Reply</button>
-        <button id="downvote-button-3" class="response-button" onclick="buttonClicked('downvote', this);"> 
-          <img id="downvote-comment-icon-3" class="button-icon" src='resources/downvote.png'> Downvote</button>
-        <button id="upvote-button-3" class="response-button" onclick="buttonClicked('upvote', this);"> 
-          <img id="upvote-comment-icon-3" class="button-icon" src='resources/upvote.png'> Upvote</button>
-        <button id="report-button-3" class="response-button" onclick="buttonClicked('report', this);">
-          <img id="report-icon-1" class="button-icon" src="resources/flag.png">Report</button>
-        
-      </div>
-      <div id="reply-area-3" class="comment-reply reply-button reply-area">
-        <textarea id="reply-textarea-3" placeholder="Join a discussion" class="reply-textarea"></textarea>
-        <button id="reply-submit-button-3" class="response-button reply-button main-button reply-submit-button" onclick="buttonClicked('reply-submit', this)">Reply</button>
-      </div>
-      <div class="user-comment-spacer"></div>
-    </div>
-    
-    <div id="comment4" class="comment-box"> 
-      <div class="comment-username">User 5472</div>
-      <div class="comment-time">3/8/2018 10:07 AM EST</div>
-      <div class="comment-text">How about Trump loads all the money he was gonna spend on that wall into garbage trucks, drives it down to the border, and sets it all on fire. That would basically accomplish the same thing.</div>
-      <div class="comment-interactions secondary-interactions">
-        <button id="reply-button-4" class="response-button reply-button" onclick="buttonClicked('reply', this)">Reply</button>
-        <button id="downvote-button-4" class="response-button" onclick="buttonClicked('downvote', this);"> 
-          <img id="downvote-comment-icon-4" class="button-icon" src='resources/downvote.png'> Downvote</button>
-        <button id="upvote-button-4" class="response-button" onclick="buttonClicked('upvote', this);"> 
-          <img id="upvote-comment-icon-4" class="button-icon" src='resources/upvote.png'> Upvote</button>
-        <button id="report-button-4" class="response-button" onclick="buttonClicked('report', this);">
-          <img id="report-icon-1" class="button-icon" src="resources/flag.png">Report</button>
-
-      </div>
-      <div id="reply-area-4" class="comment-reply reply-button reply-area">
-        <textarea id="reply-textarea-4" placeholder="Join a discussion" class="reply-textarea"></textarea>
-        <button id="reply-submit-button-4" class="response-button reply-button main-button reply-submit-button" onclick="buttonClicked('reply-submit', this)">Reply</button>
-      </div>
-      
-      <div class="user-comment-spacer"></div>
-    </div>
-    
-    
-  </div>
+This task is part of a research study conducted by Joseph Seering at Carnegie Mellon University.
+<br>
+<br>
+We are conducting research to develop a new method for effectively sorting comments. In this task you will read a brief snippet from a political news article and will be asked to add a comment to a comment thread. 
   
-  <div id="comment-section-break"></div>
+<h4>Purpose</h4>
+The purpose of the research is to develop a new method for sorting comments in comment threads.
   
-  <div id="comment-submission">
-    <div id="comment-submission-title"><img id="comment-submission-icon" src="resources/commentBubble.png"> Comment</div>
-  </div>
-  
-  <div id="comment-area-1" class="comment-reply reply-button">
-    <textarea id="comment-textarea" placeholder="Join the discussion" class="reply-textarea"></textarea>
-    <button id="comment-submit-button-1" class="response-button reply-button main-button reply-submit-button" onclick="buttonClicked('comment-submit', this)">Comment</button>
-  </div>
-    
-  <div id="comment-submission-footer"></div>
+<h4>Procedures</h4>
+In this study you will be asked to read a short (2 paragraph) snippet from a political article. You will then be asked to add a comment to a comment thread generated by other users. This study will take approximately 10 minutes.
 
+<h4>Participant Requirements</h4>
+Participation in this study is limited to individuals age 18 and older. Participants must also speak English fluently.
+
+<h4>Risks</h4>
+The risks and discomfort associated with participation in this study are no greater than those ordinarily encountered in daily life or during other online activities. You may become bored during the study, or you may find the article or other users’ comments annoying.
+
+<h4>Benefits</h4>
+There may be no personal benefit from your participation in the study but the knowledge received may be of value to humanity. 
+
+<h4>Compensation & Costs</h4>
+You will be compensated a fixed amount of $1.70 for completing this study.
+<br>
+<br>
+There will be no cost to you if you participate in this study. 
+
+<h4>Future Use of Information</h4>
+In the future, once we have removed all identifiable information from your data, we may use the data for our future research studies, or we may distribute the data to other researchers for their research studies.  We would do this without getting additional informed consent from you (or your legally authorized representative).  Sharing of data with other researchers will only be done in such a manner that you will not be identified.
+
+
+
+  <h4>Confidentiality</h4>
+The data captured for this study will not include any identifying information about you beyond your MTurk worker ID, which is required for us to compensate you. Your worker ID will not be mentioned in any publication or dissemination of the research data and/or results by Carnegie Mellon. Note that per regulation all research data must be kept for a minimum of 3 years.
+<br>
+<br>
+No annotation services will be used in this study.
+
+  <h4>Right to Ask Questions & Contact Information</h4>
+If you have any questions about this study, you should feel free to ask them by contacting the Principal Investigator now at Joseph Seering, Graduate Researcher, Human-Computer Interaction Institute, 5000 Forbes Avenue, Pittsburgh PA 15232, jseering@cs.cmu.edu.  If you have questions later, desire additional information, or wish to withdraw your participation please contact the Principal Investigator by mail or e-mail in accordance with the contact information listed above.  
+<br>
+<br>
+If you have questions pertaining to your rights as a research participant; or to report concerns to this study, you should contact the Office of Research integrity and Compliance at Carnegie Mellon University.  Email: irb-review@andrew.cmu.edu . Phone: 412-268-1901 or 412-268-5460.
+
+<h4>Voluntary Participation</h4>
+Your participation in this research is voluntary.  You may discontinue participation at any time during the research activity.  You may print a copy of this consent form for your records. 
+<br>
+<br>
+
+<form id="consent-form">
+  <b>I am age 18 or older. </b>
+  <div id="age-consent">
+    <input id="age-consent-yes" type="radio" name="ageConsent">Yes   
+    <input id="age-consent-no" type="radio" name="ageConsent">No
+  </div>
+<br> 
+<br>
+  <b>I have read and understand the information above. </b>
+  <div id="read-consent">
+    <input id="read-consent-yes" type="radio" name="readConsent">Yes   
+    <input id="read-consent-no" type="radio" name="readConsent">No
+  </div>
+<br>
+<br>
+  <b>I want to participate in this research and continue with the study.</b>
+  <div id="participate-consent">
+    <input id="participate-consent-yes" type="radio" name="participateConsent">Yes   
+    <input id="participate-consent-no" type="radio" name="participateConsent">No 
+  </div>
+</form>
+
+<br>
+<br>
+"You must check "Yes" in all three boxes above to proceed. If you do not meet these conditions, please exit this task now."
+<br> 
+<br>
+<button id="continue-consent" class="continue-button" onclick="continueToTask()">Continue To Instructions</button>
+<div id="foot-spacing"></div>
 </body>
-</html> 
+
+
+</html>

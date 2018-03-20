@@ -1,9 +1,9 @@
-var DOWNVOTE_ON = "resources/downvote_on.png";
-var DOWNVOTE_OFF = "resources/downvote.png";
-var UPVOTE_ON = "resources/upvote_on.png";
-var UPVOTE_OFF = "resources/upvote.png";
-var REPORT_ON = "resources/flag_on.png";
-var REPORT_OFF = "resources/flag.png"; 
+var DOWNVOTE_ON = "../resources/downvote_on.png";
+var DOWNVOTE_OFF = "../resources/downvote.png";
+var UPVOTE_ON = "../resources/upvote_on.png";
+var UPVOTE_OFF = "../resources/upvote.png";
+var REPORT_ON = "../resources/flag_on.png";
+var REPORT_OFF = "../resources/flag.png"; 
 
 var REPORT_ON_RGB = "rgb(240, 108, 9)";
 var REPORT_OFF_RGB = "rgb(155, 155, 155)"; 
@@ -138,9 +138,9 @@ function fireReplySubmit(callerObject) {
     <div class="comment-text">ComText</div>
     <div class="comment-interactions secondary-interactions">
       <button id="downvote-button-ComNum" class="response-button" onclick="buttonClicked('downvote', this);"> 
-        <img id="downvote-comment-icon-ComNum" class="button-icon" src='resources/downvote.png'>Downvote</button>
+        <img id="downvote-comment-icon-ComNum" class="button-icon" src='../resources/downvote.png'>Downvote</button>
       <button id="upvote-button-ComNum" class="response-button" onclick="buttonClicked('upvote', this);"> 
-        <img id="upvote-comment-icon-ComNum" class="button-icon" src='resources/upvote.png'>Upvote</button>
+        <img id="upvote-comment-icon-ComNum" class="button-icon" src='../resources/upvote.png'>Upvote</button>
     </div>
     <div class="comment-spacer"> </div>
   </div>
@@ -197,9 +197,9 @@ function makeComment() {
     <div class="comment-text">ComText</div>
     <div class="comment-interactions secondary-interactions">
       <button id="downvote-button-ComNum" class="response-button" onclick="buttonClicked('downvote', this);"> 
-        <img id="downvote-comment-icon-ComNum" class="button-icon" src='resources/downvote.png'>Downvote</button>
+        <img id="downvote-comment-icon-ComNum" class="button-icon" src='../resources/downvote.png'>Downvote</button>
       <button id="upvote-button-ComNum" class="response-button" onclick="buttonClicked('upvote', this);"> 
-        <img id="upvote-comment-icon-ComNum" class="button-icon" src='resources/upvote.png'>Upvote</button>
+        <img id="upvote-comment-icon-ComNum" class="button-icon" src='../resources/upvote.png'>Upvote</button>
     </div>
     <div class="comment-spacer"> </div>
   </div>
