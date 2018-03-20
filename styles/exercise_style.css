@@ -195,3 +195,15 @@ body {
 #headline-article-break {
   height: 40px;
 }
+
+#project-continue {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  width: 100%; 
+  background-color: gray;
+}
+
+#exercise-continue {
+  float: right; 
+}

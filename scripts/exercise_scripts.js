@@ -16,6 +16,8 @@ var USER_ID_LENGTH = 8;
 var currentCommentNum = 5; 
 var currentReplyNum = 1; 
 
+localStorage.setItem("commentComplete", "not_complete");
+
 function buttonClicked(buttonType, callerObject) { 
   if (buttonType==="downvote") {
     fireDownvote(callerObject); 
@@ -225,6 +227,8 @@ function makeComment() {
   
   // Show rest of the page; 
   unhideSecondaryInteractions();
+  
+  localStorage.setItem("commentComplete", "complete");
 
   return commentText
 }
