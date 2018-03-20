@@ -163,7 +163,6 @@ function fireReplySubmit(callerObject) {
   replyButton.innerHTML = "Reply";
   replyButton.style.color = REPLY_COLOR;
   
-  fireReply(replyButton);
   return elemID; 
 }
 
