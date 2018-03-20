@@ -41,6 +41,7 @@ body {
 .comment-time {
   font-size: 12px; 
   color: #C9C9C9;
+  line-height: 1.4;
 }
 
 .comment-text {
