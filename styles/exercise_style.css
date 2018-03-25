@@ -6,10 +6,18 @@ body {
   margin: 0 auto;
 }
 
+#topdesc {
+  font-size: 24px;
+  line-height: 1.6;
+  margin-top: 10vm;
+  font-weight: lighter;
+}
+
 #headline {
-  font-size: 56px; 
+  font-size: 36px; 
   line-height: 1.2;
   margin-top: 10vm;
+  font-weight: bold;
 }
 
 
@@ -24,7 +32,7 @@ body {
 .article-text {
   font-size: 16.5px;
   float: clear; 
-  font-family: "Georgia", Times, "Times New Roman", serif;
+  font-family: "Verdana", "Georgia", "Times New Roman", serif;
   margin-top: 2vm;
   margin-bottom: 4vm;
 }
