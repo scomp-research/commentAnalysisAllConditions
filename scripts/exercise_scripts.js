@@ -12,7 +12,6 @@ var REPLY_COLOR = "#16A085";
 var CANCEL_COLOR = "#F06C09";
 
 var STANDARD_USER = "0444"; 
-var USER_ID_LENGTH = 8;
 var currentCommentNum = 5; 
 var currentReplyNum = 1; 
 

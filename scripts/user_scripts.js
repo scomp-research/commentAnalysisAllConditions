@@ -1,3 +1,5 @@
+var USER_ID_LENGTH = 8;
+
 function getUserID() {
     if (localStorage.getItem('commentForum_user_id') === null) {
         var new_id = makeUserID(); 
