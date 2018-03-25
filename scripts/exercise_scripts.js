@@ -132,8 +132,7 @@ function fireReplySubmit(callerObject) {
   
   var replyHTML = `
   <div id="replyComNum" class="reply-submission"> 
-    <div class="comment-username user-username">User UserNum</div>
-    <div class="comment-time">DateAndTime</div>
+    <div class="comment-username user-username">User UserNum   <a>(Just now)</a></div>
     <div class="comment-text">ComText</div>
     <div class="comment-interactions secondary-interactions">
       <button id="downvote-button-ComNum" class="response-button" onclick="buttonClicked('downvote', this);"> 
