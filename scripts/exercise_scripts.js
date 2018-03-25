@@ -192,8 +192,7 @@ function makeComment() {
   
   var commentHTML = `
   <div id="commentComNum" class="comment-box user-comment"> 
-    <div class="comment-username user-username">User UserNum</div>
-    <div class="comment-time">DateAndTime</div>
+    <div class="comment-username user-username">User UserNum   <a>(Just now)</a></div>
     <div class="comment-text">ComText</div>
     <div class="comment-interactions secondary-interactions">
       <button id="downvote-button-ComNum" class="response-button" onclick="buttonClicked('downvote', this);"> 
