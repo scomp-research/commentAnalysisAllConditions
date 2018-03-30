@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/intsurveydivs.css">
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+<script src="../scripts/jquery-3.3.1.min.js"></script>
+<script src="../scripts/openmodel.js"></script>
+<script>
+$(document).ready(function(){
+	$("#submit").click(function(){
+        $("#surveytable1").hide();
+    	$("#surveytable2").hide();
+        $("#submit").hide();
+	});
+}); 
+</script>
+<script>
+	$('input:radio').click(function() {
+	var feeling = $('input:radio[name=feeling]:checked').val();
+	var calm = $('input:radio[name=calm]:checked').val();
+	var fedup = $('input:radio[name=fedup]:checked').val();
+</script>
+<a href="javascript:;" onclick="openmodel()">Open</a>
+    <main id="main">
+    	<div class = "container">
+			<div id = "survey1" class="model-box">		
+			<header>
+                <p class="title">Please answer the following to help us better understand your comment:</p>
+                <p class="text"></p>
+            </header>
+			<table id = "surveytable1" class = "survey1a">
+				<thead>
+					<tr>
+						<th> </th>
+						<th>Right now I feel...</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>(-3) Very unpleasant</td>
+						<td><input type="radio" value="-3" name="feeling"/></td>
+					</tr>
+					<tr>
+						<td>(-2) Unpleasant</td>
+						<td><input type="radio" value="-2" name="feeling"/></td>
+					</tr>
+					<tr>
+						<td>(-1) Mildly unpleasant</td>
+						<td><input type="radio" value="-1" name="feeling"/></td>
+					</tr>
+					<tr>
+						<td>(0) Neutral</td>
+						<td><input type="radio" value="0" name="feeling"/></td>
+					</tr>
+					<tr>
+						<td>(1) Mildly pleasant</td>
+						<td><input type="radio" value="1" name="feeling"/></td>
+					</tr>
+					<tr>
+						<td>(2) Pleasant</td>
+						<td><input type="radio" value="2" name="feeling"/></td>
+					</tr>
+					<tr>
+						<td>(3) Very pleasant</td>
+						<td><input type="radio" value="3" name="feeling"/></td>
+					</tr>
+				</tbody>
+			</table>
+			<table id = "surveytable2" class = "survey1b">
+				<thead>
+					<tr>
+						<th> </th>
+						<th>Right now I am...</th>			
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td> </td>
+						<td>Calm</td>
+						<td>Fed up</td>
+					</tr>
+					<tr>
+						<td>(1) Not at all</td>
+						<td><input type="radio" value="0" name="calm"/></td>
+						<td><input type="radio" value="0" name="fedup"/></td>
+					</tr>
+					<tr>
+						<td>(2) Somewhat</td>
+						<td><input type="radio" value="1" name="calm"/></td>
+						<td><input type="radio" value="1" name="fedup"/></td>
+					</tr>
+					<tr>
+						<td>(3) Very</td>
+						<td><input type="radio" value="2" name="calm"/></td>
+						<td><input type="radio" value="2" name="fedup"/></td>
+					</tr>
+					<tr>
+						<td>(4) Extremely</td>
+						<td><input type="radio" value="3" name="calm"/></td>
+						<td><input type="radio" value="3" name="fedup"/></td>
+					</tr>
+				</tbody>
+			</table>
+            <button id = "submit">Submit</button>
+			</div>
+		</div>
+    </main>
+
+</body>
+</html>
