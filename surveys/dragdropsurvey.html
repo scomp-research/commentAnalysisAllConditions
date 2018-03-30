@@ -18,9 +18,9 @@ $(document).ready(function(){
 </script>
 <script>
 	$('input:radio').click(function() {
-	var enthusiasm = $('input:radio[name=compassionate]:checked').val();
-	var knowledgeable = $('input:radio[name=analytical]:checked').val();
-	var timeliness = $('input:radio[name=independent]:checked').val();
+	var compassionate = $('input:radio[name=compassionate]:checked').val();
+	var analytical = $('input:radio[name=analytical]:checked').val();
+	var independent = $('input:radio[name=independent]:checked').val();
 	});
 </script>
 <a href="javascript:;" onclick="openmodel()">Open</a>
@@ -40,51 +40,46 @@ $(document).ready(function(){
 					<tbody>
 						<tr>
 							<td> </td>
+							<td>Almost never</td>
+							<td>Rarely</td>
+							<td>Less than half the time</td>
+							<td>Netural</td>
+							<td>More than half the time</td>
+							<td>Often</td>
+							<td>Almost always</td>
+						</tr>
+						<tr>
 							<td>Compassionate</td>
-							<td>Analytical</td>
-							<td>Independent</td>
-						</tr>
-						<tr>
-							<td>(1) Almost never</td>
 							<td><input type="radio" value="1" name="compassionate"/></td>
-							<td><input type="radio" value="1" name="analytical"/></td>
-							<td><input type="radio" value="1" name="independent"/></td>
-						</tr>
-						<tr>
-							<td>(2) Rarely</td>
 							<td><input type="radio" value="2" name="compassionate"/></td>
-							<td><input type="radio" value="2" name="analytical"/></td>
-							<td><input type="radio" value="2" name="independent"/></td>
-						</tr>
-						<tr>
-							<td>(3) Less than half the time</td>
 							<td><input type="radio" value="3" name="compassionate"/></td>
-							<td><input type="radio" value="3" name="analytical"/></td>
-							<td><input type="radio" value="3" name="independent"/></td>
-						</tr>
-						<tr>
-							<td>(4) Neutral</td>
 							<td><input type="radio" value="4" name="compassionate"/></td>
-							<td><input type="radio" value="4" name="analytical"/></td>
-							<td><input type="radio" value="4" name="independent"/></td>
-						</tr>
-						<tr>
-							<td>(5) More than half the time</td>
 							<td><input type="radio" value="5" name="compassionate"/></td>
-							<td><input type="radio" value="5" name="analytical"/></td>
-							<td><input type="radio" value="5" name="independent"/></td>
-						</tr>
-						<tr>
-							<td>(6) Often</td>
 							<td><input type="radio" value="6" name="compassionate"/></td>
-							<td><input type="radio" value="6" name="analytical"/></td>
-							<td><input type="radio" value="6" name="independent"/></td>
+							<td><input type="radio" value="7" name="compassionate"/></td>
+
 						</tr>
 						<tr>
-							<td>(7) Almost always</td>
-							<td><input type="radio" value="7" name="compassionate"/></td>
+							<td>Analytical</td>
+							<td><input type="radio" value="1" name="analytical"/></td>
+							<td><input type="radio" value="2" name="analytical"/></td>
+							<td><input type="radio" value="3" name="analytical"/></td>
+							<td><input type="radio" value="4" name="analytical"/></td>
+							<td><input type="radio" value="5" name="analytical"/></td>
+							<td><input type="radio" value="6" name="analytical"/></td>
 							<td><input type="radio" value="7" name="analytical"/></td>
+
+						</tr>
+						<tr>
+							<td>Compassionate</td>
+							<td><input type="radio" value="1" name="independent"/></td>
+							<td><input type="radio" value="2" name="independent"/></td>
+							<td><input type="radio" value="3" name="independent"/></td>
+							<td><input type="radio" value="4" name="independent"/></td>
+							<td><input type="radio" value="5" name="independent"/></td>
+							<td><input type="radio" value="6" name="independent"/></td>
 							<td><input type="radio" value="7" name="independent"/></td>
+
 						</tr>
 					</tbody>
 				</table>
