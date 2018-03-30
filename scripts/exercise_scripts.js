@@ -15,6 +15,9 @@ var STANDARD_USER = "0444";
 var currentCommentNum = 5; 
 var currentReplyNum = 1; 
 
+var interventionTask = true; 
+var surveyTask = true; 
+
 localStorage.setItem("commentComplete", "not_complete");
 
 function cleanResource(resource) {

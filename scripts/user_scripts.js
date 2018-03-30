@@ -18,6 +18,8 @@ function makeUserID () {
   return text;
 }
 
+var surveyRound = 1; 
+
 function postToSheet(act, elemID, val) {
   
   var obj = {
@@ -30,11 +32,23 @@ function postToSheet(act, elemID, val) {
   
   var url = 'https://script.google.com/macros/s/AKfycbyUnuAXgDhKsDJ4sVeRpbWChn1EAAo15qse7rTeKkIW5Xs0bfgE/exec'
   
+  var urlRound2 = 'https://script.google.com/macros/s/AKfycby3dLK8cMJglS-NdDt8TketPKasr94sL8xlNAgqwwACDuwF1ys/exec'
+  
+  if (surveyRound === 1) {
   var response = $.ajax(
-  {
-    url: url, 
-    method: "GET",
-    dataType: "json",
-    data: obj,
-  }).success();
+    {
+      url: url, 
+      method: "GET",
+      dataType: "json",
+      data: obj,
+    }).success();
+  } else if (surveyRound === 2) {
+    var response = $.ajax(
+      {
+        url: urlRound2, 
+        method: "GET",
+        dataType: "json",
+        data: obj,
+      }).success();
+  }
 }
