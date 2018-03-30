@@ -59,7 +59,7 @@ table.border th {
 	width: 33%
 }
 
-th, td {
+.surveytable {
     padding: 15px;
     text-align: left;
 }
