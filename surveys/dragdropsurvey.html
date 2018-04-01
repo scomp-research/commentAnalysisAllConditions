@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/jsopenmodel.css">
-	<link rel="stylesheet" href="../styles/intsurveydivs.css">
+    <link rel="stylesheet" href="../styles/drawdropsurveynew.css">
 </head>
 <body>
 <script src="../scripts/jquery-3.3.1.min.js"></script>
@@ -33,12 +32,12 @@ $(document).ready(function(){
 				</header>
 				<table id = "surveytable1">
 					<thead>
-						<tr>
+						<tr id="question">
 							<th>How often are you:</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr id="frequency">
 							<td> </td>
 							<td>Almost never</td>
 							<td>Rarely</td>
@@ -48,7 +47,7 @@ $(document).ready(function(){
 							<td>Often</td>
 							<td>Almost always</td>
 						</tr>
-						<tr>
+						<tr class="option">
 							<td>Compassionate</td>
 							<td><input type="radio" value="1" name="compassionate"/></td>
 							<td><input type="radio" value="2" name="compassionate"/></td>
@@ -59,7 +58,7 @@ $(document).ready(function(){
 							<td><input type="radio" value="7" name="compassionate"/></td>
 
 						</tr>
-						<tr>
+						<tr class="option">
 							<td>Analytical</td>
 							<td><input type="radio" value="1" name="analytical"/></td>
 							<td><input type="radio" value="2" name="analytical"/></td>
@@ -70,7 +69,7 @@ $(document).ready(function(){
 							<td><input type="radio" value="7" name="analytical"/></td>
 
 						</tr>
-						<tr>
+						<tr class="option">
 							<td>Compassionate</td>
 							<td><input type="radio" value="1" name="independent"/></td>
 							<td><input type="radio" value="2" name="independent"/></td>
