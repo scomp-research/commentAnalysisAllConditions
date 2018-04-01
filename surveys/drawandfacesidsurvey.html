@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/model-box.css">
-<link rel="stylesheet" href="../styles/intsurveydivs.css">
+    <link rel="stylesheet" href="../styles/drawfacesurveynew.css">
 </head>
 <body>
 <script src="../scripts/jquery-3.3.1.min.js"></script>
@@ -32,80 +31,96 @@ $(document).ready(function(){
                 <p class="title">Please answer the following to help us better understand your comment:</p>
                 <p class="text"></p>
             </header>
+            
+            
+        <div class="questions">
 			<table id = "surveytable1" class = "survey1a">
 				<thead>
 					<tr>
 						<th> </th>
-						<th>Right now I feel...</th>
+						<th id="question1">1. Right now I feel _______ .</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>(-3) Very unpleasant</td>
+				    <tr class="level">
+                        <td>Very unpleasant</td>
+                        <td>Unpleasant</td>
+                        <td>Mildly unpleasant</td>
+				        <td>Neutral</td>
+				        <td>Mildly pleasant</td>
+				        <td>Pleasant</td>
+				        <td>Very pleasant</td>
+				    </tr>
+				
+					<tr class="option">
 						<td><input type="radio" value="-3" name="feeling"/></td>
-					</tr>
-					<tr>
-						<td>(-2) Unpleasant</td>
 						<td><input type="radio" value="-2" name="feeling"/></td>
-					</tr>
-					<tr>
-						<td>(-1) Mildly unpleasant</td>
 						<td><input type="radio" value="-1" name="feeling"/></td>
-					</tr>
-					<tr>
-						<td>(0) Neutral</td>
 						<td><input type="radio" value="0" name="feeling"/></td>
-					</tr>
-					<tr>
-						<td>(1) Mildly pleasant</td>
 						<td><input type="radio" value="1" name="feeling"/></td>
-					</tr>
-					<tr>
-						<td>(2) Pleasant</td>
 						<td><input type="radio" value="2" name="feeling"/></td>
-					</tr>
-					<tr>
-						<td>(3) Very pleasant</td>
 						<td><input type="radio" value="3" name="feeling"/></td>
 					</tr>
 				</tbody>
 			</table>
+			
+			
 			<table id = "surveytable2" class = "survey1b">
 				<thead>
 					<tr>
-						<th> </th>
-						<th>Right now I am...</th>			
+						<th id="question2">2. Right now I am calm. </th>			
 					</tr>
 				</thead>
+				
 				<tbody>
-					<tr>
-						<td> </td>
-						<td>Calm</td>
-						<td>Fed up</td>
-					</tr>
-					<tr>
-						<td>(1) Not at all</td>
-						<td><input type="radio" value="0" name="calm"/></td>
-						<td><input type="radio" value="0" name="fedup"/></td>
-					</tr>
-					<tr>
-						<td>(2) Somewhat</td>
-						<td><input type="radio" value="1" name="calm"/></td>
-						<td><input type="radio" value="1" name="fedup"/></td>
-					</tr>
-					<tr>
-						<td>(3) Very</td>
-						<td><input type="radio" value="2" name="calm"/></td>
-						<td><input type="radio" value="2" name="fedup"/></td>
-					</tr>
-					<tr>
-						<td>(4) Extremely</td>
-						<td><input type="radio" value="3" name="calm"/></td>
-						<td><input type="radio" value="3" name="fedup"/></td>
-					</tr>
+				    <tr class="level" id="level2">
+                        <td>Not at all</td>
+                        <td>Somewhat</td>
+                        <td>Very</td>
+				        <td>Extremely</td>
+				    </tr>
+				    
+				    <tr class="option" id="option2">
+                        <td><input type="radio" value="0" name="calm"/></td>
+                        <td><input type="radio" value="1" name="calm"/></td>
+                        <td><input type="radio" value="2" name="calm"/></td>
+				        <td><input type="radio" value="3" name="calm"/></td>
+				    </tr>
+				    
 				</tbody>
 			</table>
+          
+           
+           <table id = "surveytable2" class = "survey1b">
+				<thead>
+					<tr>
+						<th id="question2">3. Right now I am fed up.  </th>			
+					</tr>
+				</thead>
+				
+				<tbody>
+				    <tr class="level" id="level2">
+                        <td>Not at all</td>
+                        <td>Somewhat</td>
+                        <td>Very</td>
+				        <td>Extremely</td>
+				    </tr>
+				    
+				    <tr class="option" id="option2">
+                        <td><input type="radio" value="0" name="fedup"/></td>
+                        <td><input type="radio" value="1" name="fedup"/></td>
+                        <td><input type="radio" value="2" name="fedup"/></td>
+				        <td><input type="radio" value="3" name="fedup"/></td>
+				    </tr>
+				    
+				</tbody>
+			</table>
+           
             <button id = "submit">Submit</button>
+            
+			
+			</div>
+			
 			</div>
 		</div>
     </main>
