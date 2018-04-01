@@ -22,6 +22,8 @@ $(document).ready(function(){
 	var independent = $('input:radio[name=independent]:checked').val();
 	});
 </script>
+
+
 <a href="javascript:;" onclick="openmodel()">Open</a>
     <main id="main">
     	<div class = "container">
@@ -31,14 +33,14 @@ $(document).ready(function(){
 					<p class="text"></p>
 				</header>
 				<table id = "surveytable1">
-					<thead>
+					<!--<thead>
 						<tr id="question">
 							<th>How often are you:</th>
 						</tr>
-					</thead>
+					</thead>-->
 					<tbody>
 						<tr id="frequency">
-							<td> </td>
+							<td class="question"> </td>
 							<td>Almost never</td>
 							<td>Rarely</td>
 							<td>Less than half the time</td>
@@ -48,7 +50,7 @@ $(document).ready(function(){
 							<td>Almost always</td>
 						</tr>
 						<tr class="option">
-							<td>Compassionate</td>
+							<td class="question">How often are you compassionate</td>
 							<td><input type="radio" value="1" name="compassionate"/></td>
 							<td><input type="radio" value="2" name="compassionate"/></td>
 							<td><input type="radio" value="3" name="compassionate"/></td>
@@ -59,7 +61,7 @@ $(document).ready(function(){
 
 						</tr>
 						<tr class="option">
-							<td>Analytical</td>
+							<td class="question">How often are you analytical</td>
 							<td><input type="radio" value="1" name="analytical"/></td>
 							<td><input type="radio" value="2" name="analytical"/></td>
 							<td><input type="radio" value="3" name="analytical"/></td>
@@ -70,7 +72,7 @@ $(document).ready(function(){
 
 						</tr>
 						<tr class="option">
-							<td>Compassionate</td>
+							<td class="question">How often are you independent</td>
 							<td><input type="radio" value="1" name="independent"/></td>
 							<td><input type="radio" value="2" name="independent"/></td>
 							<td><input type="radio" value="3" name="independent"/></td>
