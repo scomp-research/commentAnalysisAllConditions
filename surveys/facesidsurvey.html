@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/jsopenmodel.css">
+    <link rel="stylesheet" href="../styles/model-box.css">
 <link rel="stylesheet" href="../styles/intsurveydivs.css">
 </head>
 <body>
@@ -33,8 +33,7 @@ $(document).ready(function(){
 				<p class="subtitle">For each of these faces, please choose which emotion the person is displaying:
 				<p class="text"></p>
 			</header>
-			<div class = "container">
-				<table id = "surveytable1" class = "survey2a">
+				<table id = "surveytable1" class = "surveytable">
 					<thead>
 						<tr>
 							<th> </th>
@@ -42,28 +41,27 @@ $(document).ready(function(){
 					</thead>
 					<tbody>
 						<tr>
-							<td><img src = "../resources/eyes1.png" alt="first picture of eyes" style="width:170px;height:67px;"></td>
+							<td colspan="2"><img src = "../resources/eyes1.png" alt="first picture of eyes" style="width:170px;height:67px;"></td>
 						</tr>
 						<tr>
-							<td>Terrified</td>
 							<td><input type="radio" value="3" name="eyes1"/></td>
+							<td>Terrified</td>
 						</tr>
 						<tr>
-							<td>Upset</td>
 							<td><input type="radio" value="1" name="eyes1"/></td>
+							<td>Upset</td>
 						</tr>
 						<tr>
-							<td>Arrogant</td>
 							<td><input type="radio" value="4" name="eyes1"/></td>
+							<td>Arrogant</td>
 						</tr>
 						<tr>
-							<td>Annoyed</td>
 							<td><input type="radio" value="2" name="eyes1"/></td>
+							<td>Annoyed</td>
 						</tr>
 					</tbody>
 				</table>
-				
-				<table id = "surveytable2" class = "survey2b">
+				<table id = "surveytable2" class = "surveytable">
 					<thead>
 						<tr>
 							<th> </th>
@@ -71,28 +69,28 @@ $(document).ready(function(){
 					</thead>
 					<tbody>
 						<tr>
-							<td><img src = "../resources/eyes2.png" alt="second picture of eyes" style="width:170px;height:67px;"></td>
-
+							<td colspan="2"><img src = "../resources/eyes2.png" alt="second picture of eyes" style="width:170px;height:67px;"></td>
 						</tr>
 						<tr>
-							<td>Joking</td>
+							
 							<td><input type="radio" value="4" name="eyes2"/></td>
+							<td>Joking</td>
 						</tr>
 						<tr>
-							<td>Insisting</td>
 							<td><input type="radio" value="1" name="eyes2"/></td>
+							<td>Insisting</td>
 						</tr>
 						<tr>
-							<td>Amused</td>
 							<td><input type="radio" value="3" name="eyes2"/></td>
+							<td>Amused</td>
 						</tr>
 						<tr>
-							<td>Relaxed</td>
 							<td><input type="radio" value="2" name="eyes2"/></td>
+							<td>Relaxed</td>
 						</tr>
 					</tbody>
 				</table>
-				<table id = "surveytable3" class = "survey2c">
+				<table id = "surveytable3" class = "surveytable">
 					<thead>
 						<tr>
 							<th> </th>
@@ -100,27 +98,26 @@ $(document).ready(function(){
 					</thead>
 					<tbody>
 						<tr>
-							<td><img src = "../resources/eyes3.png" alt="third picture of eyes" style="width:170px;height:67px;"></td>
+							<td colspan="2"><img src = "../resources/eyes3.png" alt="third picture of eyes" style="width:170px;height:67px;"></td>
 						</tr>
 						<tr>
-							<td>Pensive</td>
 							<td><input type="radio" value="1" name="eyes3"/></td>
+							<td>Pensive</td>
 						</tr>
 						<tr>
-							<td>Irritated</td>
 							<td><input type="radio" value="2" name="eyes3"/></td>
+							<td>Irritated</td>
 						</tr>
 						<tr>
-							<td>Excited</td>
 							<td><input type="radio" value="4" name="eyes3"/></td>
+							<td>Excited</td>
 						</tr>
 						<tr>
-							<td>Hostile</td>
 							<td><input type="radio" value="3" name="eyes3"/></td>
+							<td>Hostile</td>
 						</tr>
 					</tbody>
 				</table>
-			</div>
 			<button id = "submit">Submit</button>
 		</div>
     </main>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/jsopenmodel.css">
+    <link rel="stylesheet" href="../styles/model-box.css">
 <link rel="stylesheet" href="../styles/intsurveydivs.css">
 </head>
 <body>
@@ -18,9 +18,9 @@ $(document).ready(function(){
 </script>
 <script>
 	$('input:radio').click(function() {
-	var enthusiasm = $('input:radio[name=innerfeelings]:checked').val();
-	var knowledgeable = $('input:radio[name=reflective]:checked').val();
-	var timeliness = $('input:radio[name=privatethoughts]:checked').val();
+	var innerfeelings = $('input:radio[name=innerfeelings]:checked').val();
+	var reflective = $('input:radio[name=reflective]:checked').val();
+	var privatethoughts = $('input:radio[name=privatethoughts]:checked').val();
 	});
 </script>
 <a href="javascript:;" onclick="openmodel()">Open</a>
@@ -40,51 +40,46 @@ $(document).ready(function(){
 					<tbody>
 						<tr>
 							<td> </td>
-							<td>conscious of my inner feelings</td>
-							<td>reflective about my life</td>
-							<td>aware of my innermost private thoughts</td>
+							<td>Strongly disagree</td>
+							<td>Disagree</td>
+							<td>Slightly disagree</td>
+							<td>Neither agree nor disagree</td>
+							<td>Slightly agree</td>
+							<td>Agree</td>
+							<td>Strongly agree</td>
 						</tr>
 						<tr>
-							<td>(1) Strongly disagree</td>
+							<td>...conscious of my inner feelings</td>
 							<td><input type="radio" value="1" name="innerfeelings"/></td>
-							<td><input type="radio" value="1" name="reflective"/></td>
-							<td><input type="radio" value="1" name="privatethoughts"/></td>
-						</tr>
-						<tr>
-							<td>(2) Disagree</td>
 							<td><input type="radio" value="2" name="innerfeelings"/></td>
-							<td><input type="radio" value="2" name="reflective"/></td>
-							<td><input type="radio" value="2" name="privatethoughts"/></td>
-						</tr>
-						<tr>
-							<td>(3) Slightly disagree</td>
 							<td><input type="radio" value="3" name="innerfeelings"/></td>
-							<td><input type="radio" value="3" name="reflective"/></td>
-							<td><input type="radio" value="3" name="privatethoughts"/></td>
-						</tr>
-						<tr>
-							<td>(4) Neither agree nor disagree</td>
 							<td><input type="radio" value="4" name="innerfeelings"/></td>
-							<td><input type="radio" value="4" name="reflective"/></td>
-							<td><input type="radio" value="4" name="privatethoughts"/></td>
-						</tr>
-						<tr>
-							<td>(5) Slightly agree</td>
 							<td><input type="radio" value="5" name="innerfeelings"/></td>
-							<td><input type="radio" value="5" name="reflective"/></td>
-							<td><input type="radio" value="5" name="privatethoughts"/></td>
-						</tr>
-						<tr>
-							<td>(6) Agree</td>
 							<td><input type="radio" value="6" name="innerfeelings"/></td>
-							<td><input type="radio" value="6" name="reflective"/></td>
-							<td><input type="radio" value="6" name="privatethoughts"/></td>
+							<td><input type="radio" value="7" name="innerfeelings"/></td>
+
 						</tr>
 						<tr>
-							<td>(7) Strongly agree</td>
-							<td><input type="radio" value="7" name="innerfeelings"/></td>
+							<td>...reflective about my life</td>
+							<td><input type="radio" value="1" name="reflective"/></td>
+							<td><input type="radio" value="2" name="reflective"/></td>
+							<td><input type="radio" value="3" name="reflective"/></td>
+							<td><input type="radio" value="4" name="reflective"/></td>
+							<td><input type="radio" value="5" name="reflective"/></td>
+							<td><input type="radio" value="6" name="reflective"/></td>
 							<td><input type="radio" value="7" name="reflective"/></td>
+
+						</tr>
+						<tr>
+							<td>...aware of my innermost private thoughts</td>
+							<td><input type="radio" value="1" name="privatethoughts"/></td>
+							<td><input type="radio" value="2" name="privatethoughts"/></td>
+							<td><input type="radio" value="3" name="privatethoughts"/></td>
+							<td><input type="radio" value="4" name="privatethoughts"/></td>
+							<td><input type="radio" value="5" name="privatethoughts"/></td>
+							<td><input type="radio" value="6" name="privatethoughts"/></td>
 							<td><input type="radio" value="7" name="privatethoughts"/></td>
+
 						</tr>
 					</tbody>
 				</table>

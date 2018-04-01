@@ -7,7 +7,7 @@ main{
 .model-box{
     width: 700px;
     position: fixed;
-    height: 400px;
+    height: 450px;
     top: 50%;
     left: 50%;
     z-index: 1000;
@@ -199,19 +199,57 @@ tbody{
     margin:2rem;
 }
 
+/*head*/
+
+#frequency{
+    display: flex;
+    flex-direction: row;
+}
+
 #frequency td{
-    width:70px;
-    font-size:0.8rem;
+    width:50px;
+    font-size:0.9rem;
     font-family: Helvetica Neue;
+    margin:15px 15px;
 }
 
-#option td{
-    width:70px;
-    align-content: center;
-    font-family: Helvetica Neue;
+.option{
+    display: flex;
+    flex-direction: row;
 }
 
-#option{
+.option td{
+    width:50px;
+    font-size:1rem;
+    font-family: Helvetica Neue;
+    margin:20px 15px;
+    line-height: 1.3em;
     
-    
+}
+
+.option .question{
+    width:140px;
+    margin:0;
+}
+
+#frequency .question{
+    width:140px;
+    margin:0;
+}
+
+/*button*/
+#submit {
+    background-color: #4A90E2; 
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    position:relative;
+    left:600px;
+    bottom:15px;
 }

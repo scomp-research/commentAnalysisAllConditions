@@ -57,3 +57,9 @@ table.border th {
 .survey2c {
 	float: left ;
 	width: 33%
+}
+
+.surveytable {
+    padding: 5px;
+    text-align: left;
+}
