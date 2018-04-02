@@ -254,16 +254,13 @@ tbody{
 
 #question1 {
     position: relative;
-    left:20px;
-    top:20px;
+	text-align: left;
 }
 
 /*second & third survey*/
 
 #question2{
     position: relative;
-    left:20px;
-    top:0px;
     text-align: left;
 }
 
