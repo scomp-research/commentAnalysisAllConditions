@@ -163,7 +163,7 @@ table.border th {
 
 .surveytable td:first-child{
 	width: 105px;
-	border: 200px;
+	margin: 5px;
 }
 
 #submit {
