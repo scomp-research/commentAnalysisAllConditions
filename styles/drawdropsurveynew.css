@@ -171,7 +171,7 @@ table.border th {
 
 /*title*/
 .title{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
     font-family: Helvetica Neue;
     color: white;
@@ -211,8 +211,6 @@ tbody{
     font-family: Helvetica Neue;
     margin:10px 5px;
 	text-align: center;
-	vertical-align: center;
-
 }
 
 .option{
