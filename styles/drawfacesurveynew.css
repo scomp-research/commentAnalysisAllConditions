@@ -147,6 +147,7 @@ table.border th {
 .survey1a {
 	float: left ;
 	width: 100% ;
+	margin: 20px;
 }
 .survey1b {
 	float: left ;
@@ -249,19 +250,21 @@ tbody{
 
 #level1 td{
 	margin: 5px 10px;
-	width: 60px;
+	width: 50px;
 }
-#level2{
+#level2 td{
 	margin:5px 10px;
+	width: 80px;
 }
 
 #option1 td{
 	margin: 5px 10px;
-	width: 60px;
+	width: 50px;
 }
 
-#option2{
+#option2 td{
 	margin:5px 10px;
+	width: 80px;
 }
 
 table{
