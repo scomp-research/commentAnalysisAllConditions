@@ -244,20 +244,25 @@ tbody{
 #level1 td{
 	margin: 5px 15px;
 	width: 50px;
+	text-align: center;
 }
 #level2 td{
 	margin:5px 10px;
 	width: 90px;
+	text-align: center;
+
 }
 
 #option1 td{
 	margin: 5px 15px;
 	width: 50px;
+	text-align: center;
 }
 
 #option2 td{
 	margin:5px 10px;
 	width: 90px;
+	text-align: center;
 }
 
 table{
