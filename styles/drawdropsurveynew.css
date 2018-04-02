@@ -209,7 +209,7 @@ tbody{
     width:60px;
     font-size:0.8rem;
     font-family: Helvetica Neue;
-    margin:15px 5px;
+    margin:10px 10px;
 }
 
 .option{
@@ -221,19 +221,19 @@ tbody{
     width:60px;
     font-size:0.8rem;
     font-family: Helvetica Neue;
-    margin:15px 5px;
+    margin:10px 10px;
     line-height: 1.3em;
     
 }
 
 .option .question{
     width:140px;
-    margin:0;
+    margin:5px 10px;
 }
 
 #frequency .question{
     width:140px;
-    margin:0;
+    margin:5px 10px;
 }
 
 /*button*/
