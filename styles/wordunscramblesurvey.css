@@ -159,7 +159,7 @@ table.border th {
 
 .surveytable td{
 	width: 65px;
-	margin-right: 10px;
+	border-right: 10px;
 }
 
 .surveytable td:first-child{
