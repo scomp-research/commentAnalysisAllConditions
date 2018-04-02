@@ -13,16 +13,15 @@
 </head>
 <body>
 
+  <div id="overlay">
+    <div id="overlayBackground"></div>
+  </div>
+  <iframe id="intervention" src="../interventions/facesIntervention.html"></iframe>
+  
   <div id="main-content">
    <div id="topdesc">News of the Day:</div>
     <div id="headline">As a Legal Immigrant, I’m Proud to Have Voted for Trump</div>
     <div id="author-break"></div>
-    <!--<div id="author-line">
-      <div id="author-intro" class="author-text">by</div>
-      <div id="author-name" class="author-text">S. C. Reed,</div>
-      <div id="author-title" class="author-text">White House Reporter.</div>
-      <div id="author-date" class="author-text">March 19th, 2018</div> -->
-    
     </div>
     <br>
     <div id="headline-article-break"></div>
@@ -37,7 +36,6 @@
       <button class="response-button" onclick="buttonClicked('downvote', this);" type="button"> <img id="downvote-article-icon-1" class="button-icon" src='../resources/downvote.png'> Downvote </button>
       <button class="response-button" onclick="buttonClicked('upvote', this);" type="button"> <img id="upvote-article-icon-1" class="button-icon" src='../resources/upvote.png'> Upvote </button>
     </div>
-  </div>
   
   <div id="article-break"> </div>
 
@@ -136,7 +134,7 @@
   </div>
   
   <div id="comment-area-1" class="comment-reply reply-button">
-    <textarea id="comment-textarea" placeholder="Join the discussion" class="reply-textarea"></textarea>
+    <textarea id="comment-textarea" placeholder="Join the discussion" class="reply-textarea" onmousedown="checkForIntervention()"></textarea>
     <button id="comment-submit-button-1" class="response-button reply-button main-button reply-submit-button" onclick="buttonClicked('comment-submit', this)">Comment</button>
   </div>
     

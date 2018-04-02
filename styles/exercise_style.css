@@ -223,3 +223,30 @@ body {
   float: right; 
   display: none; 
 }
+
+#overlay {
+  width:      100%;
+  height:     100%;
+  opacity: 0.8; 
+  background: #555;
+  top:        0; 
+  left:       0; 
+  position:   fixed;
+  display:    none; 
+}
+
+#intervention {
+  z-index: 10; 
+  display: none; 
+  margin: 0 auto; 
+  background: #555; 
+  position: fixed; 
+  opacity: 1; 
+  width: 500px;
+  height: 580px;
+  position: fixed;
+  left: 50%;
+  margin-left: -37.5%;
+  top: 10%;
+  border: none;
+}

@@ -16,7 +16,9 @@ var currentCommentNum = 5;
 var currentReplyNum = 1; 
 
 var interventionTask = true; 
+var interventionComplete = false; 
 var surveyTask = true; 
+var surveyComplete = false; 
 
 localStorage.setItem("commentComplete", "not_complete");
 
@@ -169,8 +171,14 @@ function fireReplySubmit(callerObject) {
 }
 
 function fireComment(callerObject) {
-  var commentText = makeComment(); 
-  postToSheet('comment-submit', "comment-submit-button", commentText); 
+  
+  if (interventionTask && !interventionComplete) {
+    startIntervention(); 
+  } else {
+    var commentText = makeComment(); 
+    postToSheet('comment-submit', "comment-submit-button", commentText); 
+  }
+
 }
 
 
@@ -264,4 +272,28 @@ function isIllegalString(input) {
   if(isEmpty(input) || containsIllegalCharacter(input)) {
     return true; 
   }
+}
+
+function checkForIntervention(){
+  if (interventionTask && !interventionComplete) {
+    startIntervention(); 
+  }
+}
+
+function startIntervention() {
+  document.getElementById("overlay").style.display = "block"; 
+  document.getElementById("intervention").style.display = "block";
+  postToSheet("Begin-Intervention", "N/A", "InterventionName");
+}
+
+function endIntervention(intervention) {
+  parent.document.getElementById("intervention").style.display = "none"; 
+  parent.document.getElementById("overlay").style.display = "none"; 
+  postToSheet("End-Intervention", "N/A", "InterventionName");
+}
+
+window.validateIntervention = function(intervention) {
+  console.log("VALIDATED |" + intervention); 
+  interventionComplete = true;
+  endIntervention(intervention); 
 }
