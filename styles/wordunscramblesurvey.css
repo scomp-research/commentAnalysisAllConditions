@@ -63,7 +63,7 @@ main{
     line-height: 146px;
 }
 .model-box>header>p:first-child{
-    font-size: 22pt;
+    font-size: 12pt;
     font-weight: bold;
     font-family: Helvetica Neue;
     color: white;
@@ -154,6 +154,7 @@ table.border th {
 .survey1a {
 	float: left ;
 	width: 50% ;
+	padding: 15px;
 }
 .survey1b {
 	float: left ;
