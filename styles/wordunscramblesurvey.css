@@ -177,3 +177,18 @@ table.border th {
     text-align: left;
 }
 
+#submit {
+    background-color: #4A90E2; 
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    position:relative;
+	top: 40px;
+    width:80px;
+}
