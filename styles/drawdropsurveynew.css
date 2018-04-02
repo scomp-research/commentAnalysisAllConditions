@@ -207,9 +207,11 @@ tbody{
 
 #frequency td{
     width:60px;
-    font-size:0.8rem;
+    font-size:0.9rem;
     font-family: Helvetica Neue;
     margin:10px 5px;
+	text-align: center;
+
 }
 
 .option{
@@ -219,10 +221,11 @@ tbody{
 
 .option td{
     width:60px;
-    font-size:0.8rem;
+    font-size:0.9rem;
     font-family: Helvetica Neue;
     margin:10px 5px;
     line-height: 1.3em;
+	text-align: center;
     
 }
 
