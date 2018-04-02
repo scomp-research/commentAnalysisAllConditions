@@ -235,11 +235,6 @@ tbody{
 }
 
 
-.option td{
-    margin:0 20px; 
-    flex-grow: 1;
-}
-
 #question1 {
     position: relative;
 	text-align: left;
