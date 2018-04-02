@@ -190,7 +190,6 @@ header{
 }
 #question{
     font-size: 0.9rem;
-    font-weight: bold;
     font-family: Helvetica Neue;
     margin: 10rem;
 }
@@ -220,15 +219,15 @@ tbody{
 
 .option td{
     width:50px;
-    font-size:1rem;
+    font-size:0.9rem;
     font-family: Helvetica Neue;
-    margin:20px 15px;
+    margin:15px 10px;
     line-height: 1.3em;
     
 }
 
 .option .question{
-    width:140px;
+    width:100px;
     margin:0;
 }
 
