@@ -184,7 +184,7 @@ header{
 }
 
 /*main*/
-#surveytable1{
+#surveytable1, #surveytable2{
     display:flex;
     flex-direction: column;
 }
