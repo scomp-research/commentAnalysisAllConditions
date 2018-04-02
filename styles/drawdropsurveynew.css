@@ -7,7 +7,7 @@ main{
 .model-box{
     width: 580px;
     position: fixed;
-    height: 400px;
+    height: 450px;
     top: 50%;
     left: 50%;
     z-index: 1000;
@@ -171,7 +171,7 @@ table.border th {
 
 /*title*/
 .title{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     font-family: Helvetica Neue;
     color: white;
