@@ -249,22 +249,22 @@ tbody{
 }
 
 #level1 td{
-	margin: 5px 10px;
+	margin: 5px 15px;
 	width: 50px;
 }
 #level2 td{
 	margin:5px 10px;
-	width: 80px;
+	width: 90px;
 }
 
 #option1 td{
-	margin: 5px 10px;
+	margin: 5px 15px;
 	width: 50px;
 }
 
 #option2 td{
 	margin:5px 10px;
-	width: 80px;
+	width: 90px;
 }
 
 table{
