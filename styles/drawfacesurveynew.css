@@ -247,16 +247,18 @@ tbody{
     text-align: left;
 }
 
-#level1{
+#level1 td{
 	margin: 5px 10px;
 	width: 60px;
+}
 #level2{
 	margin:5px 10px;
 }
 
-#option1{
+#option1 td{
 	margin: 5px 10px;
 	width: 60px;
+}
 
 #option2{
 	margin:5px 10px;
