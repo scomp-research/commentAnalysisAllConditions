@@ -151,31 +151,10 @@ table.border th {
 	margin: 0 auto; 
 }
 
-.survey1a {
-	float: left ;
-	width: 50% ;
-	padding: 15px;
-}
-.survey1b {
-	float: left ;
-	width: 50% ;
-}
-.survey2a {
-	float: left ;
-	width: 33% ;
-}
-.survey2b {
-	float: left ;
-	width: 33% ;
-}
-.survey2c {
-	float: left ;
-	width: 33%
-}
-
 .surveytable {
     padding: 5px;
     text-align: left;
+	padding: 15px;
 }
 
 #submit {
