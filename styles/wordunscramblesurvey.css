@@ -159,11 +159,11 @@ table.border th {
 
 .surveytable td{
 	width: 65px;
-	border-right: 10px;
 }
 
 .surveytable td:first-child{
 	width: 105px;
+	border: 200px;
 }
 
 #submit {
