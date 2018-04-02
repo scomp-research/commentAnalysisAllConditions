@@ -7,7 +7,7 @@ main{
 .model-box{
     width: 580px;
     position: fixed;
-    height: 500px;
+    height: 450px;
     top: 50%;
     left: 50%;
     z-index: 1000;
@@ -195,7 +195,7 @@ header{
 }
 
 tbody{
-    margin:2rem;
+    margin:1rem;
 }
 
 /*head*/
