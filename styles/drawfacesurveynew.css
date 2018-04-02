@@ -231,7 +231,6 @@ tbody{
     position: relative;
 	text-align: left;
 	margin: 20px 0px;
-	padding: 10px;
 }
 
 /*second & third survey*/
@@ -240,7 +239,10 @@ tbody{
     position: relative;
     text-align: left;
 	margin: 20px 0px;
-	padding: 10px;
+}
+
+.level {
+	padding-bottom: 10px;
 }
 
 #level1 td{
