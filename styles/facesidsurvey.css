@@ -63,13 +63,13 @@ main{
     line-height: 146px;
 }
 .model-box>header>p:first-child{
-    font-size: 14pt;
+    font-size: 11pt;
     font-weight: bold;
     font-family: Helvetica Neue;
     color: white;
 }
 .model-box>header>p:nth-child(2){
-    font-size: 12pt;
+    font-size: 10pt;
     font-family: Helvetica Neue;
     color: white;
 }
@@ -159,10 +159,12 @@ table.border th {
 .survey1a {
 	float: left ;
 	width: 50% ;
+	padding: 15px;
 }
 .survey1b {
 	float: left ;
 	width: 50% ;
+	padding: 15px;
 }
 .survey2a {
 	float: left ;
@@ -180,5 +182,21 @@ table.border th {
 .surveytable {
     padding: 5px;
     text-align: left;
+}
+
+#submit {
+    background-color: #4A90E2; 
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    position:relative;
+    left:440px;
+    width:80px;
 }
 
