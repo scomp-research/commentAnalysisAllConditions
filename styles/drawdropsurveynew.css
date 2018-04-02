@@ -5,9 +5,9 @@ main{
     background: rgba(0,0,0,0.3);
 }
 .model-box{
-    width: 700px;
+    width: 580px;
     position: fixed;
-    height: 450px;
+    height: 500px;
     top: 50%;
     left: 50%;
     z-index: 1000;
