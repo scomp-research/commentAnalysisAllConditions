@@ -247,12 +247,19 @@ tbody{
     text-align: left;
 }
 
+#level1{
+	margin: 5px 10px;
+	width: 60px;
 #level2{
-    margin:5px 10px;
+	margin:5px 10px;
 }
 
+#option1{
+	margin: 5px 10px;
+	width: 60px;
+
 #option2{
-    margin:5px 10px;
+	margin:5px 10px;
 }
 
 table{
