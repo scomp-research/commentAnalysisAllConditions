@@ -187,12 +187,6 @@ header{
 
 /*main*/
 
-#question1, #question2{
-    font-size: 1rem;
-    font-family: Helvetica Neue;
-	margin-bottom: 10px;
-    font-weight:500;
-}
 
 tbody{
     margin:2rem;
@@ -236,7 +230,7 @@ tbody{
 #question1 {
     position: relative;
 	text-align: left;
-	margin: 15px 0px
+	margin: 20px 0px
 }
 
 /*second & third survey*/
@@ -244,7 +238,7 @@ tbody{
 #question2{
     position: relative;
     text-align: left;
-	margin: 15px 0px
+	margin: 20px 0px
 }
 
 #level1 td{
