@@ -151,11 +151,6 @@ table.border th {
 	margin: 0 auto; 
 }
 
-.question{
-	width: 105px;
-	margin: 0px 15px;
-}
-
 .surveytable {
     padding: 5px;
     text-align: left;
@@ -164,6 +159,10 @@ table.border th {
 
 .surveytable td{
 	width: 65px;
+}
+
+.surveytable td:first-child{
+	width: 105px;
 }
 
 #submit {
