@@ -157,6 +157,10 @@ table.border th {
 	padding: 15px;
 }
 
+.surveytable td{
+	width: 50px;
+}
+
 #submit {
     background-color: #4A90E2; 
     border: none;
