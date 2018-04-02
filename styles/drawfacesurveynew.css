@@ -191,7 +191,7 @@ header{
 #question1, #question2{
     font-size: 1rem;
     font-family: Helvetica Neue;
-    margin: 10rem;
+    margin: 6rem;
     font-weight:500;
 }
 
@@ -214,8 +214,7 @@ tbody{
     cursor: pointer;
     border-radius: 4px;
     position:relative;
-    left:580px;
-    top:20px;
+    left:440px;
     width:80px;
 }
 
@@ -269,11 +268,11 @@ tbody{
 }
 
 #level2{
-    margin:5px 25px;
+    margin:5px 5px;
 }
 
 #option2{
-    margin:5px 25px;
+    margin:5px 5px;
 }
 
 table{
@@ -281,7 +280,7 @@ table{
 }
 
 .survey1b{
-    margin-bottom: 25px;
+    margin-bottom: 0px;
 }
 
 
