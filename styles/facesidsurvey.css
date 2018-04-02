@@ -63,13 +63,13 @@ main{
     line-height: 146px;
 }
 .model-box>header>p:first-child{
-    font-size: 22pt;
+    font-size: 14pt;
     font-weight: bold;
     font-family: Helvetica Neue;
     color: white;
 }
 .model-box>header>p:nth-child(2){
-    font-size: 20pt;
+    font-size: 12pt;
     font-family: Helvetica Neue;
     color: white;
 }
@@ -112,9 +112,9 @@ main{
 }
 
 
-*/ Added
+/* Added
 
-/*
+*/
 
 *{font-size: 14px;list-style: none;text-decoration: none;margin: 0;padding: 0;}
 .fl{
