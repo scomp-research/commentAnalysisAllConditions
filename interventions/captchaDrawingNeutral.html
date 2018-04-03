@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>face</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/captchaDrawing.css">
+</head>
+<body>
+<!--<a href="javascript:;" onclick="openmodel()">open</a>-->
+    <main id="main">
+        <div class="model-box">
+            <header>
+                <p class="title">Prove you're not a robot.</p>
+                <p class="text">Draw the image that you see on the left in the box on the right.</p>
+            </header>
+            <div class="canvas">
+                <div>
+                    <img src="img/drawing%20example-neutral%20face.png">
+                </div>
+                <div style="position: relative;">
+                    <canvas id="c1" width="316" height="306"></canvas>
+                    <div class="remove" onclick="clearImg()">
+                        <img src="img/eraser-active.png" id="isClearImg"/>
+                    </div>
+                </div>
+            </div>
+            <div class="verifybtn"><a href="javascript:;" onclick="validation()"><img src="img/button-submit.png"></a> </div>
+        </div>
+    </main>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/captchaDrawing.js"></script>
+</body>
+</html>
