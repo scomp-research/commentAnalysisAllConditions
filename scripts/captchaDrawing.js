@@ -30,9 +30,9 @@ function clearImg() {
 // submit canvas 
 function validation() {
     $('#c1').parent('div').append('<div style="width: 100%;height: 100%;background-color: #ddd;position: absolute;top: 0;left: 0;opacity: 0.4"></div>');
-    $('.verifybtn>a>img').attr('src', '../references/button-submitting.png');
+    $('.verifybtn>a>img').attr('src', '../resources/button-submitting.png');
     setTimeout(function () {
-        $('.verifybtn>a>img').attr('src', '../references/button-submitted.png');
+        $('.verifybtn>a>img').attr('src', '../resources/button-submitted.png');
     }, 1500);
     var caxvas = document.getElementById('c1');
     var imgBase = caxvas.toDataURL("image/png");
