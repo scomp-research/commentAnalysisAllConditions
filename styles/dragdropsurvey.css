@@ -144,33 +144,16 @@ table.border th {
 	margin: 0 auto; 
 }
 
-.survey1a {
-	float: left ;
-	width: 50% ;
-}
-.survey1b {
-	float: left ;
-	width: 100% ;
-	padding: 5px 15px
-}
-.survey2a {
-	float: left ;
-	width: 33% ;
-}
-.survey2b {
-	float: left ;
-	width: 33% ;
+
+
+/*main*/
+/*head*/
+    
+header{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
-.survey2c {
-	float: left ;
-    width: 33%
-}
-
-        
-/*---new changes--*/
-
-/*title*/
 .title{
     font-size: 1.1rem;
     font-weight: bold;
@@ -178,78 +161,25 @@ table.border th {
     color: white;
     margin: 1rem 1rem;
 }
-    
-header{
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+
+/*survey*/
+
+.singlequestionsurvey {
+	float: left ;
+	width: 100% ;
+	padding: 5px 15px
 }
-
-/*main*/
-#surveytable1{
-    display:flex;
-    flex-direction: column;
-}
-#question{
-    font-size: 0.9rem;
-    font-family: Helvetica Neue;
-    margin: 10rem;
-}
-
-tbody{
-    margin:1rem;
-}
-
-/*head*/
-
-#frequency{
-    display: flex;
-    flex-direction: row;
-}
-
-#frequency td{
-    width:60px;
-    font-size:0.9rem;
-    font-family: Helvetica Neue;
-    margin:10px 5px;
-	text-align: center;
-}
-
-.option{
-    display: flex;
-    flex-direction: row;
-}
-
-.option td{
-    width:60px;
-    font-size:0.9rem;
-    font-family: Helvetica Neue;
-    margin:10px 5px;
-    line-height: 1.3em;
-	text-align: center;
-    
-}
-
-.option .question{
-    width:140px;
-    margin:10px 5px;
-}
-
-#level2 td{
-	margin:5px 10px;
-	width: 90px;
-	text-align: center;
-
-}
-
-#option2 td{
+		
+.fourlevelscale td{
 	margin:5px 10px;
 	width: 90px;
 	text-align: center;
 }
 
-#frequency .question{
-    width:140px;
-    margin:10px 5px;
+.fourradioitems td{
+	margin:5px 10px;
+	width: 90px;
+	text-align: center;
 }
 
 /*button*/
