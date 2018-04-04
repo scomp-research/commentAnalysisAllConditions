@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/drawdropsurveynew.css">
+    <link rel="stylesheet" href="../styles/wordunscramblesurvey.css">
 </head>
 <body>
 <script src="../scripts/jquery-3.3.1.min.js"></script>
@@ -10,7 +10,7 @@
 <script>
 $(document).ready(function(){
 	$("#submit").click(function(){
-        $("#surveytable1").hide();
+        $("#surveytable2").hide();
         $("#submit").hide();
 	});
 }); 
@@ -32,49 +32,77 @@ $(document).ready(function(){
 					<p class="title">Please answer the following to help us better understand your comment:</p>
 					<p class="text"></p>
 				</header>
-				<table id = "surveytable1">
-					<!--<thead>
-						<tr id="question">
-							<th>How often are you:</th>
+				<div class="questions">
+				<table id = "surveytable2" class = "survey1b">
+					<thead>
+						<tr>
+							<th id="question1" colspan="4">1. Right now how <strong>compassionate</strong> do you feel?</th>
 						</tr>
-					</thead>-->
+					</thead>
+						<tr>
+							<td> </td>
+						</tr>
 					<tbody>
-						<tr id="frequency">
-							<td class="question"> </td>
-							<td>Almost never</td>
-							<td>Rarely</td>
-							<td>Less than half the time</td>
-							<td>Netural</td>
-							<td>More than half the time</td>
-							<td>Often</td>
-							<td>Almost always</td>
+						<tr class="level" id="level2">
+							<td>Not at all compassionate</td>
+							<td>Somewhat compassionate</td>
+							<td>Very compassionate</td>
+							<td>Extremely compassionate</td>
 						</tr>
-						<tr class="option">
-							<td class="question">Right now how <strong>compassionate</strong> do you feel?</td>
+
+						<tr class="option" id="option2">
+							<td><input type="radio" value="0" name="compassionate"/></td>
 							<td><input type="radio" value="1" name="compassionate"/></td>
 							<td><input type="radio" value="2" name="compassionate"/></td>
 							<td><input type="radio" value="3" name="compassionate"/></td>
-							<td><input type="radio" value="4" name="compassionate"/></td>
-
 						</tr>
-						<tr class="option">
-							<td class="question">How often are you <strong>analytical?</strong></td>
-							<td><input type="radio" value="1" name="analytical"/></td>
-							<td><input type="radio" value="2" name="analytical"/></td>
-							<td><input type="radio" value="3" name="analytical"/></td>
-							<td><input type="radio" value="4" name="analytical"/></td>
-
+					</tbody>
+				</table>		
+				<table id = "surveytable2" class = "survey1b">
+					<thead>
+						<tr>
+							<th id="question2" colspan="4">2. Right now how <strong>analytical</strong> do you feel?</th>			
 						</tr>
-						<tr class="option">
-							<td class="question">How often are you <strong>independent?</strong></td>
-							<td><input type="radio" value="1" name="independent"/></td>
-							<td><input type="radio" value="2" name="independent"/></td>
-							<td><input type="radio" value="3" name="independent"/></td>
-							<td><input type="radio" value="4" name="independent"/></td>
+					</thead>	
+					<tbody>
+						<tr class="level" id="level2">
+							<td>Not at all compassionate</td>
+							<td>Somewhat compassionate</td>
+							<td>Very compassionate</td>
+							<td>Extremely compassionate</td>
+						</tr>
 
+						<tr class="option" id="option2">
+							<td><input type="radio" value="0" name="compassionate"/></td>
+							<td><input type="radio" value="1" name="compassionate"/></td>
+							<td><input type="radio" value="2" name="compassionate"/></td>
+							<td><input type="radio" value="3" name="compassionate"/></td>
 						</tr>
 					</tbody>
 				</table>
+				<table id = "surveytable3" class = "survey1b">
+					<thead>
+						<tr>
+							<th id="question2" colspan="4">3. Right now how <strong>independent</strong> do you feel?</th>			
+						</tr>
+					</thead>	
+					<tbody>
+						<tr class="level" id="level2">
+							<td>Not at all independent</td>
+							<td>Somewhat independent</td>
+							<td>Very independent</td>
+							<td>Extremely independent</td>
+						</tr>
+
+						<tr class="option" id="option2">
+							<td><input type="radio" value="0" name="independent"/></td>
+							<td><input type="radio" value="1" name="independent"/></td>
+							<td><input type="radio" value="2" name="independent"/></td>
+							<td><input type="radio" value="3" name="independent"/></td>
+						</tr>
+					</tbody>
+				</table>
+
             	<button id = "submit">Submit</button>
 			</div>
 		</div>
