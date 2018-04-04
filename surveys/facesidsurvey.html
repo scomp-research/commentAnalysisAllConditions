@@ -3,123 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../styles/facesidsurvey.css">
+<link rel="stylesheet" href="../styles/faces_survey_style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
+<script>
+  function fireComplete() {
+    var form = document.getElementById("eye-form");
+    
+    var eyes1 = $('input[name=eyes1]:checked').val();
+    var eyes2 = $('input[name=eyes2]:checked').val();
+    var eyes3 = $('input[name=eyes3]:checked').val();
+    
+    if (eyes1 === undefined || eyes2 === undefined || eyes3 === undefined) {
+      alert("Please select an emotion for each face."); 
+    } else {
+      parent.endSurvey("faces", [{"eyes1":eyes1},{"eyes2":eyes2},{"eyes3":eyes3}]); 
+    }
+
+  }
+</script>
+  
 </head>
 <body>
-<script src="../scripts/jquery-3.3.1.min.js"></script>
-<script src="../scripts/openmodel.js"></script>
-<script>
-$(document).ready(function(){
-	$("#submit").click(function(){
-        $("#surveytable1").hide();
-        $("#surveytable2").hide();
-        $("#surveytable3").hide();
-        $("#submit").hide();
-	});
-}); 
-</script>
-<script>
-	$('input:radio').click(function() {
-	var eyes1 = $('input:radio[name=eyes1]:checked').val();
-	var eyes2 = $('input:radio[name=eyes2]:checked').val();
-	var eyes3 = $('input:radio[name=eyes3]:checked').val();
-	});
-</script>
-<a href="javascript:;" onclick="openmodel()">Open</a>
-    <main id="main">
-		<div id = "survey1" class = model-box>
-			<header>
-				<p class="title">Please answer the following to help us better understand your comment:</p>
-				<p class="subtitle"><br>For each of these faces, please choose which emotion the person is displaying:
-				<p class="text"></p>
-			</header>
-				<table id = "surveytable1" class = "survey1a">
-					<thead>
-						<tr>
-							<th> </th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td colspan="2"><img src = "../resources/eyes1.png" alt="first picture of eyes" style="width:170px;height:67px;"></td>
-						</tr>
-						<tr>
-							<td><input type="radio" value="3" name="eyes1"/></td>
-							<td>Terrified</td>
-						</tr>
-						<tr>
-							<td><input type="radio" value="1" name="eyes1"/></td>
-							<td>Upset</td>
-						</tr>
-						<tr>
-							<td><input type="radio" value="4" name="eyes1"/></td>
-							<td>Arrogant</td>
-						</tr>
-						<tr>
-							<td><input type="radio" value="2" name="eyes1"/></td>
-							<td>Annoyed</td>
-						</tr>
-					</tbody>
-				</table>
-				<table id = "surveytable2" class = "survey1b">
-					<thead>
-						<tr>
-							<th> </th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td colspan="2"><img src = "../resources/eyes2.png" alt="second picture of eyes" style="width:170px;height:67px;"></td>
-						</tr>
-						<tr>
-							
-							<td><input type="radio" value="4" name="eyes2"/></td>
-							<td>Joking</td>
-						</tr>
-						<tr>
-							<td><input type="radio" value="1" name="eyes2"/></td>
-							<td>Insisting</td>
-						</tr>
-						<tr>
-							<td><input type="radio" value="3" name="eyes2"/></td>
-							<td>Amused</td>
-						</tr>
-						<tr>
-							<td><input type="radio" value="2" name="eyes2"/></td>
-							<td>Relaxed</td>
-						</tr>
-					</tbody>
-				</table>
-				<table id = "surveytable3" class = "survey1a">
-					<thead>
-						<tr>
-							<th> </th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td colspan="2"><img src = "../resources/eyes3.png" alt="third picture of eyes" style="width:170px;height:67px;"></td>
-						</tr>
-						<tr>
-							<td><input type="radio" value="1" name="eyes3"/></td>
-							<td>Pensive</td>
-						</tr>
-						<tr>
-							<td><input type="radio" value="2" name="eyes3"/></td>
-							<td>Irritated</td>
-						</tr>
-						<tr>
-							<td><input type="radio" value="4" name="eyes3"/></td>
-							<td>Excited</td>
-						</tr>
-						<tr>
-							<td><input type="radio" value="3" name="eyes3"/></td>
-							<td>Hostile</td>
-						</tr>
-					</tbody>
-				</table>
-			<button id = "submit">Submit</button>
-		</div>
-    </main>
+  
+<div id="header">
+  <div id="headerText1">Please answer the following to help us better understand your comment.</div>
+  <div id="headerText2">For each of these faces, please choose which emotion the person is displaying.</div>
+</div>
+<form id="eye-form">
+  <div class="image-box">
+    <img class="eye-image" id="eyes1" src= "../resources/eyes1.png" alt="first picture of eyes"/>
+    <br> 
+    <input class="surveyRadioButton" type="radio" name="eyes1" value="terrified"> Terrified<br>
+    <input class="surveyRadioButton" type="radio" name="eyes1" value="upset"> Upset<br>
+    <input class="surveyRadioButton" type="radio" name="eyes1" value="arrogant"> Arrogant <br> 
+    <input class="surveyRadioButton" type="radio" name="eyes1" value="annoyed"> Annoyed <br>
+  </div>
+  <div class="image-box">
+    <img class="eye-image" id="eyes2" src= "../resources/eyes2.png" alt="second picture of eyes"/>
+    <br> 
+    <input class="surveyRadioButton" type="radio" name="eyes2" value="joking"> Joking<br>
+    <input class="surveyRadioButton" type="radio" name="eyes2" value="insisting"> Insisting <br> 
+    <input class="surveyRadioButton" type="radio" name="eyes2" value="amused"> Amused <br>
+    <input class="surveyRadioButton" type="radio" name="eyes2" value="relaxed"> Relaxed<br>
+  </div>
+  
+  <div class="image-box">
+      <img class="eye-image" id="eyes3" src= "../resources/eyes3.png" alt="second picture of eyes"/>
+    <br> 
+    <input class="surveyRadioButton" type="radio" name="eyes3" value="pensive"> Pensive<br>
+    <input class="surveyRadioButton" type="radio" name="eyes3" value="irritated"> Irritated<br>
+    <input class="surveyRadioButton" type="radio" name="eyes3" value="excited"> Excited<br> 
+    <input class="surveyRadioButton" type="radio" name="eyes3" value="hostile"> Hostile <br>
+  </div>
+</form>
+<button id="submit-button" onclick="fireComplete()">Submit</button>
 </body>
 </html>

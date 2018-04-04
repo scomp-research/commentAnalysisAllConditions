@@ -17,8 +17,10 @@ var currentReplyNum = 1;
 
 var interventionTask = true; 
 var interventionComplete = false; 
+var selectedIntervention = "faces";
 var surveyTask = true; 
 var surveyComplete = false; 
+
 
 localStorage.setItem("commentComplete", "not_complete");
 
@@ -283,13 +285,25 @@ function checkForIntervention(){
 function startIntervention() {
   document.getElementById("overlay").style.display = "block"; 
   document.getElementById("intervention").style.display = "block";
-  postToSheet("Begin-Intervention", "N/A", "InterventionName");
+  postToSheet("Begin-Intervention", "N/A", selectedIntervention);
 }
 
 function endIntervention(intervention) {
-  parent.document.getElementById("intervention").style.display = "none"; 
-  parent.document.getElementById("overlay").style.display = "none"; 
-  postToSheet("End-Intervention", "N/A", "InterventionName");
+  postToSheet("End-Intervention", "N/A", intervention);
+  if (surveyTask) {
+    var intervention = parent.document.getElementById("intervention");
+    intervention.src = "../surveys/facesidsurvey.html"; 
+  } else {
+    parent.document.getElementById("intervention").style.display = "none"; 
+    parent.document.getElementById("overlay").style.display = "none"; 
+  }
+}
+
+window.endSurvey = function(intervention, value) {
+  console.log("Ending Survey");
+  surveyComplete = true;
+  postToSheet("end-survey", intervention, JSON.stringify(value)); 
+  window.location.replace('../pages/post-exercise.html');
 }
 
 window.validateIntervention = function(intervention) {
