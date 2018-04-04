@@ -33,7 +33,7 @@ $(document).ready(function(){
 					<p class="text"></p>
 				</header>
 				<div class="questions">
-				<table id = "surveytable2" class = "survey1b">
+				<table id = "surveytable1" class = "singlequestionsurvey">
 					<thead>
 						<tr>
 							<th id="question1" colspan="4">1. Right now how <strong>compassionate</strong> do you feel?</th>
@@ -43,14 +43,14 @@ $(document).ready(function(){
 							<td> </td>
 						</tr>
 					<tbody>
-						<tr class="level" id="level2">
+						<tr id="scale1" class="fourlevelscale">
 							<td>Not at all compassionate</td>
 							<td>Somewhat compassionate</td>
 							<td>Very compassionate</td>
 							<td>Extremely compassionate</td>
 						</tr>
 
-						<tr class="option" id="option2">
+						<tr id="options1" class="fourradioitems">
 							<td><input type="radio" value="0" name="compassionate"/></td>
 							<td><input type="radio" value="1" name="compassionate"/></td>
 							<td><input type="radio" value="2" name="compassionate"/></td>
@@ -58,21 +58,21 @@ $(document).ready(function(){
 						</tr>
 					</tbody>
 				</table>		
-				<table id = "surveytable2" class = "survey1b">
+				<table id = "surveytable2" class = "singlequestionsurvey">
 					<thead>
 						<tr>
 							<th id="question2" colspan="4">2. Right now how <strong>analytical</strong> do you feel?</th>			
 						</tr>
 					</thead>	
 					<tbody>
-						<tr class="level" id="level2">
+						<tr id="scale2" class="fourlevelscale">
 							<td>Not at all compassionate</td>
 							<td>Somewhat compassionate</td>
 							<td>Very compassionate</td>
 							<td>Extremely compassionate</td>
 						</tr>
 
-						<tr class="option" id="option2">
+						<tr id="options2" class="fourradioitems">
 							<td><input type="radio" value="0" name="compassionate"/></td>
 							<td><input type="radio" value="1" name="compassionate"/></td>
 							<td><input type="radio" value="2" name="compassionate"/></td>
@@ -80,21 +80,21 @@ $(document).ready(function(){
 						</tr>
 					</tbody>
 				</table>
-				<table id = "surveytable3" class = "survey1b">
+				<table id = "surveytable3" class = "singlequestionsurvey">
 					<thead>
 						<tr>
 							<th id="question2" colspan="4">3. Right now how <strong>independent</strong> do you feel?</th>			
 						</tr>
 					</thead>	
 					<tbody>
-						<tr class="level" id="level2">
+						<tr id="scale3" class="fourlevelscale">
 							<td>Not at all independent</td>
 							<td>Somewhat independent</td>
 							<td>Very independent</td>
 							<td>Extremely independent</td>
 						</tr>
 
-						<tr class="option" id="option2">
+						<tr id="options3" class="fourradioitems">
 							<td><input type="radio" value="0" name="independent"/></td>
 							<td><input type="radio" value="1" name="independent"/></td>
 							<td><input type="radio" value="2" name="independent"/></td>
@@ -103,7 +103,7 @@ $(document).ready(function(){
 					</tbody>
 				</table>
 
-            	<button id = "submit">Submit</button>
+            		<button id = "submit">Submit</button>
 			</div>
 		</div>
     </main>
