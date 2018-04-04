@@ -35,85 +35,82 @@ $(document).ready(function(){
             
             
         <div class="questions">
-	<table id = "surveytable1" class = "survey1b">
-		<thead>
-			<tr>
-			<th id="question1" colspan="5">1. Right now I feel _______ .</th>
-			</tr>
-		</thead>
-			<tr>
-				<td> </td>
-			</tr>
-		<tbody>
-			<tr class="level" id="level1">
-				<td>Very unpleasant</td>
-				<td>Unpleasant</td>
-				<td>Mildly unpleasant</td>
-				<td>Neutral</td>
-				<td>Mildly pleasant</td>
-				<td>Pleasant</td>
-				<td>Very pleasant</td>
-			</tr>
+		<table id = "surveytable1" class = "singlequestionsurvey">
+			<thead>
+				<tr>
+					<th id="question1" class = "singlequestionheader" colspan="4">1. Right now I feel _______ .</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="scale1" class="sevenlevelscale" >
+					<td>Very unpleasant</td>
+					<td>Unpleasant</td>
+					<td>Mildly unpleasant</td>
+					<td>Neutral</td>
+					<td>Mildly pleasant</td>
+					<td>Pleasant</td>
+					<td>Very pleasant</td>
+				</tr>
 
-			<tr class="option" id="option1">
-				<td><input type="radio" value="-3" name="feeling"/></td>
-				<td><input type="radio" value="-2" name="feeling"/></td>
-				<td><input type="radio" value="-1" name="feeling"/></td>
-				<td><input type="radio" value="0" name="feeling"/></td>
-				<td><input type="radio" value="1" name="feeling"/></td>
-				<td><input type="radio" value="2" name="feeling"/></td>
-				<td><input type="radio" value="3" name="feeling"/></td>
-			</tr>
-		</tbody>
-	</table>		
-	<table id = "surveytable2" class = "survey1b">
-		<thead>
-			<tr>
-				<th id="question2" colspan="4">2. Right now I feel _______ .</th>			
-			</tr>
-		</thead>	
-		<tbody>
-			<tr class="level" id="level2">
-				<td>Not at all calm</td>
-				<td>Somewhat calm</td>
-				<td>Very calm</td>
-				<td>Extremely calm</td>
-			</tr>
-				    
-			<tr class="option" id="option2">
-				<td><input type="radio" value="0" name="calm"/></td>
-				<td><input type="radio" value="1" name="calm"/></td>
-				<td><input type="radio" value="2" name="calm"/></td>
-				<td><input type="radio" value="3" name="calm"/></td>
-			</tr>
-				    
-		</tbody>
-	</table>
-        <table id = "surveytable3" class = "survey1b">
-		<thead>
-			<tr>
-				<th id="question2" colspan="4">3. Right now I feel _______ .</th>			
-			</tr>
-		</thead>	
-		<tbody>
-			<tr class="level" id="level2">
-				<td>Not at all fed up</td>
-				<td>Somewhat fed up</td>
-				<td>Very fed up</td>
-				<td>Extremely fed up</td>
-			</tr>	    
-			<tr class="option" id="option2">
-				<td><input type="radio" value="0" name="fedup"/></td>
-				<td><input type="radio" value="1" name="fedup"/></td>
-				<td><input type="radio" value="2" name="fedup"/></td>
-				<td><input type="radio" value="3" name="fedup"/></td>
-			</tr>    
-		</tbody>
-	</table>
-        <button id = "submit">Submit</button>
-</div>
-</div>
-</div>
+				<tr id="options1" class="sevenradioitems">
+					<td><input type="radio" value="-3" name="feeling"/></td>
+					<td><input type="radio" value="-2" name="feeling"/></td>
+					<td><input type="radio" value="-1" name="feeling"/></td>
+					<td><input type="radio" value="0" name="feeling"/></td>
+					<td><input type="radio" value="1" name="feeling"/></td>
+					<td><input type="radio" value="2" name="feeling"/></td>
+					<td><input type="radio" value="3" name="feeling"/></td>
+				</tr>
+			</tbody>
+		</table>		
+		<table id = "surveytable2" class = "singlequestionsurvey">
+			<thead>
+				<tr>
+					<th id="question2" class = "singlequestionheader" colspan="4">2. Right now I feel _______ .</th>			
+				</tr>
+			</thead>	
+			<tbody>
+				<tr id="scale2" class="fourlevelscale">
+					<td>Not at all calm</td>
+					<td>Somewhat calm</td>
+					<td>Very calm</td>
+					<td>Extremely calm</td>
+				</tr>
+
+				<tr class="options2" id="fourradioitems">
+					<td><input type="radio" value="0" name="calm"/></td>
+					<td><input type="radio" value="1" name="calm"/></td>
+					<td><input type="radio" value="2" name="calm"/></td>
+					<td><input type="radio" value="3" name="calm"/></td>
+				</tr>
+
+			</tbody>
+		</table>
+		<table id = "surveytable3" class = "singlequestionsurvey">
+			<thead>
+				<tr>
+					<th id="question3" class = "singlequestionheader" colspan="4">3. Right now I feel _______ .</th>			
+				</tr>
+			</thead>	
+			<tbody>
+				<tr id="scale3" class="fourlevelscale">
+					<td>Not at all fed up</td>
+					<td>Somewhat fed up</td>
+					<td>Very fed up</td>
+					<td>Extremely fed up</td>
+				</tr>	    
+				<tr class="options3" id="fourradioitems">
+					<td><input type="radio" value="0" name="fedup"/></td>
+					<td><input type="radio" value="1" name="fedup"/></td>
+					<td><input type="radio" value="2" name="fedup"/></td>
+					<td><input type="radio" value="3" name="fedup"/></td>
+				</tr>    
+			</tbody>
+		</table>
+        	<button id = "submit">Submit</button>
+	</div>
+	</div>
+	</div>
 </main>
 
 </body>
