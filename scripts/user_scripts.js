@@ -18,7 +18,7 @@ function makeUserID () {
   return text;
 }
 
-var surveyRound = 1; 
+var surveyRound = 2; 
 
 function postToSheet(act, elemID, val) {
   
