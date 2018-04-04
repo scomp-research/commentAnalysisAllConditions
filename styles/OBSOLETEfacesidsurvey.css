@@ -201,3 +201,45 @@ table.border th {
     width:80px;
 }
 
+.eye-image {
+  width: 170px; 
+  height: 67px; 
+}
+
+.surveyRadioButton {
+  clear: left; 
+}
+
+.image-box {
+  padding: 10px; 
+  float: left; 
+}
+
+#header { 
+  padding: 10px; 
+  background-color: #2A60D1;
+  color: white; 
+  font-family: Roboto;
+}
+
+#headerText1 {
+  font-weight: bold; 
+  font-size: 18px;
+}
+
+#headerText2 {
+  padding-top: 10px;
+  font-size: 14px; 
+}
+
+#submit-button {
+  position: absolute; 
+  right: 20px;
+  bottom: 20px;
+  clear: left;
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #2A60D1;
+  color: white;
+}
