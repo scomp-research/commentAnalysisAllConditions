@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/drawandfacesidsurvey.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  
+<script>
+  function fireComplete() {
+    var form = document.getElementById("eye-form");
+    
+    var val1 = $('input[name=feeling]:checked').val();
+    var val2 = $('input[name=calm]:checked').val();
+    var val3 = $('input[name=fedup]:checked').val();
+    
+    if (val1 === undefined || val2 === undefined || val3 === undefined) {
+      alert("Please select a value for each question."); 
+    } else {
+      parent.endSurvey("faces", [{"feeling":val1},{"calm":val2},{"fedup":val3}]); 
+    }
+  }
+</script>
+  
 </head>
 <body>
 <script src="../scripts/jquery-3.3.1.min.js"></script>
 <script src="../scripts/openmodel.js"></script>
 <script>
 $(document).ready(function(){
-	$("#submit").click(function(){
-        $("#surveytable1").hide();
-    	$("#surveytable2").hide();
-	$("#surveytable3").hide();
-        $("#submit").hide();
-	});
+  openmodel(); 
 }); 
 </script>
 <script>
@@ -24,7 +37,6 @@ $(document).ready(function(){
 	var fedup = $('input:radio[name=fedup]:checked').val();
 	});
 </script>
-<a href="javascript:;" onclick="openmodel()">Open</a>
     <main id="main">
     	<div class = "container">
 	<div id = "survey1" class="model-box">		
@@ -107,7 +119,7 @@ $(document).ready(function(){
 				</tr>    
 			</tbody>
 		</table>
-        	<button id = "submit">Submit</button>
+        	<button id = "submit" onclick="fireComplete()">Submit</button>
 	</div>
 	</div>
 	</div>

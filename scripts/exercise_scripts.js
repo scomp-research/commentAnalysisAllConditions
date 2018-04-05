@@ -17,10 +17,14 @@ var currentReplyNum = 1;
 
 var interventionTask = true; 
 var interventionComplete = false; 
-var selectedIntervention = "faces";
+
 var surveyTask = true; 
 var surveyComplete = false; 
 
+var surveyTask2 = true; 
+var survey2Complete = false; 
+
+var selectedIntervention = "faces";
 
 localStorage.setItem("commentComplete", "not_complete");
 
@@ -277,22 +281,44 @@ function isIllegalString(input) {
 }
 
 function checkForIntervention(){
+  // Just Survey
+  if (surveyTask && !interventionTask) {
+    startSurvey(); 
+  } else if (interventionTask) {
+    startIntervention(); 
+  } else {
+    console.log("No Task supplied"); 
+  }
+  
   if (interventionTask && !interventionComplete) {
     startIntervention(); 
   }
 }
 
 function startIntervention() {
+  document.getElementById("intervention").src="../interventions/facesIntervention.html";
   document.getElementById("overlay").style.display = "block"; 
   document.getElementById("intervention").style.display = "block";
-  postToSheet("Begin-Intervention", "N/A", selectedIntervention);
+  postToSheet("begin-intervention", "N/A", selectedIntervention);
+}
+
+function startSurvey() {
+  var intervention = parent.document.getElementById("intervention");
+  // Update survey contents...
+  intervention.src = "../surveys/facesidsurvey.html"; 
+  
+  var overlay = document.getElementById("overlay");
+  // Show overlay
+  overlay.style.display = "block"; 
+  intervention.style.display = "block";
+  
+  postToSheet("begin-survey", "N/A", selectedIntervention);
 }
 
 function endIntervention(intervention) {
-  postToSheet("End-Intervention", "N/A", intervention);
+  postToSheet("end-intervention", "N/A", intervention);
   if (surveyTask) {
-    var intervention = parent.document.getElementById("intervention");
-    intervention.src = "../surveys/facesidsurvey.html"; 
+    startSurvey(); 
   } else {
     parent.document.getElementById("intervention").style.display = "none"; 
     parent.document.getElementById("overlay").style.display = "none"; 
@@ -301,9 +327,25 @@ function endIntervention(intervention) {
 
 window.endSurvey = function(intervention, value) {
   console.log("Ending Survey");
-  surveyComplete = true;
-  postToSheet("end-survey", intervention, JSON.stringify(value)); 
-  window.location.replace('../pages/post-exercise.html');
+  if (!surveyComplete) {
+    surveyComplete = true;
+    postToSheet("end-survey1", intervention, JSON.stringify(value)); 
+  } else {
+    survey2Complete = true;
+    postToSheet("end-survey2", intervention, JSON.stringify(value)); 
+  }
+
+  if (surveyTask2 && !survey2Complete) {
+    // Swap to task 2; 
+    var intervention = parent.document.getElementById("intervention"); 
+    intervention.style.width = "580px";
+    intervention.style.height = "500px";
+    intervention.src = "../surveys/drawandfacesidsurvey.html";
+  } else {
+    // End task
+    window.location.replace('../pages/post-exercise.html');
+  }
+  
 }
 
 window.validateIntervention = function(intervention) {
