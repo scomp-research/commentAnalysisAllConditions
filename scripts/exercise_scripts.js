@@ -44,7 +44,6 @@ function chooseIntervention() {
   }
   var interventionOptions = ["faces-positive", "faces-neutral", "faces-survey-only"];
   selectedIntervention = interventionOptions[Math.floor(val*interventionOptions.length)];
-  console.log(selectedIntervention); 
   postToSheet("Chose intervention", "N/A", selectedIntervention); 
 }
 
@@ -53,10 +52,19 @@ function setupIntervention() {
   
   if (selectedIntervention === "faces-positive") {
     intervention.src = "../interventions/facesInterventionpositive.html";
+    interventionTask = true; 
+    surveyTask = true; 
+    surveyTask2 = true; 
   } else if (selectedIntervention === "faces-neutral") {
     intervention.src = "../interventions/facesInterventionneutral.html";
+    interventionTask = true; 
+    surveyTask = true; 
+    surveyTask2 = true; 
   } else if (selectedIntervention === "faces-survey-only") {
     intervention.src = "../surveys/facesidsurvey.html";
+    interventionTask = false; 
+    surveyTask = true; 
+    surveyTask2 = true; 
   }
 }
 
@@ -357,7 +365,6 @@ function endIntervention(intervention) {
 }
 
 window.endSurvey = function(intervention, value) {
-  console.log("Ending Survey");
   if (!surveyComplete) {
     surveyComplete = true;
     postToSheet("end-survey1", intervention, JSON.stringify(value)); 
