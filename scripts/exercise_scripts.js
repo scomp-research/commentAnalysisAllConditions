@@ -49,7 +49,6 @@ function chooseIntervention() {
 
 function setupIntervention() {
   var intervention = document.getElementById("intervention"); 
-  
   if (selectedIntervention === "faces-positive") {
     intervention.src = "../interventions/facesInterventionpositive.html";
     interventionTask = true; 
