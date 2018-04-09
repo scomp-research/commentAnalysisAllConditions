@@ -29,26 +29,13 @@ function postToSheet(act, elemID, val) {
     elem: elemID,
     value: val
   }
-  
-  var url = 'https://script.google.com/macros/s/AKfycbyUnuAXgDhKsDJ4sVeRpbWChn1EAAo15qse7rTeKkIW5Xs0bfgE/exec'
-  
-  var urlRound2 = 'https://script.google.com/macros/s/AKfycby3dLK8cMJglS-NdDt8TketPKasr94sL8xlNAgqwwACDuwF1ys/exec'
-  
-  if (surveyRound === 1) {
+
   var response = $.ajax(
     {
-      url: url, 
+      url: "https://script.google.com/macros/s/AKfycbyaSKc9UdNrRG3o_42ZFq4-Ys3Ges3nzWI0DtTjUkNZeDCLG40R/exec", 
       method: "GET",
       dataType: "json",
       data: obj,
     }).success();
-  } else if (surveyRound === 2) {
-    var response = $.ajax(
-      {
-        url: urlRound2, 
-        method: "GET",
-        dataType: "json",
-        data: obj,
-      }).success();
-  }
+  
 }

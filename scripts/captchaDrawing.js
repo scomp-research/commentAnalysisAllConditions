@@ -1,11 +1,16 @@
 var oc= document.getElementById('c1');
 var ogc=oc.getContext('2d');
 window.onload= function(){
-    var left = $('#c1').offset().left;
-    var top = $('#c1').offset().top;
     ogc.lineWidth = 2;
     oc.onmousedown = function(ev){
+      var left = $('#c1').offset().left;
+      var top = $('#c1').offset().top;
+      console.log("Down");
         var ev = ev || window.event;
+        console.log(ev.pageX); 
+        console.log(ev.pageY); 
+        console.log(left);
+        console.log(top); 
             ogc.moveTo(ev.pageX - left ,ev.pageY - top);
             document.onmousemove = function(ev){
                 var ev = ev || window.event;
@@ -36,6 +41,6 @@ function validation() {
     }, 1500);
     var caxvas = document.getElementById('c1');
     var imgBase = caxvas.toDataURL("image/png");
-    console.log(imgBase)
+    parent.validateIntervention("drawing", imgBase); 
     return imgBase; // imgBase = 64base string for the png
 }

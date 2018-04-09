@@ -15,6 +15,7 @@ var STANDARD_USER = "0444";
 var currentCommentNum = 5; 
 var currentReplyNum = 1; 
 
+// Change the variables below to set your task. 
 var interventionTask = true; 
 var interventionComplete = false; 
 
@@ -24,7 +25,13 @@ var surveyComplete = false;
 var surveyTask2 = true; 
 var survey2Complete = false; 
 
-var selectedIntervention = "faces";
+var selectedIntervention = "drawing"; // The selected intervention will update in the "chooseIntervention" function. 
+var INTERVENTION_WIDTH = "800px";
+var INTERVAENTION_HEIGHT = "580px"; 
+
+var SURVEY_FILE_LOCATION = "../surveys/drawandfacesidsurvey.html";
+var SURVEY_WIDTH = "580px";
+var SURVEY_HEIGHT = "500px"; 
 
 localStorage.setItem("commentComplete", "not_complete");
 
@@ -42,29 +49,31 @@ function chooseIntervention() {
   if (val === 1) {
     val = Math.random(); 
   }
-  var interventionOptions = ["faces-positive", "faces-neutral", "faces-survey-only"];
+  var interventionOptions = ["drawing-positive", "drawing-neutral", "drawing-survey-only"];
   selectedIntervention = interventionOptions[Math.floor(val*interventionOptions.length)];
   postToSheet("Chose intervention", "N/A", selectedIntervention); 
 }
 
 function setupIntervention() {
   var intervention = document.getElementById("intervention"); 
-  if (selectedIntervention === "faces-positive") {
-    intervention.src = "../interventions/facesInterventionpositive.html";
+  if (selectedIntervention === "drawing-positive") {
+    intervention.src = "../interventions/captchaDrawingPositive.html";
     interventionTask = true; 
     surveyTask = true; 
-    surveyTask2 = true; 
-  } else if (selectedIntervention === "faces-neutral") {
-    intervention.src = "../interventions/facesInterventionneutral.html";
+    surveyTask2 = false; 
+  } else if (selectedIntervention === "drawing-neutral") {
+    intervention.src = "../interventions/captchaDrawingNeutral.html";
     interventionTask = true; 
     surveyTask = true; 
-    surveyTask2 = true; 
-  } else if (selectedIntervention === "faces-survey-only") {
-    intervention.src = "../surveys/facesidsurvey.html";
+    surveyTask2 = false; 
+  } else if (selectedIntervention === "drawing-survey-only") {
+    intervention.src = "../surveys/drawandfacesidsurvey.html";
     interventionTask = false; 
     surveyTask = true; 
-    surveyTask2 = true; 
+    surveyTask2 = false; 
   }
+  intervention.style.width = INTERVENTION_WIDTH; 
+  intervention.style.height = INTERVAENTION_HEIGHT; 
 }
 
 function cleanResource(resource) {
@@ -343,7 +352,9 @@ function startIntervention() {
 function startSurvey() {
   var intervention = parent.document.getElementById("intervention");
   // Update survey contents...
-  intervention.src = "../surveys/facesidsurvey.html"; 
+  intervention.src = SURVEY_FILE_LOCATION; 
+  intervention.style.width = SURVEY_WIDTH;
+  intervention.style.height = SURVEY_HEIGHT; 
   
   var overlay = document.getElementById("overlay");
   // Show overlay
@@ -366,23 +377,9 @@ function endIntervention(intervention) {
 window.endSurvey = function(intervention, value) {
   if (!surveyComplete) {
     surveyComplete = true;
-    postToSheet("end-survey1", intervention, JSON.stringify(value)); 
-  } else {
-    survey2Complete = true;
-    postToSheet("end-survey2", intervention, JSON.stringify(value)); 
-  }
-
-  if (surveyTask2 && !survey2Complete) {
-    // Swap to task 2; 
-    var intervention = parent.document.getElementById("intervention"); 
-    intervention.style.width = "580px";
-    intervention.style.height = "500px";
-    intervention.src = "../surveys/drawandfacesidsurvey.html";
-  } else {
-    // End task
+    postToSheet("end-survey1", intervention, JSON.stringify(value));
     window.location.replace('../pages/post-exercise.html');
-  }
-  
+  } 
 }
 
 window.validateIntervention = function(intervention, value) {
