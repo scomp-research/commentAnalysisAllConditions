@@ -376,11 +376,9 @@ function endIntervention(intervention) {
 }
 
 window.endSurvey = function(intervention, value) {
-  if (!surveyComplete) {
-    surveyComplete = true;
-    postToSheet("end-survey1", intervention, JSON.stringify(value));
-    window.location.replace('../pages/post-exercise.html');
-  } 
+  surveyComplete = true;
+  postToSheet("end-survey", intervention, JSON.stringify(value));
+  window.location.replace('../pages/post-exercise.html');
 }
 
 window.validateIntervention = function(intervention, value) {
