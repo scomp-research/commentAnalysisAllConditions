@@ -18,24 +18,38 @@ function makeUserID () {
   return text;
 }
 
-var surveyRound = 2; 
-
 function postToSheet(act, elemID, val) {
-  
-  var obj = {
-    timestamp: new Date().getTime(),
-    user_id: getUserID(),
-    action: act,
-    elem: elemID,
-    value: val
-  }
 
-  var response = $.ajax(
+  elements = String(val).match(/.{1,5000}/g);
+  if (elements.length == 1) {
+    var obj = {
+      timestamp: new Date().getTime(),
+      user_id: getUserID(),
+      action: act,
+      elem: elemID,
+      value: elements[0]
+    }
+    sendObj(obj);
+  } else {
+    for (var i=0; i<elements.length; i++) {
+      var obj = {
+        timestamp: new Date().getTime(),
+        user_id: getUserID(),
+        action: act,
+        elem: elemID,
+        value: "Elem-Piece<"+i+">: "+elements[i]
+      }
+      sendObj(obj);
+    }
+  }
+}
+
+function sendObj(obj) {
+    var response = $.ajax(
     {
       url: "https://script.google.com/macros/s/AKfycbyaSKc9UdNrRG3o_42ZFq4-Ys3Ges3nzWI0DtTjUkNZeDCLG40R/exec", 
       method: "GET",
       dataType: "json",
       data: obj,
     }).success();
-  
 }
