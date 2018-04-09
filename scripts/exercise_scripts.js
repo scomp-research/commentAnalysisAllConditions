@@ -25,7 +25,7 @@ var surveyComplete = false;
 var surveyTask2 = true; 
 var survey2Complete = false; 
 
-var selectedIntervention = "drawing"; // The selected intervention will update in the "chooseIntervention" function. 
+var selectedIntervention = "drawing-neutral"; // The selected intervention will update in the "chooseIntervention" function. 
 var INTERVENTION_WIDTH = "800px";
 var INTERVAENTION_HEIGHT = "580px"; 
 
@@ -45,12 +45,13 @@ function initializePage() {
 }
 
 function chooseIntervention() {
-  val = Math.random(); 
-  if (val === 1) {
-    val = Math.random(); 
-  }
-  var interventionOptions = ["drawing-positive", "drawing-neutral", "drawing-survey-only"];
-  selectedIntervention = interventionOptions[Math.floor(val*interventionOptions.length)];
+//  val = Math.random(); 
+//  if (val === 1) {
+//    val = Math.random(); 
+//  }
+//  var interventionOptions = ["drawing-positive", "drawing-neutral", "drawing-survey-only"];
+//  selectedIntervention = interventionOptions[Math.floor(val*interventionOptions.length)];
+  selectedIntervention = "drawing-neutral"
   postToSheet("Chose intervention", "N/A", selectedIntervention); 
 }
 
