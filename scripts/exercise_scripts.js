@@ -381,11 +381,18 @@ window.endSurvey = function(intervention, value) {
   console.log(intervention); 
   console.log(value); 
   postToSheet("end-survey", intervention, JSON.stringify(value));
-  window.location.replace('../pages/post-exercise.html');
+  
+  setTimeout(function() {
+    window.location.replace('../pages/post-exercise.html');
+  }, 50);
+  
 }
 
 window.validateIntervention = function(intervention, value) {
-  postToSheet("validate-intervention", "N/A", JSON.stringify(value));  
-  interventionComplete = true;
-  endIntervention(intervention); 
+  postToSheet("validate-intervention", "N/A", JSON.stringify(value));
+  
+  setTimeout(function () {
+    interventionComplete = true;
+    endIntervention(intervention); 
+  }, 50); 
 }
