@@ -47,7 +47,7 @@ function postToSheet(act, elemID, val) {
 function sendObj(obj) {
     var response = $.ajax(
     {
-      url: "https://script.google.com/macros/s/AKfycbyaSKc9UdNrRG3o_42ZFq4-Ys3Ges3nzWI0DtTjUkNZeDCLG40R/exec", 
+      url: "https://script.google.com/macros/s/AKfycbz0cXj4A-itrmt1FpUbzkGgttzTHDZL8vsf9SpE69RZgNCdiptu/exec", 
       method: "GET",
       dataType: "json",
       data: obj,

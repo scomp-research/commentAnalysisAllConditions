@@ -25,13 +25,14 @@ var surveyComplete = false;
 var surveyTask2 = true; 
 var survey2Complete = false; 
 
-var selectedIntervention = "drawing-neutral"; // The selected intervention will update in the "chooseIntervention" function. 
-var INTERVENTION_WIDTH = "800px";
-var INTERVAENTION_HEIGHT = "580px"; 
+var selectedIntervention = "dragging-neutral"; // The selected intervention will update in the "chooseIntervention" function. 
+var INTERVENTION_WIDTH = "500px";
+var INTERVAENTION_HEIGHT = "560px"; 
 
-var SURVEY_FILE_LOCATION = "../surveys/drawandfacesidsurvey.html";
+
+var SURVEY_FILE_LOCATION = "../surveys/dragdropsurvey.html";
 var SURVEY_WIDTH = "580px";
-var SURVEY_HEIGHT = "500px"; 
+var SURVEY_HEIGHT = "450px"; 
 
 localStorage.setItem("commentComplete", "not_complete");
 
@@ -51,7 +52,7 @@ function chooseIntervention() {
 //  }
 //  var interventionOptions = ["drawing-positive", "drawing-neutral", "drawing-survey-only"];
 //  selectedIntervention = interventionOptions[Math.floor(val*interventionOptions.length)];
-  selectedIntervention = "drawing-neutral"
+  selectedIntervention = "dragging-neutral"
   postToSheet("Chose intervention", "N/A", selectedIntervention); 
 }
 
@@ -62,8 +63,8 @@ function setupIntervention() {
     interventionTask = true; 
     surveyTask = true; 
     surveyTask2 = false; 
-  } else if (selectedIntervention === "drawing-neutral") {
-    intervention.src = "../interventions/captchaDrawingNeutral.html";
+  } else if (selectedIntervention === "dragging-neutral") {
+    intervention.src = "../interventions/neutraldragdrop.html";
     interventionTask = true; 
     surveyTask = true; 
     surveyTask2 = false; 
@@ -377,6 +378,8 @@ function endIntervention(intervention) {
 
 window.endSurvey = function(intervention, value) {
   surveyComplete = true;
+  console.log(intervention); 
+  console.log(value); 
   postToSheet("end-survey", intervention, JSON.stringify(value));
   window.location.replace('../pages/post-exercise.html');
 }
