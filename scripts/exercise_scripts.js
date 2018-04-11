@@ -25,7 +25,7 @@ var surveyComplete = false;
 var surveyTask2 = true; 
 var survey2Complete = false; 
 
-var selectedIntervention = "scramble-neutral"; // The selected intervention will update in the "chooseIntervention" function. 
+var selectedIntervention = "scramble-positive"; // The selected intervention will update in the "chooseIntervention" function. 
 var INTERVENTION_WIDTH = "600px";
 var INTERVAENTION_HEIGHT = "600px"; 
 
@@ -52,7 +52,7 @@ function chooseIntervention() {
 //  }
 //  var interventionOptions = ["drawing-positive", "drawing-neutral", "drawing-survey-only"];
 //  selectedIntervention = interventionOptions[Math.floor(val*interventionOptions.length)];
-  selectedIntervention = "scramble-neutral";
+  selectedIntervention = "scramble-positive";
   postToSheet("Chose intervention", "N/A", selectedIntervention); 
 }
 
