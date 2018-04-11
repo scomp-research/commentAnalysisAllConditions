@@ -7,12 +7,26 @@
 <body>
 <script src="../scripts/jquery-3.3.1.min.js"></script>
 <script src="../scripts/openmodel.js"></script>
+  
+<script>
+  function fireComplete() {
+    var form = document.getElementById("eye-form");
+    
+    var val1 = $('input[name=innerfeelings]:checked').val();
+    var val2 = $('input[name=reflective]:checked').val();
+    var val3 = $('input[name=privatethoughts]:checked').val();
+    
+    if (val1 === undefined || val2 === undefined || val3 === undefined) {
+      alert("Please select a value for each question."); 
+    } else {
+      parent.endSurvey("scramble_intervention", [{"innerfeelings":val1},{"reflective":val2},{"privatethoughts":val3}]); 
+    }
+  }
+</script>
+  
 <script>
 $(document).ready(function(){
-	$("#submit").click(function(){
-        $("#surveytable1").hide();
-        $("#submit").hide();
-	});
+  openmodel(); 
 }); 
 </script>
 <script>
@@ -82,7 +96,7 @@ $(document).ready(function(){
 						</tr>
 					</tbody>
 				</table>
-            	<button id = "submit">Submit</button>
+            	<button id = "submit" onclick="fireComplete()">Submit</button>
 			</div>
 		</div>
     </main>

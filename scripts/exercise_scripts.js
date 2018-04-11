@@ -25,14 +25,14 @@ var surveyComplete = false;
 var surveyTask2 = true; 
 var survey2Complete = false; 
 
-var selectedIntervention = "dragging-neutral"; // The selected intervention will update in the "chooseIntervention" function. 
-var INTERVENTION_WIDTH = "500px";
-var INTERVAENTION_HEIGHT = "560px"; 
+var selectedIntervention = "scramble-neutral"; // The selected intervention will update in the "chooseIntervention" function. 
+var INTERVENTION_WIDTH = "600px";
+var INTERVAENTION_HEIGHT = "600px"; 
 
 
-var SURVEY_FILE_LOCATION = "../surveys/dragdropsurvey.html";
+var SURVEY_FILE_LOCATION = "../surveys/wordunscramblesurvey.html";
 var SURVEY_WIDTH = "580px";
-var SURVEY_HEIGHT = "450px"; 
+var SURVEY_HEIGHT = "470px"; 
 
 localStorage.setItem("commentComplete", "not_complete");
 
@@ -52,24 +52,24 @@ function chooseIntervention() {
 //  }
 //  var interventionOptions = ["drawing-positive", "drawing-neutral", "drawing-survey-only"];
 //  selectedIntervention = interventionOptions[Math.floor(val*interventionOptions.length)];
-  selectedIntervention = "dragging-neutral"
+  selectedIntervention = "scramble-neutral";
   postToSheet("Chose intervention", "N/A", selectedIntervention); 
 }
 
 function setupIntervention() {
   var intervention = document.getElementById("intervention"); 
-  if (selectedIntervention === "drawing-positive") {
-    intervention.src = "../interventions/captchaDrawingPositive.html";
+  if (selectedIntervention === "scramble-positive") {
+    intervention.src = "../interventions/wordunscramblepositive.html";
     interventionTask = true; 
     surveyTask = true; 
     surveyTask2 = false; 
-  } else if (selectedIntervention === "dragging-neutral") {
-    intervention.src = "../interventions/neutraldragdrop.html";
+  } else if (selectedIntervention === "scramble-neutral") {
+    intervention.src = "../interventions/wordunscrambleneutral.html";
     interventionTask = true; 
     surveyTask = true; 
     surveyTask2 = false; 
-  } else if (selectedIntervention === "drawing-survey-only") {
-    intervention.src = "../surveys/drawandfacesidsurvey.html";
+  } else if (selectedIntervention === "scramble-survey-only") {
+    intervention.src = "../surveys/wordunscramblesurvey.html";
     interventionTask = false; 
     surveyTask = true; 
     surveyTask2 = false; 
