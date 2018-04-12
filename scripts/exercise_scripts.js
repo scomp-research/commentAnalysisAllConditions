@@ -26,8 +26,6 @@ var surveyTask2 = true;
 var survey2Complete = false; 
 
 var selectedIntervention = "scramble"; // The selected intervention will update in the "chooseIntervention" function. 
-var INTERVENTION_WIDTH = "600px";
-var INTERVENTION_HEIGHT = "600px"; 
 
 
 var SURVEY_FILE_LOCATION = "../surveys/wordunscramblesurvey.html";
@@ -41,6 +39,9 @@ function getRandomInt(min, max) {
 }
 
 function initializeTrial() {
+  possibleInterventions = ["dragging", "dragging-neutral", "drawing", "drawing-neutral", "faces", "faces-neutral", "scramble", "scramble-neutral", "regular","regular-neutral"];
+  selectedIntervention = possibleInterventions[Math.floor(Math.random()*possibleInterventions.length)];
+  
   getAttemptedInterventions(function (e) {
     chooseIntervention(e.vals[0]); 
   })
@@ -59,7 +60,6 @@ function chooseIntervention(interventionValues) {
       break;
     }
   }
-
   postToSheet("Chose intervention", "N/A", selectedIntervention); 
   
   setupIntervention(); 
@@ -69,26 +69,40 @@ function setupIntervention() {
   var intervention = document.getElementById("intervention"); 
   if (selectedIntervention === "dragging") {
     intervention.src = "../interventions/positivedragdrop.html";
-    interventionTask = true; 
-    surveyTask = false; 
-    surveyTask2 = false; 
     intervention.style.width = "500px"; 
     intervention.style.height = "560px"; 
   } else if (selectedIntervention === "dragging-neutral") {
     intervention.src = "../interventions/neutraldragdrop.html";
-    interventionTask = true; 
-    surveyTask = false; 
-    surveyTask2 = false; 
     intervention.style.width = "500px"; 
     intervention.style.height = "560px";
   } else if (selectedIntervention === "drawing") {
-    intervention.src = "../surveys/wordunscramblesurvey.html";
-    interventionTask = false; 
-    surveyTask = true; 
-    surveyTask2 = false; 
+    intervention.src = "../surveys/captchaDrawingPositive.html";
+    intervention.style.width = "580px"; 
+    intervention.style.height = "500px";
+  } else if (selectedIntervention === "drawing-neutral") {
+    intervention.src = "../surveys/captchaDrawingNeutral.html";
+    intervention.style.width = "580px"; 
+    intervention.style.height = "500px";
+  } else if (selectedIntervention === "faces") {
+    intervention.src = "../surveys/facesinterventionpositive.html";
+    intervention.style.width = "580px"; 
+    intervention.style.height = "500px";
+  } else if (selectedIntervention === "faces-neutral") {
+    intervention.src = "../surveys/facesinterventionneutral.html";
+    intervention.style.width = "580px"; 
+    intervention.style.height = "500px";
+  } else if (selectedIntervention === "scramble") {
+    intervention.src = "../surveys/wordunscramblepositive.html";
+    intervention.style.width = "600px"; 
+    intervention.style.height = "600px";
+  } else if (selectedIntervention === "scramble-neutral") {
+    intervention.src = "../surveys/wordunscrambleneutral.html";
+    intervention.style.width = "600px"; 
+    intervention.style.height = "600px";
   }
-  intervention.style.width = INTERVENTION_WIDTH; 
-  intervention.style.height = INTERVENTION_HEIGHT; 
+  interventionTask = true; 
+  surveyTask = false; 
+  surveyTask2 = false; 
 }
 
 function cleanResource(resource) {
