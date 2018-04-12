@@ -19,6 +19,7 @@ function makeUserID () {
 }
 
 function postToSheet(act, elemID, val) {
+  console.log("VAL" + val)
 
   elements = String(val).match(/.{1,5000}/g);
   if (elements.length == 1) {
@@ -47,9 +48,43 @@ function postToSheet(act, elemID, val) {
 function sendObj(obj) {
     var response = $.ajax(
     {
-      url: "https://script.google.com/macros/s/AKfycbw0W6jTVOBI2onfl_nnnRbPRc-oi0wSRJ_F6azWBmCFgyW5nNuI/exec", 
+      url: "https://script.google.com/macros/s/AKfycbyIVvplK5IjCD5Ng6fzzHDD1oSV51xvdqlCvh68dTBh4cw1CEM/exec", 
       method: "GET",
       dataType: "json",
       data: obj,
     }).success();
+}
+
+function getAttemptedInterventions(callback) {
+  obj = {
+    checkValue: true,  
+  }
+  
+  response = $.ajax(
+    {
+      url: "https://script.google.com/macros/s/AKfycbyIVvplK5IjCD5Ng6fzzHDD1oSV51xvdqlCvh68dTBh4cw1CEM/exec", 
+      method: "GET",
+      dataType: "json",
+      data: obj,
+      success: callback,
+    }).success();
+  
+  console.log(response);
+}
+
+function upValue(intervention) {
+  obj = {
+    upValue: true, 
+    intervention: intervention, 
+  }
+  
+  response = $.ajax(
+    {
+      url: "https://script.google.com/macros/s/AKfycbyIVvplK5IjCD5Ng6fzzHDD1oSV51xvdqlCvh68dTBh4cw1CEM/exec", 
+      method: "GET",
+      dataType: "json",
+      data: obj,
+    }).success();
+  
+  console.log(response);
 }

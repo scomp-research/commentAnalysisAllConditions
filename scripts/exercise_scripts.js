@@ -25,9 +25,9 @@ var surveyComplete = false;
 var surveyTask2 = true; 
 var survey2Complete = false; 
 
-var selectedIntervention = "scramble-positive"; // The selected intervention will update in the "chooseIntervention" function. 
+var selectedIntervention = "scramble"; // The selected intervention will update in the "chooseIntervention" function. 
 var INTERVENTION_WIDTH = "600px";
-var INTERVAENTION_HEIGHT = "600px"; 
+var INTERVENTION_HEIGHT = "600px"; 
 
 
 var SURVEY_FILE_LOCATION = "../surveys/wordunscramblesurvey.html";
@@ -40,42 +40,55 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function initializePage() {
-  chooseIntervention(); 
-  setupIntervention(); 
+function initializeTrial() {
+  getAttemptedInterventions(function (e) {
+    chooseIntervention(e.vals[0]); 
+  })
 }
 
-function chooseIntervention() {
-//  val = Math.random(); 
-//  if (val === 1) {
-//    val = Math.random(); 
-//  }
-//  var interventionOptions = ["drawing-positive", "drawing-neutral", "drawing-survey-only"];
-//  selectedIntervention = interventionOptions[Math.floor(val*interventionOptions.length)];
-  selectedIntervention = "scramble-positive";
+function chooseIntervention(interventionValues) {
+  maxInterventions = 48; 
+  
+  possibleInterventions = ["dragging", "dragging-neutral", "drawing", "drawing-neutral", "faces", "faces-neutral", "scramble", "scramble-neutral", "regular","regular-neutral"]; 
+
+  for (var i=0; i<interventionValues.length; i++) {
+    if (interventionValues[i] < maxInterventions) {
+      selectedIntervention = possibleInterventions[i];
+      localStorage.selectedIntervention = selectedIntervention; 
+      upValue(selectedIntervention);
+      break;
+    }
+  }
+
   postToSheet("Chose intervention", "N/A", selectedIntervention); 
+  
+  setupIntervention(); 
 }
 
 function setupIntervention() {
   var intervention = document.getElementById("intervention"); 
-  if (selectedIntervention === "scramble-positive") {
-    intervention.src = "../interventions/wordunscramblepositive.html";
+  if (selectedIntervention === "dragging") {
+    intervention.src = "../interventions/positivedragdrop.html";
     interventionTask = true; 
-    surveyTask = true; 
+    surveyTask = false; 
     surveyTask2 = false; 
-  } else if (selectedIntervention === "scramble-neutral") {
-    intervention.src = "../interventions/wordunscrambleneutral.html";
+    intervention.style.width = "500px"; 
+    intervention.style.height = "560px"; 
+  } else if (selectedIntervention === "dragging-neutral") {
+    intervention.src = "../interventions/neutraldragdrop.html";
     interventionTask = true; 
-    surveyTask = true; 
+    surveyTask = false; 
     surveyTask2 = false; 
-  } else if (selectedIntervention === "scramble-survey-only") {
+    intervention.style.width = "500px"; 
+    intervention.style.height = "560px";
+  } else if (selectedIntervention === "drawing") {
     intervention.src = "../surveys/wordunscramblesurvey.html";
     interventionTask = false; 
     surveyTask = true; 
     surveyTask2 = false; 
   }
   intervention.style.width = INTERVENTION_WIDTH; 
-  intervention.style.height = INTERVAENTION_HEIGHT; 
+  intervention.style.height = INTERVENTION_HEIGHT; 
 }
 
 function cleanResource(resource) {
@@ -334,14 +347,10 @@ function checkForIntervention(){
   // Just Survey
   if (surveyTask && !interventionTask) {
     startSurvey(); 
-  } else if (interventionTask) {
+  } else if (interventionTask && !interventionComplete) {
     startIntervention(); 
   } else {
     console.log("No Task supplied"); 
-  }
-  
-  if (interventionTask && !interventionComplete) {
-    startIntervention(); 
   }
 }
 
@@ -371,6 +380,7 @@ function endIntervention(intervention) {
   if (surveyTask) {
     startSurvey(); 
   } else {
+    interventionComplete = true;
     parent.document.getElementById("intervention").style.display = "none"; 
     parent.document.getElementById("overlay").style.display = "none"; 
   }
@@ -378,8 +388,6 @@ function endIntervention(intervention) {
 
 window.endSurvey = function(intervention, value) {
   surveyComplete = true;
-  console.log(intervention); 
-  console.log(value); 
   postToSheet("end-survey", intervention, JSON.stringify(value));
   
   setTimeout(function() {
