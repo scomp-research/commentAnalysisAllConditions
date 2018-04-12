@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+<script>
+  function fireComplete() {
+    var form = document.getElementById("survey-form");
+    
+    var policy = $('input[name=policy]:checked').val();
+    var age = $('input[name=age]').val();
+    var gender = $('input[name=gender]:checked').val();
+    var gendertext = $('input[name=gendertext]').val();
+    
+    if (policy === undefined || age === undefined || gender === undefined)  {
+      alert("Please answer each question."); 
+    } 
+    else if (age < 18 || age > 110) {
+      alert("Please enter a valid age.");
+    }
+    else {
+      parent.endSurvey("finalsurvey", [{"policy":policy},{"age":age},{"gender":gender},{"gendertext":gendertext}]); 
+    }
+  }
+</script>
+  
+</head>
+<body>
+  
+<div id="header" style="padding-left: 40px; padding-top: 40px">
+  <div id="headerText1">Please answer the following to help us better understand your comment. <br> 
+  These will <b>NOT</b> be connected to your worker ID at any point during our analysis.</div>
+</div>
+<div id "form" style="padding-left: 40px">
+<form id="survey-form">
+    <br></br>
+  <div class="policy">
+    <div id="question1"><strong>1. What is your political perspective?</strong></div>
+    <input class="surveyRadioButton" type="radio" name="policy" value="-3"> Extremely liberal<br>
+    <input class="surveyRadioButton" type="radio" name="policy" value="-2"> Liberal<br>
+    <input class="surveyRadioButton" type="radio" name="policy" value="-1"> Slightly liberal <br> 
+    <input class="surveyRadioButton" type="radio" name="policy" value="0"> Moderate, middle of the road <br>
+    <input class="surveyRadioButton" type="radio" name="policy" value="1"> Slightly conservative <br>
+    <input class="surveyRadioButton" type="radio" name="policy" value="2"> Conservative <br>
+    <input class="surveyRadioButton" type="radio" name="policy" value="3"> Extremely conservative <br>
+  </div>
+	</form>
+    
+    <br></br>
+    <div class="age">
+        <div id="question2"><strong>2. What is your age?</strong></div>
+        <input type="text" pattern="[0-9]{2,3}" name="age" >
+
+    </div>
+    
+    <br></br>
+    <div class="gender">
+        <div id="question3"><strong>3. What is your gender?</strong></div> 
+            <input class="surveyRadioButton" type="radio" name="gender" value="Female"> Female<br>
+            <input class="surveyRadioButton" type="radio" name="gender" value="Male"> Male<br>
+            <input class="surveyRadioButton" type="radio" name="gender" value="Other"> Other <input type="text" onfocus="$('input[name=gender]').prop('checked', true)" pattern = "[A-Za-z]{1,}" name="gendertext">
+
+  </div>
+  <br>
+</form>
+
+<button id="submit-button" onclick="fireComplete()">Submit</button>
+</div>
+	
+</body>
+</html>
