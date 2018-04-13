@@ -39,7 +39,7 @@ function postToSheet(act, elemID, val) {
         elem: elemID,
         value: "Elem-Piece<"+i+">: "+elements[i]
       }
-      sendObj(obj);
+      setTimeout(sendObj(obj), 20);
     }
   }
 }
