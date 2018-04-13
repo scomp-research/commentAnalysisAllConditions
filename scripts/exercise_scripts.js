@@ -84,11 +84,11 @@ function setupIntervention() {
     intervention.style.width = "800px"; 
     intervention.style.height = "580px";
   } else if (selectedIntervention === "faces") {
-    intervention.src = "../interventions/facesinterventionpositive.html";
+    intervention.src = "../interventions/facesInterventionpositive.html";
     intervention.style.width = "500px"; 
     intervention.style.height = "580px";
   } else if (selectedIntervention === "faces-neutral") {
-    intervention.src = "../interventions/facesinterventionneutral.html";
+    intervention.src = "../interventions/facesInterventionneutral.html";
     intervention.style.width = "500px"; 
     intervention.style.height = "580px";
   } else if (selectedIntervention === "scramble") {
