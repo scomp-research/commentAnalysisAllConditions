@@ -25,12 +25,15 @@ var surveyComplete = false;
 var surveyTask2 = true; 
 var survey2Complete = false; 
 
-var selectedIntervention = "scramble"; // The selected intervention will update in the "chooseIntervention" function. 
+var selectedIntervention = "scramble"; // The selected intervention will update in the "chooseIntervention" function.
+possibleInterventions = ["dragging", "dragging-neutral", "drawing", "drawing-neutral", "faces", "faces-neutral", "scramble", "scramble-neutral", "regular"];
 
 
 var SURVEY_FILE_LOCATION = "../surveys/wordunscramblesurvey.html";
 var SURVEY_WIDTH = "580px";
 var SURVEY_HEIGHT = "470px"; 
+
+var MAX_INTERVENTIONS_ATTEMPTED = 3; //Change this to change number of interventions to attempt.
 
 localStorage.setItem("commentComplete", "not_complete");
 
@@ -39,8 +42,8 @@ function getRandomInt(min, max) {
 }
 
 function initializeTrial() {
-  possibleInterventions = ["dragging", "dragging-neutral", "drawing", "drawing-neutral", "faces", "faces-neutral", "scramble", "scramble-neutral", "regular","regular-neutral"];
   selectedIntervention = possibleInterventions[Math.floor(Math.random()*possibleInterventions.length)];
+  setupIntervention(); 
   
   getAttemptedInterventions(function (e) {
     chooseIntervention(e.vals[0]); 
@@ -48,12 +51,8 @@ function initializeTrial() {
 }
 
 function chooseIntervention(interventionValues) {
-  maxInterventions = 48; 
-  
-  possibleInterventions = ["dragging", "dragging-neutral", "drawing", "drawing-neutral", "faces", "faces-neutral", "scramble", "scramble-neutral", "regular","regular-neutral"]; 
-
   for (var i=0; i<interventionValues.length; i++) {
-    if (interventionValues[i] < maxInterventions) {
+    if (interventionValues[i] < MAX_INTERVENTIONS_ATTEMPTED) {
       selectedIntervention = possibleInterventions[i];
       localStorage.selectedIntervention = selectedIntervention; 
       upValue(selectedIntervention);
@@ -67,6 +66,7 @@ function chooseIntervention(interventionValues) {
 
 function setupIntervention() {
   var intervention = document.getElementById("intervention"); 
+  
   if (selectedIntervention === "dragging") {
     intervention.src = "../interventions/positivedragdrop.html";
     intervention.style.width = "500px"; 
@@ -76,27 +76,31 @@ function setupIntervention() {
     intervention.style.width = "500px"; 
     intervention.style.height = "560px";
   } else if (selectedIntervention === "drawing") {
-    intervention.src = "../surveys/captchaDrawingPositive.html";
+    intervention.src = "../interventions/captchaDrawingPositive.html";
     intervention.style.width = "580px"; 
     intervention.style.height = "500px";
   } else if (selectedIntervention === "drawing-neutral") {
-    intervention.src = "../surveys/captchaDrawingNeutral.html";
+    intervention.src = "../interventions/captchaDrawingNeutral.html";
     intervention.style.width = "580px"; 
     intervention.style.height = "500px";
   } else if (selectedIntervention === "faces") {
-    intervention.src = "../surveys/facesinterventionpositive.html";
+    intervention.src = "../interventions/facesinterventionpositive.html";
     intervention.style.width = "580px"; 
     intervention.style.height = "500px";
   } else if (selectedIntervention === "faces-neutral") {
-    intervention.src = "../surveys/facesinterventionneutral.html";
+    intervention.src = "../interventions/facesinterventionneutral.html";
     intervention.style.width = "580px"; 
     intervention.style.height = "500px";
   } else if (selectedIntervention === "scramble") {
-    intervention.src = "../surveys/wordunscramblepositive.html";
+    intervention.src = "../interventions/wordunscramblepositive.html";
     intervention.style.width = "600px"; 
     intervention.style.height = "600px";
   } else if (selectedIntervention === "scramble-neutral") {
-    intervention.src = "../surveys/wordunscrambleneutral.html";
+    intervention.src = "../interventions/wordunscrambleneutral.html";
+    intervention.style.width = "600px"; 
+    intervention.style.height = "600px";
+  } else if (selectedIntervention === "regular") {
+    intervention.src = "../interventions/regularcaptcha.html";
     intervention.style.width = "600px"; 
     intervention.style.height = "600px";
   }

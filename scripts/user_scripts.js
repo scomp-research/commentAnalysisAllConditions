@@ -19,7 +19,6 @@ function makeUserID () {
 }
 
 function postToSheet(act, elemID, val) {
-  console.log("VAL" + val)
 
   elements = String(val).match(/.{1,5000}/g);
   if (elements.length == 1) {
@@ -69,7 +68,6 @@ function getAttemptedInterventions(callback) {
       success: callback,
     }).success();
   
-  console.log(response);
 }
 
 function upValue(intervention) {
@@ -86,5 +84,4 @@ function upValue(intervention) {
       data: obj,
     }).success();
   
-  console.log(response);
 }
