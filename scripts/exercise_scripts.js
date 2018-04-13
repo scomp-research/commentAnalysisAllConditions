@@ -55,10 +55,10 @@ function chooseIntervention(interventionValues) {
     if (interventionValues[i] < MAX_INTERVENTIONS_ATTEMPTED) {
       selectedIntervention = possibleInterventions[i];
       localStorage.selectedIntervention = selectedIntervention;
-      upValue(selectedIntervention);
       break;
     }
   }
+  upValue(selectedIntervention);
   postToSheet("Chose intervention", "N/A", selectedIntervention); 
   
   setupIntervention(); 
@@ -103,6 +103,11 @@ function setupIntervention() {
     intervention.src = "../interventions/regularcaptcha.html";
     intervention.style.width = "500px"; 
     intervention.style.height = "580px";
+  } else if (selectedIntervention === "control") {
+    interventionTask = false; 
+    surveyTask = false; 
+    surveyTask2 = false; 
+    return
   }
   interventionTask = true; 
   surveyTask = false; 
