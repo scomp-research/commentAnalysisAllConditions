@@ -43,7 +43,7 @@ function getRandomInt(min, max) {
 
 function initializeTrial() {
   selectedIntervention = possibleInterventions[Math.floor(Math.random()*possibleInterventions.length)];
-  setupIntervention(); 
+//  setupIntervention(); 
   
   getAttemptedInterventions(function (e) {
     chooseIntervention(e.vals[0]); 
@@ -55,7 +55,6 @@ function chooseIntervention(interventionValues) {
     if (interventionValues[i] < MAX_INTERVENTIONS_ATTEMPTED) {
       selectedIntervention = possibleInterventions[i];
       localStorage.selectedIntervention = selectedIntervention; 
-      upValue(selectedIntervention);
       break;
     }
   }
@@ -77,20 +76,20 @@ function setupIntervention() {
     intervention.style.height = "560px";
   } else if (selectedIntervention === "drawing") {
     intervention.src = "../interventions/captchaDrawingPositive.html";
-    intervention.style.width = "580px"; 
-    intervention.style.height = "500px";
+    intervention.style.width = "800px"; 
+    intervention.style.height = "580px";
   } else if (selectedIntervention === "drawing-neutral") {
     intervention.src = "../interventions/captchaDrawingNeutral.html";
-    intervention.style.width = "580px"; 
-    intervention.style.height = "500px";
+    intervention.style.width = "800px"; 
+    intervention.style.height = "580px";
   } else if (selectedIntervention === "faces") {
     intervention.src = "../interventions/facesinterventionpositive.html";
-    intervention.style.width = "580px"; 
-    intervention.style.height = "500px";
+    intervention.style.width = "500px"; 
+    intervention.style.height = "580px";
   } else if (selectedIntervention === "faces-neutral") {
     intervention.src = "../interventions/facesinterventionneutral.html";
-    intervention.style.width = "580px"; 
-    intervention.style.height = "500px";
+    intervention.style.width = "500px"; 
+    intervention.style.height = "580px";
   } else if (selectedIntervention === "scramble") {
     intervention.src = "../interventions/wordunscramblepositive.html";
     intervention.style.width = "600px"; 
@@ -101,8 +100,8 @@ function setupIntervention() {
     intervention.style.height = "600px";
   } else if (selectedIntervention === "regular") {
     intervention.src = "../interventions/regularcaptcha.html";
-    intervention.style.width = "600px"; 
-    intervention.style.height = "600px";
+    intervention.style.width = "500px"; 
+    intervention.style.height = "580px";
   }
   interventionTask = true; 
   surveyTask = false; 
@@ -373,6 +372,7 @@ function checkForIntervention(){
 }
 
 function startIntervention() {
+  upValue(selectedIntervention);
   document.getElementById("overlay").style.display = "block"; 
   document.getElementById("intervention").style.display = "block";
   postToSheet("begin-intervention", "N/A", selectedIntervention);
