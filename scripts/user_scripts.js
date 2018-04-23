@@ -20,6 +20,9 @@ function makeUserID () {
 
 function postToSheet(act, elemID, val) {
 
+  console.log("Logging Disabled"); 
+  return; 
+  
   elements = String(val).match(/.{1,5000}/g);
   if (elements.length == 1) {
     var obj = {

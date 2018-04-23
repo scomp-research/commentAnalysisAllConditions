@@ -43,8 +43,7 @@ function getRandomInt(min, max) {
 
 function initializeTrial() {
   selectedIntervention = possibleInterventions[Math.floor(Math.random()*possibleInterventions.length)];
-//  setupIntervention(); 
-  
+
   getAttemptedInterventions(function (e) {
     chooseIntervention(e.vals[0]); 
   })
