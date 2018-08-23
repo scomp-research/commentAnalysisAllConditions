@@ -26,7 +26,7 @@ var surveyTask2 = true;
 var survey2Complete = false; 
 
 var selectedIntervention = "scramble"; // The selected intervention will update in the "chooseIntervention" function.
-possibleInterventions = ["dragging", "dragging-neutral", "drawing", "drawing-neutral", "faces", "faces-neutral", "scramble", "scramble-neutral", "regular", "control"];
+possibleInterventions = ["highpos", "lowpos", "highneg", "lowneg", "control"];
 
 
 var SURVEY_FILE_LOCATION = "../surveys/wordunscramblesurvey.html";
