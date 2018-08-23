@@ -66,40 +66,20 @@ function chooseIntervention(interventionValues) {
 function setupIntervention() {
   var intervention = document.getElementById("intervention"); 
   
-  if (selectedIntervention === "dragging") {
-    intervention.src = "../interventions/positivedragdrop.html";
+  if (selectedIntervention === "highpos") {
+    intervention.src = "../interventions/captchahighpos.html";
     intervention.style.width = "500px"; 
-    intervention.style.height = "560px"; 
-  } else if (selectedIntervention === "dragging-neutral") {
-    intervention.src = "../interventions/neutraldragdrop.html";
-    intervention.style.width = "500px"; 
-    intervention.style.height = "560px";
-  } else if (selectedIntervention === "drawing") {
-    intervention.src = "../interventions/captchaDrawingPositive.html";
-    intervention.style.width = "800px"; 
-    intervention.style.height = "580px";
-  } else if (selectedIntervention === "drawing-neutral") {
-    intervention.src = "../interventions/captchaDrawingNeutral.html";
-    intervention.style.width = "800px"; 
-    intervention.style.height = "580px";
-  } else if (selectedIntervention === "faces") {
-    intervention.src = "../interventions/facesInterventionpositive.html";
+    intervention.style.height = "580px"; 
+  } else if (selectedIntervention === "lowpos") {
+    intervention.src = "../interventions/captchalowpos.html";
     intervention.style.width = "500px"; 
     intervention.style.height = "580px";
-  } else if (selectedIntervention === "faces-neutral") {
-    intervention.src = "../interventions/facesInterventionneutral.html";
+  } else if (selectedIntervention === "highneg") {
+    intervention.src = "../interventions/captchahighneg.html";
     intervention.style.width = "500px"; 
     intervention.style.height = "580px";
-  } else if (selectedIntervention === "scramble") {
-    intervention.src = "../interventions/wordunscramblepositive.html";
-    intervention.style.width = "600px"; 
-    intervention.style.height = "600px";
-  } else if (selectedIntervention === "scramble-neutral") {
-    intervention.src = "../interventions/wordunscrambleneutral.html";
-    intervention.style.width = "600px"; 
-    intervention.style.height = "600px";
-  } else if (selectedIntervention === "regular") {
-    intervention.src = "../interventions/regularcaptcha.html";
+  } else if (selectedIntervention === "lowneg") {
+    intervention.src = "../interventions/captchalowneg.html";
     intervention.style.width = "500px"; 
     intervention.style.height = "580px";
   } else if (selectedIntervention === "control") {
