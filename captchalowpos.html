@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Captcha</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="captcha.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="header">
+      <div class="header-text">Prove you're not a robot</div>
+      <div class="header-text">Select all pictures below that contain a person</div>
+    </div>
+    <div class="image-row">
+      <div id="cell-1" class="captcha-cell">
+        <img id="cell-1-img" class="captcha-image" src="resources/g1.jpg">
+        <img id="cell-1-mark" class="marked-icon" src="resources/marked.png"/>
+      </div>
+      <div id="cell-2" class="captcha-cell">
+        <img id="cell-2-img" class="captcha-image" src="resources/g2.jpg">
+        <img id="cell-2-mark" class="marked-icon" src="resources/marked.png"/>
+      </div>
+      <div id="cell-3" class="captcha-cell right-cell">
+        <img id="cell-3-img" class="captcha-image" src="resources/g3.jpg">
+        <img id="cell-3-mark" class="marked-icon" src="resources/marked.png"/>
+      </div>
+    </div>
+  
+    <div class="image-row">
+      <div id="cell-4" class="captcha-cell">
+        <img id="cell-4-img" class="captcha-image" src="resources/g4.jpg">
+        <img id="cell-4-mark" class="marked-icon" src="resources/marked.png"/>
+      </div>
+      <div id="cell-5" class="captcha-cell">
+        <img id="cell-5-img" class="captcha-image" src="resources/g5.jpg">
+        <img id="cell-5-mark" class="marked-icon" src="resources/marked.png"/>
+      </div>
+      <div id="cell-6" class="captcha-cell right-cell">
+        <img id="cell-6-img" class="captcha-image" src="resources/g6.jpg">
+        <img id="cell-6-mark" class="marked-icon" src="resources/marked.png"/>
+      </div>
+    </div>
+  
+    <div class="image-row">
+      <div id="cell-7" class="captcha-cell">
+        <img id="cell-7-img" class="captcha-image" src="resources/g7.jpg">
+        <img id="cell-7-mark" class="marked-icon" src="resources/marked.png"/>
+      </div>
+      <div id="cell-8" class="captcha-cell">
+        <img id="cell-8-img" class="captcha-image" src="resources/g8.jpg">
+        <img id="cell-8-mark" class="marked-icon" src="resources/marked.png"/>
+      </div>
+      <div id="cell-9" class="captcha-cell right-cell">
+        <img id="cell-9-img" class="captcha-image" src="resources/g9.jpg">
+        <img id="cell-9-mark" class="marked-icon" src="resources/marked.png"/>
+      </div>
+    </div>
+
+    <div id="validation-row">
+      <img id="validation-button" onclick="validation()" src="resources/verify.png"> 
+    </div>
+
+  </div>
+</body>
+</html>
