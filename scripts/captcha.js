@@ -16,7 +16,7 @@ function validation() {
   }); 
 
   if (fail) {
-    alert("Please select images of faces."); 
+    alert("Please select images that contain people."); 
     selected = []; 
   } else {
     parent.validateIntervention("faces-LowNeg", selected); 
