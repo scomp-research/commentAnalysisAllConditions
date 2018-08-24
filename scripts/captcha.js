@@ -1,4 +1,4 @@
-success = [1,2,5,6,8]; // Positions of objects that are okay to select.
+success = [1,2,3,4,5,6,7,8,9]; // Positions of objects that are okay to select.
 selected = []; // Positions of objects that are selected at time of validation.
 
 function validation() {
