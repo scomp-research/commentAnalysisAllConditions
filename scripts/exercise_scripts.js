@@ -50,7 +50,7 @@ function initializeTrial() {
       getAttemptedInterventions(function (e) {
         chooseIntervention(e.vals[0]); 
       })}
-     console.log(localstorage.getItem('selectedIntervention'))
+     console.log(localStorage.getItem('selectedIntervention'))
 
 }
 
