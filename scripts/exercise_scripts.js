@@ -47,7 +47,7 @@ function initializeTrial() {
 
       getAttemptedInterventions(function (e) {
         chooseIntervention(e.vals[0]); 
-      }})
+      })}
 }
 
 function chooseIntervention(interventionValues) {
