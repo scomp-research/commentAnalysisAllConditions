@@ -42,12 +42,16 @@ function getRandomInt(min, max) {
 }
 
 function initializeTrial() {
-  if (localStorage.getItem('selectedIntervention') === null){
+  console.log("Hi");
+    console.log(localstorage.getItem('selectedIntervention'))
+    if (localStorage.getItem('selectedIntervention') === null){
       selectedIntervention = possibleInterventions[Math.floor(Math.random()*possibleInterventions.length)];
 
       getAttemptedInterventions(function (e) {
         chooseIntervention(e.vals[0]); 
       })}
+     console.log(localstorage.getItem('selectedIntervention'))
+
 }
 
 function chooseIntervention(interventionValues) {
