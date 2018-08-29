@@ -50,7 +50,8 @@ function initializeTrial() {
 
       //getAttemptedInterventions(function (e) {
         //chooseIntervention(e.vals[0]); 
-      })}
+      //})
+}
 
 }
 
