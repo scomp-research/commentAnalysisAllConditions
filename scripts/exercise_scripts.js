@@ -46,6 +46,7 @@ function initializeTrial() {
       selectedIntervention = possibleInterventions[Math.floor(Math.random()*possibleInterventions.length)];
       localStorage.setItem('selectedIntervention', selectedIntervention);
       }
+      selectedIntervention = localStorage.selectedIntervention;
       getAttemptedInterventions(function (e) {
       chooseIntervention(e.vals[0]); 
 
