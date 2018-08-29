@@ -43,7 +43,6 @@ function getRandomInt(min, max) {
 
 function initializeTrial() {
       selectedIntervention = possibleInterventions[Math.floor(Math.random()*possibleInterventions.length)];
-      console.log(localStorage.getItem('selectedIntervention'))
 
       getAttemptedInterventions(function (e) {
       chooseIntervention(e.vals[0]); 
@@ -56,7 +55,6 @@ function chooseIntervention(interventionValues) {
     if (interventionValues[i] < MAX_INTERVENTIONS_ATTEMPTED) {
       selectedIntervention = possibleInterventions[i];
       localStorage.selectedIntervention = selectedIntervention;
-      console.log(localStorage.getItem('selectedIntervention'))
 
       break;
     }
