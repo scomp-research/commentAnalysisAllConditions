@@ -25,7 +25,7 @@ var surveyComplete = false;
 var surveyTask2 = true; 
 var survey2Complete = false; 
 
-var selectedIntervention = "scramble"; // The selected intervention will update in the "chooseIntervention" function.
+var selectedIntervention = ""; // The selected intervention will update in the "chooseIntervention" function.
 possibleInterventions = ["highpos", "lowpos", "highneg", "lowneg", "control"];
 
 
