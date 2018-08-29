@@ -25,7 +25,7 @@ var surveyComplete = false;
 var surveyTask2 = true; 
 var survey2Complete = false; 
 
-var selectedIntervention = ""; // The selected intervention will update in the "chooseIntervention" function.
+var selectedIntervention = null; // The selected intervention will update in the "chooseIntervention" function.
 possibleInterventions = ["highpos", "lowpos", "highneg", "lowneg", "control"];
 
 
@@ -42,11 +42,12 @@ function getRandomInt(min, max) {
 }
 
 function initializeTrial() {
-  selectedIntervention = possibleInterventions[Math.floor(Math.random()*possibleInterventions.length)];
+  if (localStorage.getItem('commentForum_user_id') === null){
+      selectedIntervention = possibleInterventions[Math.floor(Math.random()*possibleInterventions.length)];
 
-  getAttemptedInterventions(function (e) {
-    chooseIntervention(e.vals[0]); 
-  })
+      getAttemptedInterventions(function (e) {
+        chooseIntervention(e.vals[0]); 
+      }})
 }
 
 function chooseIntervention(interventionValues) {
