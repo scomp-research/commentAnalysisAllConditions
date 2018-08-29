@@ -43,7 +43,7 @@ function getRandomInt(min, max) {
 
 function initializeTrial() {
   console.log("Hi");
-    console.log(localstorage.getItem('selectedIntervention'))
+    console.log(localStorage.getItem('selectedIntervention'))
     if (localStorage.getItem('selectedIntervention') === null){
       selectedIntervention = possibleInterventions[Math.floor(Math.random()*possibleInterventions.length)];
 
