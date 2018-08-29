@@ -59,6 +59,8 @@ function chooseIntervention(interventionValues) {
     if (interventionValues[i] < MAX_INTERVENTIONS_ATTEMPTED) {
       selectedIntervention = possibleInterventions[i];
       localStorage.selectedIntervention = selectedIntervention;
+      console.log(localStorage.getItem('selectedIntervention'))
+
       break;
     }
   }
