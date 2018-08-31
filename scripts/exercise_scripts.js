@@ -26,8 +26,8 @@ var surveyTask2 = true;
 var survey2Complete = false; 
 
 var selectedIntervention = null; // The selected intervention will update in the "chooseIntervention" function.
-//possibleInterventions = ["highpos", X"lowpos", "highneg", "Xlowneg", "control"];
-possibleInterventions = ["highpos"];
+//possibleInterventions = ["Xhighpos", "Xlowpos", "highneg", "Xlowneg", "control"];
+possibleInterventions = ["highneg"];
 
 
 var SURVEY_FILE_LOCATION = "../surveys/wordunscramblesurvey.html";
