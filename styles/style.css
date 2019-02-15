@@ -43,6 +43,13 @@
   padding: 10px;
 }
 
+.header-explain {
+  font-size: 14px;
+  color:white;
+  font-family: Roboto;
+  padding: 10px;
+}
+
 #header {
   background-color: #3C7BDA; 
   height: 100px;
