@@ -19,15 +19,17 @@
     var age = $('input[name=age]').val();
     var gender = $('input[name=gender]:checked').val();
     var gendertext = $('input[name=gendertext]').val();
+    var purpose = $('input[name=purpose]').val();
+
     
-    if (policy === undefined || age === undefined || gender === undefined)  {
+    if (policy === undefined || age === undefined || gender === undefined || purpose = undefined )  {
       alert("Please answer each question."); 
     } 
     else if (age < 18 || age > 110 || !isNumeric(age)) {
       alert("Please enter a valid age.");
     }
     else {
-        postToSheet("final-survey", "N/A", JSON.stringify([{"policy":policy},{"age":age},{"gender":gender},{"gendertext":gendertext}]));
+        postToSheet("final-survey", "N/A", JSON.stringify([{"policy":policy},{"age":age},{"gender":gender},{"gendertext":gendertext},{"purpose":purpose}]));
   
         setTimeout(function() {
           window.location.replace('../pages/post-exercise.html');
@@ -51,10 +53,11 @@ function deleteInputContents() {
 </div>
 <div style="padding-left: 40px">
 <form id="survey-form">
+    <br>
   <div class="purpose">
     <div id="questionb1"><strong>1. What was the purpose of the CAPTCHA you were shown in this study?</strong></div>
 	  <input class="openEnded" type="text" name="purpose" onfocus="$('input[name=gender]').prop('checked', true)" pattern = "[A-Za-z]{1,}">
-
+  </div>
     <br>
   <div class="policy">
     <div id="question1"><strong>1. What is your political perspective?</strong></div>
