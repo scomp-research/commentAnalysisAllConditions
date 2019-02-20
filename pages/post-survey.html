@@ -20,16 +20,25 @@
     var gender = $('input[name=gender]:checked').val();
     var gendertext = $('input[name=gendertext]').val();
     var purpose = $('input[name=purpose]').val();
+    var react1 = $('input[name=react1]:checked').val();
+    var react2 = $('input[name=react2]:checked').val();
+    var react3 = $('input[name=react3]:checked').val();
+    var react4 = $('input[name=react4]:checked').val();
+    var react5 = $('input[name=react5]:checked').val();
+    var react6 = $('input[name=react6]:checked').val();
+    var react7 = $('input[name=react7]:checked').val();
+    var react8 = $('input[name=react8]:checked').val();
+
 
     
-    if (policy === undefined || age === undefined || gender === undefined || purpose === undefined )  {
+    if (policy === undefined || age === undefined || gender === undefined || purpose === undefined || react1 === undefined || react2 === undefined || react3 === undefined || react4 === undefined || react5 === undefined || react6 === undefined || react7 === undefined || react8 === undefined)  {
       alert("Please answer each question."); 
     } 
     else if (age < 18 || age > 110 || !isNumeric(age)) {
       alert("Please enter a valid age.");
     }
     else {
-        postToSheet("final-survey", "N/A", JSON.stringify([{"policy":policy},{"age":age},{"gender":gender},{"gendertext":gendertext},{"purpose":purpose}]));
+        postToSheet("final-survey", "N/A", JSON.stringify([{"policy":policy},{"age":age},{"gender":gender},{"gendertext":gendertext},{"purpose":purpose},{"react1":react1},{"react2":react2},{"react3":react3},{"react4":react4},{"react5":react5},{"react6":react6},{"react7":react7},{"react8":react8}]));
   
         setTimeout(function() {
           window.location.replace('../pages/post-exercise.html');
@@ -56,11 +65,11 @@ function deleteInputContents() {
     <br>
   <div class="purpose">
     <div id="questionb1"><strong>1. What was the purpose of the CAPTCHA you were shown in this study?</strong></div>
-	  <input class="openEnded" type="text" name="purpose" pattern = "[A-Za-z]{1,}">
+	  <input class="openEnded" type="text" name="purpose" pattern = "[A-Za-z]{1,}" style="width: 300px;">
   </div>
     <br>
   <div class="reactance">
-  <div id="question2header"><strong>2. Please rate how strongly you agree or disagree with the following statements on a scale from 1 to 7, where 1 = “Strongly Disagree” and 7 = “Strongly Agree”:</strong></div>
+  <div id="question2header"><strong>2. Please rate how strongly you agree or disagree with the following statements on a scale from 1 to 7, where 1 = “Strongly Disagree” and 7 = “Strongly Agree”:</strong></div><br>
   <div id="question2a">
     <table>
       <tr>
