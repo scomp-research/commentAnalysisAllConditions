@@ -51,6 +51,10 @@ function deleteInputContents() {
 </div>
 <div style="padding-left: 40px">
 <form id="survey-form">
+  <div class="purpose">
+    <div id="questionb1"><strong>1. What was the purpose of the CAPTCHA you were shown in this study?</strong></div>
+	  <input class="openEnded" type="text" name="purpose" onfocus="$('input[name=gender]').prop('checked', true)" pattern = "[A-Za-z]{1,}">
+
     <br>
   <div class="policy">
     <div id="question1"><strong>1. What is your political perspective?</strong></div>
