@@ -92,11 +92,11 @@ function setupIntervention() {
   } else if (selectedIntervention === "captchalowposbasicinfo") {
     intervention.src = "../interventions/captchalowposbasicinfo.html";
     intervention.style.width = "500px";
-    intervention.style.height = "700px";
+    intervention.style.height = "680px";
   } else if (selectedIntervention === "captchalowposfullinfo") {
     intervention.src = "../interventions/captchalowposfullinfo.html";
     intervention.style.width = "500px";
-    intervention.style.height = "700px";
+    intervention.style.height = "680px";
   } else if (selectedIntervention === "control") {
     interventionTask = false; 
     surveyTask = false; 
