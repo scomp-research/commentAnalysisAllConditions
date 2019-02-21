@@ -80,7 +80,7 @@ function setupIntervention() {
   } else if (selectedIntervention === "lowpos") {
     intervention.src = "../interventions/captchalowpos.html";
     intervention.style.width = "500px"; 
-    intervention.style.height = "580px";
+    intervention.style.height = "680px";
   } else if (selectedIntervention === "highneg") {
     intervention.src = "../interventions/captchahighneg.html";
     intervention.style.width = "500px"; 
