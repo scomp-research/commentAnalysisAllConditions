@@ -90,7 +90,11 @@ function setupIntervention() {
     intervention.style.width = "500px"; 
     intervention.style.height = "580px";
   } else if (selectedIntervention === "captchalowposbasicinfo") {
-    intervention.src = "../interventions/captchalowposbasicinfo";
+    intervention.src = "../interventions/captchalowposbasicinfo.html";
+    intervention.style.width = "500px";
+    intervention.style.height = "700px";
+  } else if (selectedIntervention === "captchalowposfullinfo") {
+    intervention.src = "../interventions/captchalowposfullinfo.html";
     intervention.style.width = "500px";
     intervention.style.height = "700px";
   } else if (selectedIntervention === "control") {
