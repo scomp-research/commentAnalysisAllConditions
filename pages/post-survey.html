@@ -19,6 +19,7 @@
     var age = $('input[name=age]').val();
     var gender = $('input[name=gender]:checked').val();
     var gendertext = $('input[name=gendertext]').val();
+	  /*
     var purpose = $('input[name=purpose]').val();
     var react1 = $('input[name=react1]:checked').val();
     var react2 = $('input[name=react2]:checked').val();
@@ -28,17 +29,20 @@
     var react6 = $('input[name=react6]:checked').val();
     var react7 = $('input[name=react7]:checked').val();
     var react8 = $('input[name=react8]:checked').val();
+	  */
 
 
     
-    if (policy === undefined || age === undefined || gender === undefined || purpose === undefined || react1 === undefined || react2 === undefined || react3 === undefined || react4 === undefined || react5 === undefined || react6 === undefined || react7 === undefined || react8 === undefined)  {
+    if (policy === undefined || age === undefined || gender === undefined)  {
+	    // <!--|| purpose === undefined || react1 === undefined || react2 === undefined || react3 === undefined || react4 === undefined || react5 === undefined || react6 === undefined || react7 === undefined || react8 === undefined-->
       alert("Please answer each question."); 
     } 
     else if (age < 18 || age > 110 || !isNumeric(age)) {
       alert("Please enter a valid age.");
     }
     else {
-        postToSheet("final-survey", "N/A", JSON.stringify([{"policy":policy},{"age":age},{"gender":gender},{"gendertext":gendertext},{"purpose":purpose},{"react1":react1},{"react2":react2},{"react3":react3},{"react4":react4},{"react5":react5},{"react6":react6},{"react7":react7},{"react8":react8}]));
+        postToSheet("final-survey", "N/A", JSON.stringify([{"policy":policy},{"age":age},{"gender":gender},{"gendertext":gendertext}]));
+	    // <!--,{"purpose":purpose},{"react1":react1},{"react2":react2},{"react3":react3},{"react4":react4},{"react5":react5},{"react6":react6},{"react7":react7},{"react8":react8}-->
   
         setTimeout(function() {
           window.location.replace('../pages/post-exercise.html');
@@ -62,6 +66,7 @@ function deleteInputContents() {
 </div>
 <div style="padding-left: 40px">
 <form id="survey-form">
+	<!--
     <br>
   <div class="purpose">
     <div id="questionb1"><strong>1. What was the purpose of the CAPTCHA you were shown in this study?</strong></div>
@@ -164,6 +169,7 @@ function deleteInputContents() {
       </tr>
     </table>
   </div>
+-->
     <br>
   <div class="policy">
     <div id="question1"><strong>3. What is your political perspective?</strong></div>
