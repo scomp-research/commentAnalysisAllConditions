@@ -172,7 +172,7 @@ function deleteInputContents() {
 -->
     <br>
   <div class="policy">
-    <div id="question1"><strong>3. What is your political perspective?</strong></div>
+    <div id="question1"><strong>1. What is your political perspective?</strong></div>
     <input class="surveyRadioButton" type="radio" name="policy" value="-3"> Extremely liberal<br>
     <input class="surveyRadioButton" type="radio" name="policy" value="-2"> Liberal<br>
     <input class="surveyRadioButton" type="radio" name="policy" value="-1"> Slightly liberal <br> 
@@ -185,14 +185,14 @@ function deleteInputContents() {
     
     <br>
     <div class="age">
-        <div id="question2"><strong>4. What is your age?</strong></div>
+        <div id="question2"><strong>2. What is your age?</strong></div>
         <input type="text" pattern="[0-9]{2,3}" name="age" >
 
     </div>
     
     <br>
     <div class="gender">
-        <div id="question3"><strong>5. What is your gender?</strong></div> 
+        <div id="question3"><strong>3. What is your gender?</strong></div> 
             <input class="surveyRadioButton" type="radio" name="gender" value="Female" onclick="deleteInputContents()"> Female<br>
             <input class="surveyRadioButton" type="radio" name="gender" value="Male" onclick="deleteInputContents()"> Male<br>
             <input class="surveyRadioButton" type="radio" name="gender" value="Other"> Other <input id="genderInput" type="text" onfocus="$('input[name=gender]').prop('checked', true)" pattern = "[A-Za-z]{1,}" name="gendertext">
