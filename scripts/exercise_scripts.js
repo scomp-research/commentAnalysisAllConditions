@@ -103,7 +103,6 @@ function setupIntervention() {
     surveyTask2 = false; 
     return
   }
-  interventionTask = false; 
   surveyTask = false; 
   surveyTask2 = false; 
 }
