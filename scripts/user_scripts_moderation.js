@@ -47,7 +47,7 @@ function postToSheet(act, elemID, val) {
 function sendObj(obj) {
     var response = $.ajax(
     {
-      url: "https://script.google.com/macros/s/AKfycbyIVvplK5IjCD5Ng6fzzHDD1oSV51xvdqlCvh68dTBh4cw1CEM/exec", 
+      url: "https://script.google.com/macros/s/AKfycbyu5S5G7UtNuBWQp0ZiN6J05JNoOFFkt7h6FZtL/exec", 
       method: "GET",
       dataType: "json",
       data: obj,
@@ -61,7 +61,7 @@ function getAttemptedInterventions(callback) {
   
   response = $.ajax(
     {
-      url: "https://script.google.com/macros/s/AKfycbyIVvplK5IjCD5Ng6fzzHDD1oSV51xvdqlCvh68dTBh4cw1CEM/exec", 
+      url: "https://script.google.com/macros/s/AKfycbyu5S5G7UtNuBWQp0ZiN6J05JNoOFFkt7h6FZtL/exec", 
       method: "GET",
       dataType: "json",
       data: obj,
@@ -78,7 +78,7 @@ function upValue(intervention) {
   
   response = $.ajax(
     {
-      url: "https://script.google.com/macros/s/AKfycbyIVvplK5IjCD5Ng6fzzHDD1oSV51xvdqlCvh68dTBh4cw1CEM/exec", 
+      url: "https://script.google.com/macros/s/AKfycbyu5S5G7UtNuBWQp0ZiN6J05JNoOFFkt7h6FZtL/exec", 
       method: "GET",
       dataType: "json",
       data: obj,

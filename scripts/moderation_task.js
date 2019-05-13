@@ -23,6 +23,8 @@ function validation() {
   }
 }
 
+
+
 function initialize() {
   $('.captcha-cell').click(function () {
     var icon = $(this).find(".marked-icon");
@@ -37,9 +39,21 @@ function initialize() {
   });
 }
 
+
 $(document).ready(function() {
     initialize(); 
 });
+
+
+function continueToDiscussion() {
+
+  if ($('.reply-textarea').text == null) {
+    alert("Please enter a response"); 
+    selected = []; 
+  } else {
+    window.location.replace('../pages/exercise-moderation.html'); 
+  } 
+}
 
 
 

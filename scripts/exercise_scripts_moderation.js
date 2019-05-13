@@ -19,15 +19,16 @@ var currentReplyNum = 1;
 var interventionTask = true; 
 var interventionComplete = false; 
 
-var surveyTask = true; 
+var surveyTask = false; 
 var surveyComplete = false; 
 
 var surveyTask2 = true; 
 var survey2Complete = false; 
 
 var selectedIntervention = null; // The selected intervention will update in the "chooseIntervention" function.
-//possibleInterventions = ["highpos", "lowpos", "highneg", "lowneg", "control"];
-possibleInterventions = ["control"];
+possibleInterventions = ["twist", "remove", "control"];
+//];
+//possibleInterventions = ["control"];
 
 
 var SURVEY_FILE_LOCATION = "../surveys/wordunscramblesurvey.html";
@@ -50,7 +51,7 @@ function initializeTrial() {
       selectedIntervention = localStorage.selectedIntervention;
       getAttemptedInterventions(function (e) {
       chooseIntervention(e.vals[0]); 
-
+      //postToSheet("Chose intervention", "N/A", selectedIntervention); 
       })
       
 }
@@ -125,6 +126,8 @@ function buttonClicked(buttonType, callerObject) {
     fireComment(callerObject); 
   } else if (buttonType==="reply-submit") {
     fireReplySubmit(callerObject); 
+  } else if (buttonType==="enter-comment") {
+    fireEnterComment(callerObject);
   }
 }
 
@@ -258,12 +261,14 @@ function fireReplySubmit(callerObject) {
 
 function fireComment(callerObject) {
   
-  if (interventionTask && !interventionComplete) {
-    startIntervention(); 
-  } else {
-    var commentText = makeComment(); 
-    postToSheet('comment-submit', "comment-submit-button", commentText); 
-  }
+  var commentText = makeComment(); 
+  postToSheet('comment-submit', "comment-submit-button", commentText); 
+
+}
+
+function fireEnterComment(callerObject){
+
+  startIntervention(); 
 
 }
 
@@ -276,6 +281,45 @@ function unhideSecondaryInteractions() {
     elems[i].style.visibility = 'visible';
   }
 }
+
+var taskResponse
+
+function taskComment(intervention) {
+  var taskResponseInput = document.getElementById("comment-textarea-task");
+  taskResponse = taskResponseInput.value.trim(); 
+  // Check if the comment is legal. 
+  if (isIllegalString(taskResponse)) {
+    return;
+  }
+  if (taskResponse === "") {
+    alert("Empty comments are not allowed.");
+  } else {
+    console.log('working');
+    parent.processResponse(intervention);
+  }
+
+}
+
+window.processResponse = function(){
+  if (selectedIntervention === 'twist'){
+    console.log('working!!!');
+    interventionComplete = true;
+    parent.document.getElementById("intervention").style.display = "hide";
+    parent.document.getElementById("overlay").style.display = "hide";
+    
+    parent.document.getElementById("twist-response").textContent(taskResponse);
+
+    parent.updateComments();
+  } else if (selectedIntervention === 'remove'){
+    parent.document.getElementById("moderated-comment").textContent(taskResponse);
+    parent.document.getElementById("moderated-comment").style.color = "blue";
+    parent.document.getElementById("overlay").style.display = "hide";
+    parent.document.getElementById("intervention").style.display = "hide"; 
+    interventionComplete = true;
+    parent.updateComments();
+  }
+}
+
 
 function makeComment() {
   var commentTextArea = document.getElementById("comment-textarea");
@@ -372,10 +416,21 @@ function checkForIntervention(){
 }
 
 function startIntervention() {
-  document.getElementById("overlay").style.display = "block"; 
-  document.getElementById("intervention").style.display = "block";
-  postToSheet("begin-intervention", "N/A", selectedIntervention);
+  if (selectedIntervention === 'twist'){
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("intervention").style.display = "block"; 
+    document.getElementById('intervention').src = "../interventions/task-twist.html";
+  } else if (selectedIntervention === 'remove') {
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("intervention").style.display = "block"; 
+    document.getElementById('intervention').src = "../interventions/task-word-removal.html";
+  } else if (selectedIntervention === 'control') {
+    interventionComplete = true;
+    updateComments()
+  }  
 }
+
+
 
 function startSurvey() {
   var intervention = parent.document.getElementById("intervention");
@@ -420,4 +475,12 @@ window.validateIntervention = function(intervention, value) {
     interventionComplete = true;
     endIntervention(intervention); 
   }, 50); 
+}
+
+
+function updateComments(){
+  if (interventionComplete === true){
+    document.getElementById("enter-comment").style.display = "none";
+    document.getElementById("comment-display").style.display = "block";
+  }
 }
