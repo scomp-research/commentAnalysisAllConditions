@@ -304,8 +304,8 @@ window.processResponse = function(taskResponse){
   if (selectedIntervention === 'twist'){
     console.log('working!!!');
     interventionComplete = true;
-    parent.document.getElementById("intervention").style.display = "hide";
-    parent.document.getElementById("overlay").style.display = "hide";
+    parent.document.getElementById("intervention").style.display = "none";
+    parent.document.getElementById("overlay").style.display = "none";
     
     //parent.document.getElementById("twist-response").textContent(taskResponse);
 
@@ -313,8 +313,8 @@ window.processResponse = function(taskResponse){
   } else if (selectedIntervention === 'remove'){
     //parent.document.getElementById("moderated-comment").textContent(taskResponse);
     parent.document.getElementById("moderated-comment").style.color = "blue";
-    parent.document.getElementById("overlay").style.display = "hide";
-    parent.document.getElementById("intervention").style.display = "hide"; 
+    parent.document.getElementById("overlay").style.display = "none";
+    parent.document.getElementById("intervention").style.display = "none"; 
     interventionComplete = true;
     parent.updateComments();
   }
