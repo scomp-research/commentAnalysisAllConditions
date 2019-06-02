@@ -306,12 +306,16 @@ window.processResponse = function(taskResponse){
     interventionComplete = true;
     parent.document.getElementById("intervention").style.display = "none";
     parent.document.getElementById("overlay").style.display = "none";
-    
+    var insertText = parent.document.getElementById("twist-response");
+    insertText.append(taskResponse);
+
     //parent.document.getElementById("twist-response").textContent(taskResponse);
 
     parent.updateComments();
   } else if (selectedIntervention === 'remove'){
     //parent.document.getElementById("moderated-comment").textContent(taskResponse);
+    var insertText = parent.document.getElementById("moderated-comment");
+    insertText.append(taskResponse);
     parent.document.getElementById("moderated-comment").style.color = "blue";
     parent.document.getElementById("overlay").style.display = "none";
     parent.document.getElementById("intervention").style.display = "none"; 
