@@ -284,7 +284,7 @@ function unhideSecondaryInteractions() {
 
 var taskResponse
 
-function taskComment(intervention) {
+function taskComment() {
   var taskResponseInput = document.getElementById("comment-textarea-task");
   taskResponse = taskResponseInput.value.trim(); 
   // Check if the comment is legal. 
@@ -295,23 +295,23 @@ function taskComment(intervention) {
     alert("Empty comments are not allowed.");
   } else {
     console.log('working');
-    parent.processResponse(intervention);
+    parent.processResponse(taskResponse);
   }
 
 }
 
-window.processResponse = function(){
+window.processResponse = function(taskResponse){
   if (selectedIntervention === 'twist'){
     console.log('working!!!');
     interventionComplete = true;
     parent.document.getElementById("intervention").style.display = "hide";
     parent.document.getElementById("overlay").style.display = "hide";
     
-    parent.document.getElementById("twist-response").textContent(taskResponse);
+    //parent.document.getElementById("twist-response").textContent(taskResponse);
 
     parent.updateComments();
   } else if (selectedIntervention === 'remove'){
-    parent.document.getElementById("moderated-comment").textContent(taskResponse);
+    //parent.document.getElementById("moderated-comment").textContent(taskResponse);
     parent.document.getElementById("moderated-comment").style.color = "blue";
     parent.document.getElementById("overlay").style.display = "hide";
     parent.document.getElementById("intervention").style.display = "hide"; 
