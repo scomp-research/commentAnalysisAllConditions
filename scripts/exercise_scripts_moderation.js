@@ -308,7 +308,7 @@ window.processResponse = function(taskResponse){
     parent.document.getElementById("overlay").style.display = "none";
     var insertText = parent.document.getElementById("twist-response");
     insertText.append(taskResponse);
-
+    console.log(taskResponse)
     //parent.document.getElementById("twist-response").textContent(taskResponse);
 
     parent.updateComments();
