@@ -296,13 +296,14 @@ function taskComment() {
   } else {
     console.log('working');
     parent.processResponse(taskResponse);
+    parent.postToSheet('task-submit', "task-submit-button", taskResponse); 
   }
 
 }
 
 window.processResponse = function(taskResponse){
   if (selectedIntervention === 'twist'){
-    postToSheet('task-submit', "task-submit-button", taskResponse); 
+    
     console.log('working!!!');
     interventionComplete = true;
     parent.document.getElementById("intervention").style.display = "none";
@@ -314,7 +315,6 @@ window.processResponse = function(taskResponse){
 
     parent.updateComments();
   } else if (selectedIntervention === 'remove'){
-    postToSheet('task-submit', "task-submit-button", taskResponse); 
     //parent.document.getElementById("moderated-comment").textContent(taskResponse);
     var insertText = parent.document.getElementById("moderated-comment");
     insertText.text(taskResponse);
