@@ -295,8 +295,8 @@ function taskComment() {
     alert("Empty comments are not allowed.");
   } else {
     console.log('working');
-    parent.processResponse(taskResponse);
     parent.postToSheet('task-submit', "task-submit-button", taskResponse); 
+    parent.processResponse(taskResponse);
   }
 
 }
