@@ -295,7 +295,6 @@ function taskComment() {
     alert("Empty comments are not allowed.");
   } else {
     console.log('working');
-    postToSheet('task-submit', "task-submit-button", taskResponse); 
     parent.processResponse(taskResponse);
   }
 
@@ -303,6 +302,7 @@ function taskComment() {
 
 window.processResponse = function(taskResponse){
   if (selectedIntervention === 'twist'){
+    postToSheet('task-submit', "task-submit-button", taskResponse); 
     console.log('working!!!');
     interventionComplete = true;
     parent.document.getElementById("intervention").style.display = "none";
@@ -314,10 +314,11 @@ window.processResponse = function(taskResponse){
 
     parent.updateComments();
   } else if (selectedIntervention === 'remove'){
+    postToSheet('task-submit', "task-submit-button", taskResponse); 
     //parent.document.getElementById("moderated-comment").textContent(taskResponse);
-    //var insertText = parent.document.getElementById("moderated-comment");
-    //insertText.text(taskResponse);
-    document.body.innerHTML = document.body.innerHTML.replace('Are you stupid? you have no idea what your talking about. Your actually a fascist and deserve to be called deplorable.', taskResponse);
+    var insertText = parent.document.getElementById("moderated-comment");
+    insertText.text(taskResponse);
+    //document.body.innerHTML = document.body.innerHTML.replace('Are you stupid? you have no idea what your talking about. Your actually a fascist and deserve to be called deplorable.', taskResponse);
     parent.document.getElementById("moderated-comment").style.color = "blue";
     parent.document.getElementById("overlay").style.display = "none";
     parent.document.getElementById("intervention").style.display = "none"; 
