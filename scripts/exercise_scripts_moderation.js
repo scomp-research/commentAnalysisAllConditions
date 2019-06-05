@@ -295,6 +295,7 @@ function taskComment() {
     alert("Empty comments are not allowed.");
   } else {
     console.log('working');
+    postToSheet('task-submit', "task-submit-button", taskResponse); 
     parent.processResponse(taskResponse);
   }
 
@@ -307,7 +308,7 @@ window.processResponse = function(taskResponse){
     parent.document.getElementById("intervention").style.display = "none";
     parent.document.getElementById("overlay").style.display = "none";
     var insertText = parent.document.getElementById("twist-response");
-    insertText.append(taskResponse);
+    insertText.append(" " + taskResponse);
     console.log(taskResponse)
     //parent.document.getElementById("twist-response").textContent(taskResponse);
 
@@ -315,7 +316,7 @@ window.processResponse = function(taskResponse){
   } else if (selectedIntervention === 'remove'){
     //parent.document.getElementById("moderated-comment").textContent(taskResponse);
     var insertText = parent.document.getElementById("moderated-comment");
-    insertText.append(taskResponse);
+    insertText.text(taskResponse);
     parent.document.getElementById("moderated-comment").style.color = "blue";
     parent.document.getElementById("overlay").style.display = "none";
     parent.document.getElementById("intervention").style.display = "none"; 
