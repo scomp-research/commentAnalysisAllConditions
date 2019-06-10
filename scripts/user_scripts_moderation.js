@@ -8,6 +8,19 @@ function getUserID() {
     return localStorage.getItem('commentForum_user_id'); 
 }
 
+function updateID() {
+  var elem = document.getElementById("submission-code");
+  var id = getUserID();
+  console.log('ID');
+  if (id) {
+    elem.innerHTML = id; 
+    postToSheet("Complete-Task", "N/A", "END");
+  } else {
+    postToSheet("Complete-Task (NO ID)", "N/A", "END");
+  }
+}
+
+
 function makeUserID () {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
