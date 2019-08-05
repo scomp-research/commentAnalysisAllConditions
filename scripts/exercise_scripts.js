@@ -76,7 +76,7 @@ function setupIntervention() {
   if (selectedIntervention === "highpos") {
     intervention.src = "../interventions/captchahighpos.html";
     intervention.style.width = "500px"; 
-    intervention.style.height = "580px"; 
+    intervention.style.height = "680px"; 
   } else if (selectedIntervention === "lowpos") {
     intervention.src = "../interventions/captchalowpos.html";
     intervention.style.width = "500px"; 
@@ -84,11 +84,11 @@ function setupIntervention() {
   } else if (selectedIntervention === "highneg") {
     intervention.src = "../interventions/captchahighneg.html";
     intervention.style.width = "500px"; 
-    intervention.style.height = "580px";
+    intervention.style.height = "680px";
   } else if (selectedIntervention === "lowneg") {
     intervention.src = "../interventions/captchalowneg.html";
     intervention.style.width = "500px"; 
-    intervention.style.height = "580px";
+    intervention.style.height = "680px";
   } else if (selectedIntervention === "captchalowposbasicinfo") {
     intervention.src = "../interventions/captchalowposbasicinfo.html";
     intervention.style.width = "500px";
