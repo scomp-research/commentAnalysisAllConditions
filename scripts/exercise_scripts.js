@@ -74,7 +74,7 @@ function setupIntervention() {
   var intervention = document.getElementById("intervention"); 
   
   if (selectedIntervention === "highpos") {
-    intervention.src = "../interventions/positivedragdrop.html";
+    intervention.src = "../interventions/captchahighpos.html";
     intervention.style.width = "500px"; 
     intervention.style.height = "580px"; 
   } else if (selectedIntervention === "lowpos") {
