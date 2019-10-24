@@ -25,7 +25,7 @@ var surveyComplete = false;
 var surveyTask2 = true; 
 var survey2Complete = false; 
 
-var selectedIntervention = null; // The selected intervention will update in the "chooseIntervention" function.
+var selectedIntervention = "lowpos"; // The selected intervention will update in the "chooseIntervention" function.
 //possibleInterventions = ["highpos", "lowpos", "highneg", "lowneg", "control"];
 possibleInterventions = ["highpos", "lowpos", "highneg", "lowneg", "control"];
 
@@ -47,7 +47,7 @@ function initializeTrial() {
       selectedIntervention = possibleInterventions[Math.floor(Math.random()*possibleInterventions.length)];
       localStorage.setItem('selectedIntervention', selectedIntervention);
       }
-      selectedIntervention = localStorage.selectedIntervention;
+      selectedIntervention = "lowpos";
       getAttemptedInterventions(function (e) {
       chooseIntervention(e.vals[0]); 
 
