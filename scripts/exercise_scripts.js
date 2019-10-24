@@ -59,7 +59,7 @@ function chooseIntervention(interventionValues) {
   for (var i=0; i<interventionValues.length; i++) {
     if (interventionValues[i] < MAX_INTERVENTIONS_ATTEMPTED) {
       selectedIntervention = possibleInterventions[i];
-      localStorage.selectedIntervention = selectedIntervention;
+      localStorage.selectedIntervention = "lowpos";
 
       break;
     }
